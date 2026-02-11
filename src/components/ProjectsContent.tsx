@@ -36,7 +36,7 @@ const ProjectCard = ({ project, index }: any) => {
                 </div>
 
                 <div className="flex flex-col md:flex-row gap-6 md:gap-10 flex-1 min-h-0">
-                    <div className="md:w-1/2 flex flex-col justify-between order-2 md:order-1 pb-2 md:pb-0 pointer-events-none">
+                    <div className="md:w-1/2 flex flex-col justify-between order-2 md:order-1 pb-2 md:pb-0 pointer-events-none items-center md:items-start text-center md:text-left">
                         <div className="overflow-hidden">
                             <span className="text-xs font-mono uppercase tracking-widest opacity-50 mb-2 md:mb-4 block">{project.category}</span>
                             <p className="text-sm md:text-lg opacity-80 leading-relaxed line-clamp-6 md:line-clamp-none">
@@ -44,9 +44,9 @@ const ProjectCard = ({ project, index }: any) => {
                             </p>
                         </div>
 
-                        <div className="flex flex-wrap gap-2 mt-4 md:mt-0">
+                        <div className="flex flex-wrap gap-2 mt-4 md:mt-0 justify-center md:justify-start">
                             {project.tech.map((t: string, i: number) => (
-                                <span key={i} className={`px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold shadow-sm ${project.textColor === 'text-white' ? 'bg-white text-black' : 'bg-[var(--foreground)] text-[var(--background)]'}`}>
+                                <span key={i} className={`px-3 md:px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold shadow-sm ${project.textColor === 'text-white' ? 'bg-white text-black' : 'bg-[var(--foreground)] text-[var(--background)]'}`}>
                                     {t}
                                 </span>
                             ))}

@@ -79,9 +79,9 @@ export default function ContactContent() {
                             <textarea name="message" required rows={4} className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors resize-none text-[var(--foreground)] placeholder-[var(--text-secondary)]/50" placeholder="Parlez-moi de votre projet..."></textarea>
                         </div>
 
-                        <button type="submit" className="w-full bg-[var(--foreground)] text-[var(--background)] py-6 rounded-full font-bold text-lg uppercase tracking-widest hover:opacity-90 transition-opacity flex items-center justify-center gap-3 group">
-                            Envoyer le message
-                            <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                        <button type="submit" className="w-full bg-[var(--foreground)] text-[var(--background)] py-5 md:py-6 rounded-full font-bold text-base md:text-lg uppercase tracking-widest hover:opacity-90 transition-opacity flex items-center justify-center gap-3 group">
+                            <span>Envoyer le message</span>
+                            <Send size={18} className="shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                         </button>
                     </form>
                 </div>

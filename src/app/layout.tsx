@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { inter, playfair } from "@/lib/fonts";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -59,6 +59,15 @@ export const metadata: Metadata = {
   icons: {
     icon: '/icon.svg',
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+  width: "device-width",
+  initialScale: 1,
 };
 
 import Navbar from "@/components/Navbar";
