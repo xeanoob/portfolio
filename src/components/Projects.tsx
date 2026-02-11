@@ -30,7 +30,7 @@ const projects = [
         title: "Gestion JO 2024",
         category: "Desktop App",
         tech: "Java / SQL",
-        id: "02",
+        id: "03", // Corrigé : était "02"
         color: "bg-zinc-100",
         image: "/images/2_image.jpg",
         link: "https://github.com/xeanoob/GSBcompterendu"
@@ -39,7 +39,7 @@ const projects = [
         title: "G.S.B.",
         category: "Web & Mobile",
         tech: "PHP / Symfony",
-        id: "03",
+        id: "04", // Corrigé : était "03"
         color: "bg-zinc-50",
         image: "/images/3_image.jpg",
         link: "https://github.com/xeanoob/GSBcompterendu"
@@ -48,7 +48,7 @@ const projects = [
         title: "Outlook Automation",
         category: "Pro Tool",
         tech: "C# / .NET",
-        id: "04",
+        id: "05", // Corrigé : était "04"
         color: "bg-zinc-200",
         image: "/images/4_image.jpg",
         link: "#"
@@ -89,12 +89,15 @@ export default function Projects() {
                             >
                                 {/* Background Image */}
                                 <div className="absolute inset-0 z-0">
-                                    <Image
-                                        src={project.image}
-                                        alt={project.title}
-                                        fill
-                                        className="object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
-                                    />
+                                    {/* Vérification si l'image existe pour éviter une erreur sur le projet "Analyse Graphes" */}
+                                    {project.image && (
+                                        <Image
+                                            src={project.image}
+                                            alt={project.title}
+                                            fill
+                                            className="object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
+                                        />
+                                    )}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                                 </div>
 
