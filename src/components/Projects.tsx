@@ -27,6 +27,15 @@ const projects = [
         link: "https://github.com/Xeananas/SAEGRAH"
     },
     {
+        title: "Outlook Automation",
+        category: "Pro Tool",
+        tech: "C# / .NET",
+        id: "05", // Corrigé : était "04"
+        color: "bg-zinc-200",
+        image: "/images/outlook.png",
+        link: "#"
+    },
+    {
         title: "Gestion JO 2024",
         category: "Desktop App",
         tech: "Java / SQL",
@@ -43,16 +52,8 @@ const projects = [
         color: "bg-zinc-50",
         image: "/images/gsb.png",
         link: "https://github.com/xeanoob/GSBcompterendu"
-    },
-    {
-        title: "Outlook Automation",
-        category: "Pro Tool",
-        tech: "C# / .NET",
-        id: "05", // Corrigé : était "04"
-        color: "bg-zinc-200",
-        image: "/images/4_image.jpg",
-        link: "#"
     }
+
 ];
 
 export default function Projects() {
