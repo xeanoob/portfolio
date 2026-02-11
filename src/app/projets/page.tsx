@@ -15,7 +15,7 @@ const projects = [
         color: "bg-[#111]",
         textColor: "text-white",
         link: "https://garanches.vercel.app/",
-        image: "/images/13_rose-h.jpg"
+        image: "/images/garanches.png"
     },
     {
         title: "Analyse de Graphes (SAE)",
@@ -35,7 +35,7 @@ const projects = [
         color: "bg-[#f0f0f0]",
         textColor: "text-black",
         link: "https://github.com/xeanoob/GSBcompterendu",
-        image: "/images/2_image.jpg"
+        image: "/images/jo.png"
     },
     {
         title: "GSB - Gestion de Comptes Rendus",
@@ -45,7 +45,7 @@ const projects = [
         color: "bg-[#f0f0f0]",
         textColor: "text-black",
         link: "https://github.com/xeanoob/GSBcompterendu",
-        image: "/images/3_image.jpg"
+        image: "/images/gsb.png"
     },
     {
         title: "Outlook Add-in Automation",
@@ -55,7 +55,7 @@ const projects = [
         color: "bg-[#e0e0e0]",
         textColor: "text-black",
         link: "#",
-        image: "/images/4_image.jpg"
+        image: "/images/outlook.png"
     }
 ];
 
@@ -117,13 +117,16 @@ const ProjectCard = ({ project, index, range, targetScale }: any) => {
 
                     <div className="md:w-1/2 h-full min-h-[200px] relative rounded-2xl overflow-hidden bg-black/5 order-1 md:order-2 transform-gpu" style={{ maskImage: 'linear-gradient(white, white)', WebkitMaskImage: 'linear-gradient(white, white)' }}>
                         <motion.div style={{ scale: imageScale }} className="w-full h-full relative">
-                            <Image
-                                src={project.image}
-                                alt={project.title}
-                                fill
-                                className="object-cover"
-                                sizes="(max-width: 768px) 100vw, 50vw"
-                            />
+                            {/* Correction : Affichage conditionnel de l'image uniquement si project.image existe */}
+                            {project.image && (
+                                <Image
+                                    src={project.image}
+                                    alt={project.title}
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                />
+                            )}
                         </motion.div>
                     </div>
                 </div>

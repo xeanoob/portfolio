@@ -27,7 +27,7 @@ export default function Navbar() {
                 transition={{ duration: 0.5 }}
             >
                 <TransitionLink href="/" className="font-serif text-xl font-bold tracking-tighter text-black z-50">
-                    A.B.
+                    AB.
                 </TransitionLink>
 
                 {/* Desktop Menu */}

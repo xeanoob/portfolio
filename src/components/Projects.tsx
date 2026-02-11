@@ -14,7 +14,7 @@ const projects = [
         tech: "Next.js / Stripe",
         id: "01",
         color: "bg-zinc-50",
-        image: "/images/13_rose-h.jpg",
+        image: "/images/garanches.png",
         link: "https://garanches.vercel.app/"
     },
     {
@@ -23,7 +23,7 @@ const projects = [
         tech: "Python / NetworkX",
         id: "02",
         color: "bg-zinc-900", // Dark theme for variety
-        image: null,
+        image: "/images/graph.png",
         link: "https://github.com/Xeananas/SAEGRAH"
     },
     {
@@ -32,7 +32,7 @@ const projects = [
         tech: "Java / SQL",
         id: "03", // Corrigé : était "02"
         color: "bg-zinc-100",
-        image: "/images/2_image.jpg",
+        image: "/images/jo.png",
         link: "https://github.com/xeanoob/GSBcompterendu"
     },
     {
@@ -41,7 +41,7 @@ const projects = [
         tech: "PHP / Symfony",
         id: "04", // Corrigé : était "03"
         color: "bg-zinc-50",
-        image: "/images/3_image.jpg",
+        image: "/images/gsb.png",
         link: "https://github.com/xeanoob/GSBcompterendu"
     },
     {
@@ -50,7 +50,7 @@ const projects = [
         tech: "C# / .NET",
         id: "05", // Corrigé : était "04"
         color: "bg-zinc-200",
-        image: "/images/4_image.jpg",
+        image: "/images/outlook.png",
         link: "#"
     }
 ];
