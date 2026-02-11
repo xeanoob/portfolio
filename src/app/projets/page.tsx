@@ -25,7 +25,7 @@ const projects = [
         color: "bg-[#1a1a1a]",
         textColor: "text-white",
         link: "https://github.com/Xeananas/SAEGRAH",
-        image: null
+        image: "/images/graph.png" // Si vous avez une image pour ce projet, mettez le chemin ici (ex: "/images/graph_project.jpg")
     },
     {
         title: "Application de Gestion JO 2024",
@@ -118,14 +118,19 @@ const ProjectCard = ({ project, index, range, targetScale }: any) => {
                     <div className="md:w-1/2 h-full min-h-[200px] relative rounded-2xl overflow-hidden bg-black/5 order-1 md:order-2 transform-gpu" style={{ maskImage: 'linear-gradient(white, white)', WebkitMaskImage: 'linear-gradient(white, white)' }}>
                         <motion.div style={{ scale: imageScale }} className="w-full h-full relative">
                             {/* Correction : Affichage conditionnel de l'image uniquement si project.image existe */}
-                            {project.image && (
+                            {project.image ? (
                                 <Image
                                     src={project.image}
                                     alt={project.title}
                                     fill
-                                    className="object-cover"
+                                    className="object-contain bg-white p-4" // MODIFIÉ ICI : object-contain pour tout voir + fond blanc
                                     sizes="(max-width: 768px) 100vw, 50vw"
                                 />
+                            ) : (
+                                // Placeholder si pas d'image (optionnel, pour éviter le vide complet)
+                                <div className="w-full h-full flex items-center justify-center bg-zinc-800 text-white/20 font-serif text-4xl">
+                                    {project.title.charAt(0)}
+                                </div>
                             )}
                         </motion.div>
                     </div>

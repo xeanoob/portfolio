@@ -9,7 +9,7 @@ const timeline = [
     {
         year: "2026",
         date: "Janvier 2026 - Présent",
-        title: "Stage DevOps & Cloud",
+        title: "Stage DevOps",
         company: "Sopra Steria",
         type: "work",
         description: "Automatisation des déploiements sur Azure, mise en place de pipelines CI/CD GitLab, et conteneurisation Docker/Kubernetes.",
