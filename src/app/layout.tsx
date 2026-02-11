@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
-  title: "Portfolio - Étudiant Informatique",
+  title: "Ambroise B. - Portfolio",
   description: "Portfolio de développeur étudiant - Projets & Compétences",
 };
 

@@ -50,7 +50,7 @@ const projects = [
         tech: "C# / .NET",
         id: "05", // Corrigé : était "04"
         color: "bg-zinc-200",
-        image: "/images/outlook.png",
+        image: "/images/4_image.jpg",
         link: "#"
     }
 ];

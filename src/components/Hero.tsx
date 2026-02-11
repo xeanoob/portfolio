@@ -1,31 +1,42 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import ParallaxItem from "@/components/ParallaxItem";
 import { motion } from "framer-motion";
 
 export default function Hero() {
     return (
-        <section className="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
+        <section className="h-screen flex items-center justify-center relative overflow-hidden">
 
-            <div className="flex flex-col items-center justify-center text-center z-10 relative">
-                <ParallaxItem offset={-20} className="mb-10 max-w-4xl mx-auto">
+            {/* Fond abstrait léger */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 blur-[120px] rounded-full mix-blend-multiply opacity-50" />
+                <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] bg-purple-500/10 blur-[100px] rounded-full mix-blend-multiply opacity-40" />
+            </div>
+
+            <div className="flex flex-col items-center justify-center text-center z-10 relative px-4">
+
+                {/* Badge du haut */}
+                <ParallaxItem offset={-20} className="mb-8 max-w-4xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
+                        className="flex flex-col items-center"
                     >
-                        <span className="inline-block px-3 py-1 bg-black/5 border border-black/10 rounded-full text-xs font-bold tracking-widest uppercase text-black/70 mb-6">
-                            Développeur Fullstack Junior
+                        <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/50 backdrop-blur-md border border-black/5 rounded-full text-xs font-bold tracking-widest uppercase text-black/60 mb-6 shadow-sm">
+                            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                            Available for work
                         </span>
                     </motion.div>
 
-                    <h1 className="font-serif text-7xl md:text-8xl lg:text-9xl text-black leading-[0.9] tracking-tighter mb-8 bg-clip-text">
+                    {/* Titre Principal */}
+                    <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl text-black leading-[0.9] tracking-tighter mb-6">
                         <motion.span
                             initial={{ y: 100, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }} // "Power4.out" like easing
+                            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
                             className="block"
                         >
                             Ambroise
@@ -34,56 +45,73 @@ export default function Hero() {
                             initial={{ y: 100, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                            className="block italic text-black/90"
+                            className="block italic text-black/80"
                         >
                             Boutrin
                         </motion.span>
                     </h1>
 
-                    <motion.p
+                    {/* Sous-titre et Localisation */}
+                    <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 0.6 }}
-                        className="text-xl md:text-2xl text-black/60 font-light max-w-2xl mx-auto leading-relaxed"
+                        className="flex flex-col items-center gap-4"
                     >
-                        Concevoir des interfaces numériques qui allient <span className="font-medium text-black">esthétique</span> et <span className="font-medium text-black">performance</span>.
-                    </motion.p>
+                        <p className="text-xl md:text-2xl text-black/60 font-light max-w-2xl mx-auto leading-relaxed">
+                            Développeur Fullstack Junior spécialisé en <span className="font-medium text-black">React</span> & <span className="font-medium text-black">Next.js</span>.
+                        </p>
+
+                        <div className="flex items-center gap-2 text-black/40 text-sm font-medium uppercase tracking-wide">
+                            <MapPin size={16} />
+                            <span>Basé à Orléans, France</span>
+                        </div>
+                    </motion.div>
                 </ParallaxItem>
 
-                <ParallaxItem offset={0} className="w-full mt-10">
-                    <div className="flex flex-col sm:flex-row gap-8 space-y-4 sm:space-y-0 justify-center items-center w-full">
-                        <Link
-                            href="/projets"
-                            className="bg-black text-white px-10 py-5 rounded-full font-medium hover:scale-105 hover:bg-zinc-900 transition-all duration-300 flex items-center gap-2 group shadow-xl shadow-black/20 z-20 text-lg"
-                        >
-                            Voir les projets
-                            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                {/* Boutons d'action */}
+                <ParallaxItem offset={0} className="w-full mt-8">
+                    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full">
+
+                        {/* Bouton Projets (Noir) */}
+                        <Link href="/projets" className="group relative">
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="bg-black text-white px-8 py-4 rounded-full font-medium flex items-center gap-2 shadow-xl shadow-black/10 hover:shadow-2xl hover:shadow-black/20 transition-all"
+                            >
+                                Voir mes projets
+                                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                            </motion.button>
                         </Link>
-                        <Link
-                            href="/contact"
-                            className="px-10 py-5 rounded-full font-medium border-2 border-black/10 hover:bg-black/5 hover:border-black/30 transition-all duration-300 text-black z-20 text-lg bg-white/50 backdrop-blur-sm"
-                        >
-                            Me contacter
+
+                        {/* Bouton Contact (Outline interactif) */}
+                        <Link href="/contact">
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="px-8 py-4 rounded-full font-medium border border-black/10 hover:border-black/30 bg-white/40 backdrop-blur-sm text-black transition-all flex items-center gap-2"
+                            >
+                                <Mail size={18} className="text-black/60" />
+                                Me contacter
+                            </motion.button>
                         </Link>
                     </div>
                 </ParallaxItem>
 
+                {/* Réseaux Sociaux */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8 }}
-                    className="mt-16 flex gap-8 text-black/40 justify-center"
+                    className="mt-12 flex gap-6 text-black/40 justify-center"
                 >
-                    <a href="#" className="hover:text-black hover:scale-110 transition-all duration-300"><Github size={28} /></a>
-                    <a href="#" className="hover:text-black hover:scale-110 transition-all duration-300"><Linkedin size={28} /></a>
-                    <a href="#" className="hover:text-black hover:scale-110 transition-all duration-300"><Mail size={28} /></a>
+                    {/* ⚠️ REMPLACE LES # PAR TES VRAIS LIENS */}
+                    <a href="https://github.com/xeanoob" target="_blank" className="hover:text-black hover:scale-110 transition-all duration-300 p-2"><Github size={24} /></a>
+                    <a href="https://www.linkedin.com/in/ambroise-boutrin/" target="_blank" className="hover:text-blue-700 hover:scale-110 transition-all duration-300 p-2"><Linkedin size={24} /></a>
                 </motion.div>
             </div>
 
-            {/* Abstract Background Element (Subtle) */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-black/5 to-transparent blur-[100px] opacity-50 rounded-full" />
-            </div>
         </section>
     );
-}
+}               
