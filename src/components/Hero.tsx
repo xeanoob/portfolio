@@ -47,7 +47,7 @@ export default function Hero() {
                     className="flex flex-col items-center gap-4"
                 >
                     <p className="text-xl md:text-2xl text-black/60 font-light max-w-2xl mx-auto leading-relaxed">
-                        Développeur Fullstack Junior spécialisé en <span className="font-medium text-black">React</span> & <span className="font-medium text-black">Next.js</span>.
+                        Développeur Fullstack spécialisé en <span className="font-medium text-black">React</span> & <span className="font-medium text-black">Next.js</span>.
                     </p>
 
                     <div className="flex items-center gap-2 text-black/40 text-sm font-medium uppercase tracking-wide">

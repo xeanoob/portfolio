@@ -7,54 +7,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
-const projects = [
-    {
-        title: "E-Commerce",
-        category: "Web Fullstack",
-        tech: "Next.js / Stripe",
-        id: "01",
-        color: "bg-zinc-50",
-        image: "/images/garanches.png",
-        link: "https://garanches.vercel.app/"
-    },
-    {
-        title: "Analyse Graphes",
-        category: "Data Science",
-        tech: "Python / NetworkX",
-        id: "02",
-        color: "bg-zinc-900", // Dark theme for variety
-        image: "/images/graph.png",
-        link: "https://github.com/Xeananas/SAEGRAH"
-    },
-    {
-        title: "Outlook Automation",
-        category: "Pro Tool",
-        tech: "C# / .NET",
-        id: "05", // Corrigé : était "04"
-        color: "bg-zinc-200",
-        image: "/images/outlook.png",
-        link: "#"
-    },
-    {
-        title: "Gestion JO 2024",
-        category: "Desktop App",
-        tech: "Java / SQL",
-        id: "03", // Corrigé : était "02"
-        color: "bg-zinc-100",
-        image: "/images/jo.png",
-        link: "https://github.com/xeanoob/GSBcompterendu"
-    },
-    {
-        title: "G.S.B.",
-        category: "Web & Mobile",
-        tech: "PHP / Symfony",
-        id: "04", // Corrigé : était "03"
-        color: "bg-zinc-50",
-        image: "/images/gsb.png",
-        link: "https://github.com/xeanoob/GSBcompterendu"
-    }
-
-];
+import { projects } from "@/data/projects";
 
 export default function Projects() {
     const targetRef = useRef(null);
@@ -84,7 +37,7 @@ export default function Projects() {
                     <motion.div style={{ x }} className="flex gap-8 pl-6 md:pl-20">
                         {projects.map((project) => (
                             <Link
-                                href={project.link !== "#" ? project.link : "/projets"}
+                                href={`/projets/${project.slug}`}
                                 key={project.id}
                                 className={`group relative h-[45vh] w-[85vw] md:w-[25vw] flex-shrink-0 overflow-hidden rounded-2xl bg-black p-6 flex flex-col justify-between border border-black/5 hover:border-black/20 transition-all hover:-translate-y-2`}
                             >
@@ -114,7 +67,7 @@ export default function Projects() {
                                         {project.category}
                                     </span>
                                     <h3 className="text-2xl font-bold mb-1 text-white">{project.title}</h3>
-                                    <p className="text-white/60 text-sm">{project.tech}</p>
+                                    <p className="text-white/60 text-sm">{project.mainTech}</p>
                                 </div>
                             </Link>
                         ))}

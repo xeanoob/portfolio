@@ -1,0 +1,17 @@
+[
+  {
+    "id": "c7c13eff-4998-401d-a5aa-810ef18d3b83",
+    "message": "Cannot find module '@/components/ContactContent' or its corresponding type declarations.",
+    "file": "c:\\Users\\aboutrin\\Desktop\\site\\portfolio\\portfolio\\src\\app\\contact\\page.tsx"
+  },
+  {
+    "id": "e5a7d15e-f356-4ff9-b566-6ea9fae0282e",
+    "message": "Cannot find module '@/components/ProjectsContent' or its corresponding type declarations.",
+    "file": "c:\\Users\\aboutrin\\Desktop\\site\\portfolio\\portfolio\\src\\app\\projets\\page.tsx"
+  },
+  {
+    "id": "4e583d61-e0bf-4d43-a278-b0e0af2d93a5",
+    "message": "Cannot find module '@/components/ParcoursContent' or its corresponding type declarations.",
+    "file": "c:\\Users\\aboutrin\\Desktop\\site\\portfolio\\portfolio\\src\\app\\parcours\\page.tsx"
+  }
+]

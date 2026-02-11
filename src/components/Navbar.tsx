@@ -59,9 +59,9 @@ export default function Navbar() {
 
                     <div className="w-px h-4 bg-black/10 mx-2"></div>
 
-                    <TransitionLink href="/cv" className="text-sm font-medium hover:text-black/60 transition-colors px-2">
+                    <a href="/images/fichiers/CV_Ambroise_Boutrin_Dev_Fullstack.pdf" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-black/60 transition-colors px-2">
                         CV
-                    </TransitionLink>
+                    </a>
 
                     <TransitionLink href="/contact" className="px-5 py-2 bg-zinc-100 text-black rounded-full text-sm font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors ml-2">
                         Contact
