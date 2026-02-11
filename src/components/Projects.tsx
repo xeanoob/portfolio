@@ -18,15 +18,15 @@ export default function Projects() {
     const x = useTransform(scrollYProgress, [0, 1], ["0%", "-65%"]);
 
     return (
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-[var(--background)]">
 
             {/* Standard Header Section (Not Sticky/Overlapping) */}
             <div className="container mx-auto px-6 mb-12 flex justify-between items-end">
                 <div>
-                    <h2 className="text-4xl md:text-5xl font-serif">Projets Récents</h2>
-                    <p className="text-black/40 font-mono text-sm mt-2 uppercase tracking-widest">Une sélection de mes travaux</p>
+                    <h2 className="text-4xl md:text-5xl font-serif text-[var(--foreground)]">Projets Récents</h2>
+                    <p className="text-[var(--text-secondary)] font-mono text-sm mt-2 uppercase tracking-widest">Une sélection de mes travaux</p>
                 </div>
-                <div className="hidden md:block text-sm text-black/40">
+                <div className="hidden md:block text-sm text-[var(--text-secondary)]">
                     SCROLL &rarr;
                 </div>
             </div>

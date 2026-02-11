@@ -21,17 +21,17 @@ export default function Navbar() {
     return (
         <>
             <motion.nav
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4 flex justify-between items-center ${scrolled ? "bg-white/80 backdrop-blur-md border-b border-black/5" : "bg-transparent"}`}
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4 flex justify-between items-center ${scrolled ? "bg-[var(--background)]/80 backdrop-blur-md border-b border-[var(--border-color)]" : "bg-transparent"}`}
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <TransitionLink href="/" className="font-serif text-xl font-bold tracking-tighter text-black z-50">
+                <TransitionLink href="/" className="font-serif text-xl font-bold tracking-tighter text-[var(--foreground)] z-50">
                     AB.
                 </TransitionLink>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex items-center bg-white/50 backdrop-blur-sm p-1 rounded-full border border-black/5 relative">
+                <div className="hidden md:flex items-center bg-[var(--bg-secondary)]/50 backdrop-blur-sm p-1 rounded-full border border-[var(--border-color)] relative">
                     {[
                         { name: "Accueil", path: "/" },
                         { name: "Projets", path: "/projets" },
@@ -43,12 +43,12 @@ export default function Navbar() {
                             <TransitionLink
                                 key={item.path}
                                 href={item.path}
-                                className={`relative px-5 py-2 rounded-full text-sm font-medium transition-colors z-10 ${isActive ? "text-white" : "text-black hover:text-black/60"}`}
+                                className={`relative px-5 py-2 rounded-full text-sm font-medium transition-colors z-10 ${isActive ? "text-[var(--background)]" : "text-[var(--foreground)] hover:text-[var(--text-secondary)]"}`}
                             >
                                 {isActive && (
                                     <motion.div
                                         layoutId="navbar-indicator"
-                                        className="absolute inset-0 bg-black rounded-full -z-10"
+                                        className="absolute inset-0 bg-[var(--foreground)] rounded-full -z-10"
                                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                                     />
                                 )}
@@ -57,19 +57,19 @@ export default function Navbar() {
                         );
                     })}
 
-                    <div className="w-px h-4 bg-black/10 mx-2"></div>
+                    <div className="w-px h-4 bg-[var(--border-color)] mx-2"></div>
 
-                    <a href="/images/fichiers/CV_Ambroise_Boutrin_Dev_Fullstack.pdf" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-black/60 transition-colors px-2">
+                    <a href="/images/fichiers/CV_Ambroise_Boutrin_Dev_Fullstack.pdf" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--text-secondary)] transition-colors px-2">
                         CV
                     </a>
 
-                    <TransitionLink href="/contact" className="px-5 py-2 bg-zinc-100 text-black rounded-full text-sm font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors ml-2">
+                    <TransitionLink href="/contact" className="px-5 py-2 bg-[var(--foreground)] text-[var(--background)] rounded-full text-sm font-bold uppercase tracking-wider hover:opacity-80 transition-opacity ml-2">
                         Contact
                     </TransitionLink>
                 </div>
 
                 {/* Mobile Menu Button */}
-                <button onClick={() => setIsOpen(!isOpen)} className="md:hidden z-50 text-black">
+                <button onClick={() => setIsOpen(!isOpen)} className="md:hidden z-50 text-[var(--foreground)]">
                     {isOpen ? <X /> : <Menu />}
                 </button>
             </motion.nav>
@@ -81,10 +81,10 @@ export default function Navbar() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-40 bg-white/10 backdrop-blur-xl flex flex-col justify-between p-6"
+                        className="fixed inset-0 z-40 bg-[var(--background)]/90 backdrop-blur-xl flex flex-col justify-between p-6"
                     >
                         {/* Background Accent */}
-                        <div className="absolute inset-0 bg-white/90 z-[-1]"></div>
+                        <div className="absolute inset-0 bg-[var(--background)]/90 z-[-1]"></div>
 
                         <div className="flex justify-end">
                             {/* Close button is handled by the main nav button z-index, but we add safe space */}
@@ -108,11 +108,11 @@ export default function Navbar() {
                                     <TransitionLink
                                         href={item.path}
                                         onClick={() => setIsOpen(false)}
-                                        className="text-5xl md:text-6xl font-serif font-bold text-black hover:opacity-50 transition-opacity block"
+                                        className="text-5xl md:text-6xl font-serif font-bold text-[var(--foreground)] hover:opacity-50 transition-opacity block"
                                     >
                                         {item.name}
                                     </TransitionLink>
-                                    <div className="h-px bg-black/5 mt-4 w-full"></div>
+                                    <div className="h-px bg-[var(--border-color)] mt-4 w-full"></div>
                                 </motion.div>
                             ))}
                         </nav>
@@ -123,10 +123,10 @@ export default function Navbar() {
                             transition={{ delay: 0.5 }}
                             className="mb-10"
                         >
-                            <p className="text-sm font-mono uppercase text-black/40 mb-2">Socials</p>
+                            <p className="text-sm font-mono uppercase text-[var(--text-secondary)] mb-2">Socials</p>
                             <div className="flex gap-4">
-                                <a href="https://github.com" className="text-black text-lg underline">GitHub</a>
-                                <a href="https://linkedin.com" className="text-black text-lg underline">LinkedIn</a>
+                                <a href="https://github.com" className="text-[var(--foreground)] text-lg underline">GitHub</a>
+                                <a href="https://linkedin.com" className="text-[var(--foreground)] text-lg underline">LinkedIn</a>
                             </div>
                         </motion.div>
                     </motion.div>

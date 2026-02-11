@@ -36,21 +36,21 @@ export default function SkillsPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="text-6xl md:text-8xl font-serif mb-6 tracking-tight"
+                        className="text-6xl md:text-8xl font-serif mb-6 tracking-tight text-[var(--foreground)]"
                     >
-                        Expertise<span className="text-black/20">.</span>
+                        Expertise<span className="text-[var(--foreground)]/20">.</span>
                     </motion.h1>
                     <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: 100 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
-                        className="h-1 bg-black w-24 mb-6 md:mx-0 mx-auto"
+                        className="h-1 bg-[var(--foreground)] w-24 mb-8 md:mx-0 mx-auto"
                     />
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4 }}
-                        className="text-xl text-black/60 max-w-2xl"
+                        className="text-xl text-[var(--text-secondary)] max-w-2xl"
                     >
                         Une approche pragmatique du développement moderne. Pas de pourcentages arbitraires, juste une maîtrise des technologies qui comptent.
                     </motion.p>
@@ -65,7 +65,7 @@ export default function SkillsPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.15 }}
                             whileHover={{ y: -10 }}
-                            className="group relative bg-[#fafafa] p-8 rounded-[2rem] border border-black/5 shadow-sm hover:shadow-2xl hover:border-black/10 transition-all duration-500 ease-out flex flex-col justify-between overflow-hidden"
+                            className="group relative bg-[var(--bg-secondary)] p-8 rounded-[2rem] border border-[var(--border-color)] shadow-sm hover:shadow-2xl hover:border-[var(--foreground)]/20 transition-all duration-500 ease-out flex flex-col justify-between overflow-hidden"
                         >
                             {/* Decorative Background Icon */}
                             <div className="absolute -right-10 -bottom-10 opacity-[0.03] transform group-hover:scale-110 group-hover:-rotate-12 transition-transform duration-700 pointer-events-none">
@@ -73,12 +73,12 @@ export default function SkillsPage() {
                             </div>
 
                             <div>
-                                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-6 text-black group-hover:scale-110 transition-transform duration-300">
+                                <div className="w-12 h-12 bg-[var(--foreground)] text-[var(--background)] rounded-2xl flex items-center justify-center shadow-sm mb-6 group-hover:scale-110 transition-transform duration-300">
                                     {stack.icon}
                                 </div>
 
-                                <h3 className="text-2xl font-bold mb-3">{stack.title}</h3>
-                                <p className="text-black/60 mb-8 leading-relaxed text-sm md:text-base pr-4">
+                                <h3 className="text-2xl font-bold mb-3 text-[var(--foreground)]">{stack.title}</h3>
+                                <p className="text-[var(--text-secondary)] mb-8 leading-relaxed text-sm md:text-base pr-4">
                                     {stack.description}
                                 </p>
                             </div>
@@ -88,7 +88,7 @@ export default function SkillsPage() {
                                 {stack.tags.map((tag, i) => (
                                     <span
                                         key={i}
-                                        className="px-3 py-1.5 bg-white border border-black/5 rounded-lg text-sm font-medium text-black/80 shadow-sm group-hover:border-black/20 transition-colors"
+                                        className="px-3 py-1.5 bg-[var(--background)] border border-[var(--border-color)] rounded-lg text-sm font-medium text-[var(--foreground)]/80 shadow-sm group-hover:border-[var(--foreground)]/30 transition-colors"
                                     >
                                         {tag}
                                     </span>
@@ -100,13 +100,13 @@ export default function SkillsPage() {
 
                 {/* Detailed Technical Arsenal */}
                 <div className="mt-32">
-                    <h2 className="text-4xl md:text-5xl font-serif mb-12 border-b border-black/10 pb-6">Arsenal Technique Détaillé</h2>
+                    <h2 className="text-4xl md:text-5xl font-serif mb-12 border-b border-[var(--border-color)] pb-6 text-[var(--foreground)]">Arsenal Technique Détaillé</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
                         {/* Frontend Column */}
                         <div className="space-y-6">
-                            <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2">
+                            <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2 text-[var(--foreground)]">
                                 <span className="w-2 h-2 bg-blue-500 rounded-full"></span> Frontend
                             </h3>
                             <ul className="space-y-3">
@@ -121,7 +121,7 @@ export default function SkillsPage() {
 
                         {/* Backend Column */}
                         <div className="space-y-6">
-                            <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2">
+                            <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2 text-[var(--foreground)]">
                                 <span className="w-2 h-2 bg-green-500 rounded-full"></span> Backend
                             </h3>
                             <ul className="space-y-3">
@@ -135,7 +135,7 @@ export default function SkillsPage() {
 
                         {/* Database & DevOps Column */}
                         <div className="space-y-6">
-                            <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2">
+                            <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2 text-[var(--foreground)]">
                                 <span className="w-2 h-2 bg-purple-500 rounded-full"></span> Ops & Data
                             </h3>
                             <ul className="space-y-3">
@@ -149,7 +149,7 @@ export default function SkillsPage() {
 
                         {/* Tools & Soft Skills Column */}
                         <div className="space-y-6">
-                            <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2">
+                            <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2 text-[var(--foreground)]">
                                 <span className="w-2 h-2 bg-orange-500 rounded-full"></span> Outils &+
                             </h3>
                             <ul className="space-y-3">
@@ -173,12 +173,12 @@ export default function SkillsPage() {
 // Helper Component for the detailed list
 function SkillItem({ name, level, detail }: { name: string, level: string, detail: string }) {
     return (
-        <li className="border-b border-black/5 pb-2 hover:pl-2 transition-all duration-300">
+        <li className="border-b border-[var(--border-color)] pb-3 hover:pl-2 transition-all duration-300">
             <div className="flex justify-between items-baseline mb-1">
-                <span className="font-bold text-lg">{name}</span>
-                <span className="text-xs font-mono bg-black/5 px-2 py-0.5 rounded text-black/60">{level}</span>
+                <span className="font-bold text-lg text-[var(--foreground)]">{name}</span>
+                <span className="text-xs font-mono bg-[var(--foreground)]/5 px-2 py-0.5 rounded text-[var(--text-secondary)]">{level}</span>
             </div>
-            <p className="text-xs text-black/40 italic">{detail}</p>
+            <p className="text-xs text-[var(--text-secondary)]/70 italic">{detail}</p>
         </li>
     );
 }

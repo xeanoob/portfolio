@@ -20,11 +20,11 @@ const skillCategories = [
 
 export default function Skills() {
     return (
-        <section className="py-32 bg-white px-6">
+        <section className="py-32 bg-[var(--background)] px-6">
             <ScrollReveal className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-6xl font-serif mb-4">Stack Technique</h2>
-                    <p className="text-black/40 font-mono text-xs uppercase tracking-[0.2em]">Mon Arsenal de Développement</p>
+                    <h2 className="text-4xl md:text-6xl font-serif mb-4 text-[var(--foreground)]">Stack Technique</h2>
+                    <p className="text-[var(--text-secondary)] font-mono text-xs uppercase tracking-[0.2em]">Mon Arsenal de Développement</p>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8">
@@ -35,10 +35,10 @@ export default function Skills() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: catIndex * 0.1, duration: 0.5 }}
                             viewport={{ once: true }}
-                            className="bg-zinc-50 rounded-3xl p-8 border border-black/5 hover:border-black/20 transition-colors"
+                            className="bg-[var(--bg-secondary)] rounded-3xl p-8 border border-[var(--border-color)] hover:border-[var(--foreground)] transition-colors"
                         >
-                            <h3 className="text-xl font-bold mb-6 flex items-center gap-3">
-                                <span className="w-2 h-2 rounded-full bg-black"></span>
+                            <h3 className="text-xl font-bold mb-6 flex items-center gap-3 text-[var(--foreground)]">
+                                <span className="w-2 h-2 rounded-full bg-[var(--foreground)]"></span>
                                 {category.name}
                             </h3>
 
@@ -46,7 +46,7 @@ export default function Skills() {
                                 {category.skills.map((skill, skillIndex) => (
                                     <span
                                         key={skillIndex}
-                                        className="px-3 py-1.5 bg-white border border-black/5 rounded-lg text-sm font-medium text-black/70 shadow-sm hover:scale-105 hover:text-black transition-all cursor-default"
+                                        className="px-3 py-1.5 bg-[var(--foreground)]/5 border border-[var(--border-color)] rounded-lg text-sm font-medium text-[var(--foreground)] shadow-sm hover:scale-105 hover:border-[var(--foreground)]/50 transition-all cursor-default"
                                     >
                                         {skill}
                                     </span>

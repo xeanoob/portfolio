@@ -12,11 +12,10 @@ export default function ScrollIndicator({ className = "" }: { className?: string
             className={`flex flex-col items-center gap-2 cursor-pointer ${className}`}
             onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
         >
-            <span className="text-xs font-bold uppercase tracking-widest text-black/80">Découvrir</span>
             <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                className="bg-black text-white p-2 rounded-full shadow-lg"
+                className="bg-[var(--foreground)] text-[var(--background)] p-3 rounded-full shadow-lg border border-[var(--border-color)]"
             >
                 <ChevronDown size={20} />
             </motion.div>

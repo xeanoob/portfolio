@@ -20,14 +20,14 @@ const ProjectCard = ({ project, index }: any) => {
             className="min-h-[80vh] py-10 flex items-center justify-center relative"
         >
             <div
-                className={`flex flex-col relative w-[90vw] md:w-[70vw] max-w-[100%] h-[70vh] rounded-[2rem] p-6 md:p-10 shadow-2xl border border-white/10 ${project.color} ${project.textColor} overflow-hidden group`}
+                className={`flex flex-col relative w-[90vw] md:w-[70vw] max-w-[100%] h-[70vh] rounded-[2rem] p-6 md:p-10 shadow-2xl border border-[var(--border-color)] ${['bg-white', 'bg-[#f0f0f0]', 'bg-[#e0e0e0]'].includes(project.color) ? 'bg-[var(--bg-secondary)]' : project.color} ${project.textColor === 'text-black' ? 'text-[var(--foreground)]' : project.textColor} overflow-hidden group`}
             >
                 {/* Make whole card clickable via overlay link */}
                 <Link href={`/projets/${project.slug}`} className="absolute inset-0 z-20" aria-label={`Voir le détail du projet ${project.title}`} />
 
                 <div className="flex justify-between items-start mb-4 md:mb-8">
                     <h2 className="text-2xl md:text-5xl font-bold text-center md:text-left leading-tight flex-1 mr-4">{project.title}</h2>
-                    <div className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold uppercase tracking-wider text-xs transition-all duration-300 shadow-lg ${project.textColor === 'text-white' ? 'bg-white text-black group-hover:scale-105' : 'bg-black text-white group-hover:scale-105'}`}>
+                    <div className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold uppercase tracking-wider text-xs transition-all duration-300 shadow-lg ${project.textColor === 'text-white' ? 'bg-white text-black group-hover:scale-105' : 'bg-[var(--foreground)] text-[var(--background)] group-hover:scale-105'}`}>
                         <span className="hidden md:inline">Voir le détail</span>
                         <span className="md:hidden">Voir</span>
                         <ArrowUpRight size={18} />
@@ -45,7 +45,7 @@ const ProjectCard = ({ project, index }: any) => {
 
                         <div className="flex flex-wrap gap-2 mt-4 md:mt-0">
                             {project.tech.map((t: string, i: number) => (
-                                <span key={i} className={`px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold shadow-sm ${project.textColor === 'text-white' ? 'bg-white text-black' : 'bg-black text-white'}`}>
+                                <span key={i} className={`px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold shadow-sm ${project.textColor === 'text-white' ? 'bg-white text-black' : 'bg-[var(--foreground)] text-[var(--background)]'}`}>
                                     {t}
                                 </span>
                             ))}
@@ -64,7 +64,7 @@ const ProjectCard = ({ project, index }: any) => {
                                 />
                             </div>
                         ) : (
-                            <div className="w-full h-full flex items-center justify-center bg-black/5 text-black/10 font-serif text-8xl select-none rounded-xl">
+                            <div className="w-full h-full flex items-center justify-center bg-[var(--foreground)]/5 text-[var(--foreground)]/10 font-serif text-8xl select-none rounded-xl">
                                 {project.title.charAt(0)}
                             </div>
                         )}
@@ -87,10 +87,10 @@ export default function ProjectsContent() {
             <ProjectsJsonLd projects={projects} />
             <div className="container mx-auto px-6 h-[80vh] flex flex-col justify-center items-center text-center relative">
                 <div>
-                    <h1 className="text-4xl sm:text-6xl md:text-9xl font-serif mb-6">Tous les Projets</h1>
-                    <p className="text-lg md:text-xl text-black/60">Une collection de défis techniques et créatifs.</p>
+                    <h1 className="text-4xl sm:text-6xl md:text-9xl font-serif mb-6 text-[var(--foreground)]">Tous les Projets</h1>
+                    <p className="text-lg md:text-xl text-[var(--text-secondary)]">Une collection de défis techniques et créatifs.</p>
                 </div>
-                <div className="w-px h-20 bg-black/10 mx-auto mt-10"></div>
+                <div className="w-px h-20 bg-[var(--border-color)] mx-auto mt-10"></div>
 
                 <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
                     <ScrollIndicator />
@@ -104,14 +104,14 @@ export default function ProjectsContent() {
             </div>
 
             {/* Next Section Cue */}
-            <div className="h-screen bg-black text-white flex items-center justify-center">
+            <div className="h-screen bg-[var(--bg-inverse)] text-[var(--text-inverse)] flex items-center justify-center">
                 <div className="text-center">
                     <h2 className="text-4xl md:text-6xl font-serif mb-6">Envie d'en voir plus ?</h2>
                     <a
                         href="/images/fichiers/CV%20AMBROISE%20BOUTRIN%20INFORMATIQUE.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block border-b border-white pb-1 hover:opacity-50 transition-opacity text-xl"
+                        className="inline-block border-b border-[var(--text-inverse)] pb-1 hover:opacity-50 transition-opacity text-xl"
                     >
                         Consulter mon CV
                     </a>
