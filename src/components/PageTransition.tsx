@@ -32,7 +32,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
                 animate={{ scaleY: 0 }}
                 exit={{ scaleY: 0 }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                style={{ originY: 0 }}
+                style={{ originY: 0, willChange: "transform" }}
             />
         </AnimatePresence>
     );

@@ -9,6 +9,12 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
     const lenisRef = useRef<Lenis | null>(null);
 
     useEffect(() => {
+        // Only initialize Lenis on desktop browsers (width > 1024px)
+        // Mobile browsers have native smooth scrolling that is usually better/standard
+        if (typeof window !== "undefined" && window.innerWidth < 1024) {
+            return;
+        }
+
         const lenis = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom ease for "heavier" feel

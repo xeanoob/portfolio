@@ -16,11 +16,12 @@ export default function ParallaxItem({ children, className = "", offset = 50 }: 
         offset: ["start end", "end start"]
     });
 
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
     const y = useTransform(scrollYProgress, [0, 1], [offset, -offset]);
 
     return (
         <div ref={ref} className={className}>
-            <motion.div style={{ y }}>
+            <motion.div style={isMobile ? {} : { y }}>
                 {children}
             </motion.div>
         </div>

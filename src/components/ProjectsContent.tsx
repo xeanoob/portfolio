@@ -17,6 +17,7 @@ const ProjectCard = ({ project, index }: any) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
+            style={{ willChange: "transform, opacity" }}
             className="min-h-[80vh] py-10 flex items-center justify-center relative"
         >
             <div

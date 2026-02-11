@@ -20,6 +20,7 @@ export default function History() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
+                            style={{ willChange: "transform, opacity" }}
                         >
                             <h3 className="text-2xl font-serif italic mb-4 text-[var(--foreground)]">Étudiant passionné par l'innovation.</h3>
                             <p className="text-lg text-[var(--text-secondary)] leading-relaxed mb-6">
@@ -32,6 +33,7 @@ export default function History() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 }}
+                            style={{ willChange: "transform, opacity" }}
                         >
                             <h4 className="text-xl font-bold mb-2 text-[var(--foreground)]">Ma Vision</h4>
                             <p className="text-base text-[var(--text-secondary)] leading-relaxed">
@@ -44,6 +46,7 @@ export default function History() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.4 }}
+                            style={{ willChange: "transform, opacity" }}
                         >
                             <div className="p-6 bg-[var(--bg-secondary)] border-l-4 border-[var(--foreground)] italic text-[var(--text-primary)]">
                                 "Mon ambition ? Transformer chaque ligne de code en une étape vers l'excellence technique et créative."
@@ -64,6 +67,7 @@ export default function History() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: idx * 0.2 }}
+                                style={{ willChange: "transform, opacity" }}
                                 className="bg-[var(--bg-secondary)] p-6 rounded-2xl shadow-lg border border-[var(--border-color)] hover:border-[var(--foreground)] transition-colors"
                             >
                                 <h4 className="text-xl font-serif font-bold mb-2 text-[var(--foreground)]">{item.title}</h4>

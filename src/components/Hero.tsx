@@ -12,8 +12,8 @@ export default function Hero() {
 
             {/* Fond abstrait léger */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 blur-[120px] rounded-full mix-blend-multiply opacity-50" />
-                <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] bg-purple-500/10 blur-[100px] rounded-full mix-blend-multiply opacity-40" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-blue-500/10 blur-[60px] md:blur-[120px] rounded-full mix-blend-multiply opacity-30 md:opacity-50" />
+                <div className="absolute top-1/3 left-1/3 w-[200px] h-[200px] md:w-[400px] md:h-[400px] bg-purple-500/10 blur-[50px] md:blur-[100px] rounded-full mix-blend-multiply opacity-20 md:opacity-40" />
             </div>
 
             <div className="flex flex-col items-center justify-center text-center z-10 relative px-4">

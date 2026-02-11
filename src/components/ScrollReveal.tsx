@@ -26,6 +26,7 @@ export default function ScrollReveal({ children, className = "", delay = 0 }: Sc
                 ease: [0.16, 1, 0.3, 1], // Custom "Power3.out" ease
                 delay
             }}
+            style={{ willChange: "transform, opacity" }}
             className={`w-full ${className}`}
         >
             {children}

@@ -75,6 +75,7 @@ export default function ParcoursContent() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-10%" }}
                                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                                style={{ willChange: "transform, opacity" }}
                                 className={`flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-20 relative ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}
                             >
                                 {/* Mobile Dot */}
