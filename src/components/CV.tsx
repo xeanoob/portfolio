@@ -113,12 +113,14 @@ export default function CVPage() {
             {/* Floating Action Button */}
             <div className="fixed bottom-10 right-10 z-50 print:hidden">
                 <a
-                    href="/cv.pdf"
-                    download="CV_Ambroise_Boutrin.pdf"
+                    href="/images/fichiers/CV%20AMBROISE%20BOUTRIN%20INFORMATIQUE.pdf"
+                    download="CV_Ambroise_Boutrin.pdf" // Nom du fichier téléchargé (propre)
                     className="flex items-center gap-3 px-6 py-4 bg-black text-white rounded-full shadow-2xl hover:scale-110 transition-transform font-bold"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <Download size={20} />
-                    <span>Télécharger PDF</span>
+                    <span>Télécharger mon CV</span>
                 </a>
             </div>
 

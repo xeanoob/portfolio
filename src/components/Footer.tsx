@@ -8,8 +8,12 @@ export default function Footer() {
         <footer className="py-8 px-6 border-t border-black/5 mt-20 bg-white">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
 
-                <div className="text-sm font-mono uppercase tracking-widest text-black/40 text-center md:text-left order-2 md:order-1">
-                    &copy; 2026 Ambroise Boutrin
+                <div className="text-sm font-mono uppercase tracking-widest text-black/40 text-center md:text-left order-2 md:order-1 flex flex-col gap-1">
+                    <span>&copy; 2026 Ambroise Boutrin</span>
+                    <span className="text-[10px] text-black/30">Basé à Orléans, France</span>
+                    <TransitionLink href="/mentions-legales" className="text-[10px] hover:text-black transition-colors underline mt-2">
+                        Mentions Légales
+                    </TransitionLink>
                 </div>
 
                 {/* Aesthetic Button - Centered */}
@@ -27,9 +31,9 @@ export default function Footer() {
                 </div>
 
                 <div className="flex gap-4 text-sm font-medium items-center justify-center md:justify-end order-3">
-                    <a href="https://github.com" target="_blank" className="p-2 rounded-full hover:bg-black/5 transition-colors"><Github size={18} /></a>
-                    <a href="https://linkedin.com" target="_blank" className="p-2 rounded-full hover:bg-black/5 transition-colors"><Linkedin size={18} /></a>
-                    <a href="mailto:boutrinambroise@gmail.com" className="p-2 rounded-full hover:bg-black/5 transition-colors"><Mail size={18} /></a>
+                    <a href="https://github.com/xeanoob" target="_blank" rel="noopener noreferrer" aria-label="Github" className="p-2 rounded-full hover:bg-black/5 transition-colors"><Github size={18} /></a>
+                    <a href="https://www.linkedin.com/in/ambroise-boutrin/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 rounded-full hover:bg-black/5 transition-colors"><Linkedin size={18} /></a>
+                    <a href="mailto:boutrinambroise@gmail.com" aria-label="Email" className="p-2 rounded-full hover:bg-black/5 transition-colors"><Mail size={18} /></a>
                 </div>
 
             </div>

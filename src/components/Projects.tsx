@@ -94,7 +94,7 @@ export default function Projects() {
                                     {project.image && (
                                         <Image
                                             src={project.image}
-                                            alt={project.title}
+                                            alt={`Aperçu du projet ${project.title}`}
                                             fill
                                             className="object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
                                         />

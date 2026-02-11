@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import ParallaxItem from "@/components/ParallaxItem";
 import { motion } from "framer-motion";
+import ScrollIndicator from "@/components/ScrollIndicator";
 
 export default function Hero() {
     return (
@@ -92,13 +93,17 @@ export default function Hero() {
                     transition={{ delay: 0.8 }}
                     className="mt-12 flex gap-6 text-black/40 justify-center pb-4"
                 >
-                    <a href="https://github.com/xeanoob" target="_blank" className="hover:text-black hover:scale-110 transition-all duration-300 p-2">
+                    <a href="https://github.com/xeanoob" target="_blank" rel="noopener noreferrer" className="hover:text-black hover:scale-110 transition-all duration-300 p-2" aria-label="Profil GitHub d'Ambroise Boutrin">
                         <Github size={24} />
                     </a>
-                    <a href="https://www.linkedin.com/in/ambroise-boutrin/" target="_blank" className="hover:text-blue-700 hover:scale-110 transition-all duration-300 p-2">
+                    <a href="https://www.linkedin.com/in/ambroise-boutrin/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 hover:scale-110 transition-all duration-300 p-2" aria-label="Profil LinkedIn d'Ambroise Boutrin">
                         <Linkedin size={24} />
                     </a>
                 </motion.div>
+            </div>
+
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20">
+                <ScrollIndicator />
             </div>
 
         </section >

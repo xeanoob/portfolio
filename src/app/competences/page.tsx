@@ -98,9 +98,87 @@ export default function SkillsPage() {
                     ))}
                 </div>
 
+                {/* Detailed Technical Arsenal */}
+                <div className="mt-32">
+                    <h2 className="text-4xl md:text-5xl font-serif mb-12 border-b border-black/10 pb-6">Arsenal Technique Détaillé</h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+                        {/* Frontend Column */}
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2">
+                                <span className="w-2 h-2 bg-blue-500 rounded-full"></span> Frontend
+                            </h3>
+                            <ul className="space-y-3">
+                                <SkillItem name="React.js" level="Avancé" detail="Hooks, Context, Performance" />
+                                <SkillItem name="Next.js" level="Avancé" detail="App Router, SSR, Server Actions" />
+                                <SkillItem name="TypeScript" level="Intermédiaire" detail="Typage strict, Interfaces" />
+                                <SkillItem name="Tailwind CSS" level="Note 10/10" detail="Design System, Responsive" />
+                                <SkillItem name="Framer Motion" level="Passionné" detail="Micro-interactions, Layout animations" />
+                                <SkillItem name="Vue.js" level="Basique" detail="Options API, Composition API" />
+                            </ul>
+                        </div>
+
+                        {/* Backend Column */}
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2">
+                                <span className="w-2 h-2 bg-green-500 rounded-full"></span> Backend
+                            </h3>
+                            <ul className="space-y-3">
+                                <SkillItem name="Node.js" level="Intermédiaire" detail="Express, API REST" />
+                                <SkillItem name="PHP / Symfony" level="Scolaire" detail="MVC, Doctrine, Twig" />
+                                <SkillItem name="C# / .NET" level="Professionnel" detail="VSTO, WinForms, LINQ" />
+                                <SkillItem name="Supabase" level="Fan" detail="Auth, Realtime DB, Edge Functions" />
+                                <SkillItem name="Java" level="Scolaire" detail="POO, Swing, JDBC" />
+                            </ul>
+                        </div>
+
+                        {/* Database & DevOps Column */}
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2">
+                                <span className="w-2 h-2 bg-purple-500 rounded-full"></span> Ops & Data
+                            </h3>
+                            <ul className="space-y-3">
+                                <SkillItem name="PostgreSQL" level="Solide" detail="Relations, Indexing" />
+                                <SkillItem name="MySQL" level="Standard" detail="Projets scolaires" />
+                                <SkillItem name="Git" level="Quotidien" detail="Flow, Rebasing, Conflicts" />
+                                <SkillItem name="Docker" level="Apprentissage" detail="Conteneurisation basique" />
+                                <SkillItem name="Vercel" level="Expert" detail="Déploiement continu, Analytics" />
+                            </ul>
+                        </div>
+
+                        {/* Tools & Soft Skills Column */}
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2">
+                                <span className="w-2 h-2 bg-orange-500 rounded-full"></span> Outils &+
+                            </h3>
+                            <ul className="space-y-3">
+                                <SkillItem name="Figma" level="Créatif" detail="Maquettage, Prototypage" />
+                                <SkillItem name="VS Code" level="IDE" detail="Extensions, Debugging" />
+                                <SkillItem name="Anglais" level="B2" detail="Documentation technique" />
+                                <SkillItem name="Agile / Scrum" level="Vécu" detail="Sprints, Dailies" />
+                                <SkillItem name="Curiosité" level="Infini" detail="Veille techno permanente" />
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Bottom spacer is minimal because Footer is right there */}
                 <div className="h-20 md:h-0"></div>
             </div>
         </main>
+    );
+}
+
+// Helper Component for the detailed list
+function SkillItem({ name, level, detail }: { name: string, level: string, detail: string }) {
+    return (
+        <li className="border-b border-black/5 pb-2 hover:pl-2 transition-all duration-300">
+            <div className="flex justify-between items-baseline mb-1">
+                <span className="font-bold text-lg">{name}</span>
+                <span className="text-xs font-mono bg-black/5 px-2 py-0.5 rounded text-black/60">{level}</span>
+            </div>
+            <p className="text-xs text-black/40 italic">{detail}</p>
+        </li>
     );
 }
