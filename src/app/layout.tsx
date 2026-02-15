@@ -7,27 +7,27 @@ import ScrollToTop from "@/components/ScrollToTop";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Ambroise B. | Développeur Fullstack & Creative",
-  description: "Portfolio d'Ambroise Boutrin, développeur web spécialisé en Next.js, React et design interactif. Création de sites web modernes et performants.",
-  keywords: ["Développeur Web Orléans", "Freelance Next.js Paris", "Création Site Web Loiret", "Ambroise Boutrin", "Développeur React France", "Portfolio Développeur"],
+  title: "Ambroise B. | Studio Créatif & Développement Web",
+  description: "Studio de développement web et design basé à Orléans. Création de sites internet sur-mesure, e-commerce et applications mobiles. Une approche artisanale du numérique.",
+  keywords: ["Studio Web Orléans", "Création Site Internet Luxe", "Développeur Freelance", "Ambroise Boutrin", "Design Minimaliste", "Next.js Expert"],
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
     url: 'https://ambroise-boutrin.fr',
-    siteName: 'Ambroise B. Portfolio',
+    siteName: 'Ambroise B. Studio',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Ambroise B. Portfolio',
+        alt: 'Ambroise B. Studio',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    description: "Découvrez mes projets et compétences en développement web. Basé à Orléans.",
-    creator: "@ambroise_b", // Mettez votre handle si vous en avez un
+    description: "Studio de développement web et design. L'excellence numérique.",
+    creator: "@ambroise_b",
   },
   robots: {
     index: true,

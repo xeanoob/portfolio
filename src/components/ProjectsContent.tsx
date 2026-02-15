@@ -28,11 +28,14 @@ const ProjectCard = ({ project, index }: any) => {
 
                 <div className="flex justify-between items-start mb-4 md:mb-8">
                     <h2 className="text-2xl md:text-5xl font-bold text-center md:text-left leading-tight flex-1 mr-4">{project.title}</h2>
-                    <div className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold uppercase tracking-wider text-xs transition-all duration-300 shadow-lg ${project.textColor === 'text-white' ? 'bg-white text-black group-hover:scale-105' : 'bg-[var(--foreground)] text-[var(--background)] group-hover:scale-105'}`}>
+                    <Link
+                        href={`/projets/${project.slug}`}
+                        className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold uppercase tracking-wider text-xs transition-all duration-300 shadow-lg relative z-30 ${project.textColor === 'text-white' ? 'bg-white text-black group-hover:scale-105' : 'bg-[var(--foreground)] text-[var(--background)] group-hover:scale-105'}`}
+                    >
                         <span className="hidden md:inline">Voir le détail</span>
                         <span className="md:hidden">Voir</span>
                         <ArrowUpRight size={18} />
-                    </div>
+                    </Link>
                 </div>
 
                 <div className="flex flex-col md:flex-row gap-6 md:gap-10 flex-1 min-h-0">
@@ -58,7 +61,7 @@ const ProjectCard = ({ project, index }: any) => {
                             <div className="relative w-full h-[80%] rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-105 bg-white/5">
                                 <Image
                                     src={project.image}
-                                    alt={`Aperçu du projet ${project.title}`}
+                                    alt={project.imageAlt || `Aperçu du projet ${project.title}`}
                                     fill
                                     className="object-contain p-4" // Padding interne pour que l'image ne touche pas les bords du cadre
                                     sizes="(max-width: 768px) 100vw, 50vw"
