@@ -1,7 +1,7 @@
 "use client";
 
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 interface ParallaxProps {
     children: React.ReactNode;
@@ -11,17 +11,28 @@ interface ParallaxProps {
 
 export default function ParallaxItem({ children, className = "", offset = 50 }: ParallaxProps) {
     const ref = useRef(null);
+    const [isMobile, setIsMobile] = useState(false); // Default to false to match server SS
+
     const { scrollYProgress } = useScroll({
         target: ref,
         offset: ["start end", "end start"]
     });
 
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 1024);
+        };
+
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
     const y = useTransform(scrollYProgress, [0, 1], [offset, -offset]);
 
     return (
         <div ref={ref} className={className}>
-            <motion.div style={isMobile ? {} : { y }}>
+            <motion.div style={isMobile ? undefined : { y }}>
                 {children}
             </motion.div>
         </div>

@@ -46,26 +46,28 @@ const timeline = [
 
 export default function ParcoursContent() {
     return (
-        <main className="min-h-screen bg-[var(--background)] pt-32 pb-20 px-6">
-            <ScrollReveal className="max-w-6xl mx-auto">
+        <main className="min-h-screen bg-[var(--background)] pt-24 md:pt-32 pb-20 px-6 relative overflow-hidden">
+            {/* Ambient Light */}
+            <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-white opacity-[0.02] blur-[150px] rounded-full pointer-events-none -translate-y-1/2"></div>
 
-                <header className="mb-32 text-center relative h-[80vh] flex flex-col justify-center items-center">
-                    <div>
-                        <h1 className="text-6xl md:text-9xl font-serif mb-6 text-[var(--foreground)]">Mon Parcours</h1>
-                        <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
-                            De la découverte à l'expertise.
+            <ScrollReveal className="max-w-6xl mx-auto relative z-10">
+
+                <header className="mb-16 md:mb-32 text-center">
+                    <div className="mb-16">
+                        <h1 className="text-5xl md:text-8xl font-serif mb-6 text-[var(--foreground)] tracking-tight">
+                            Parcours<span className="text-[var(--text-secondary)]">.</span>
+                        </h1>
+                        <p className="text-sm md:text-base font-mono text-[var(--text-secondary)] uppercase tracking-[0.2em] max-w-2xl mx-auto leading-relaxed">
+                            Évolution constante &mdash; Du code à l'infrastructure.
                         </p>
-                    </div>
-                    <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
-                        <ScrollIndicator />
                     </div>
                 </header>
 
                 <div className="relative">
                     {/* Central Line Desktop */}
                     <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[var(--border-color)] -translate-x-1/2 hidden md:block"></div>
-                    {/* Left Line Mobile */}
-                    <div className="absolute left-4 top-0 bottom-0 w-px bg-[var(--border-color)] md:hidden"></div>
+                    {/* Left Line Mobile - HIDDEN for Centered Layout */}
+                    <div className="hidden"></div>
 
                     <div className="space-y-16 md:space-y-32">
                         {timeline.map((item, index) => (
@@ -76,15 +78,15 @@ export default function ParcoursContent() {
                                 viewport={{ once: true, margin: "-10%" }}
                                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                                 style={{ willChange: "transform, opacity" }}
-                                className={`flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-20 relative ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}
+                                className={`flex flex-col md:flex-row items-center gap-6 md:gap-20 relative ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}
                             >
-                                {/* Mobile Dot */}
-                                <div className="absolute left-4 -translate-x-1/2 w-3 h-3 bg-[var(--foreground)] rounded-full md:hidden mt-2"></div>
+                                {/* Mobile Dot - HIDDEN */}
+                                <div className="hidden"></div>
 
-                                {/* Year / Visual Side (Desktop: Box, Mobile: Integrated) */}
-                                <div className={`md:w-1/2 flex ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'} w-full pl-10 md:pl-0`}>
-                                    <div className="relative z-20 w-full md:w-auto">
-                                        <div className="bg-[var(--bg-secondary)] border border-[var(--border-color)] p-4 md:p-6 rounded-2xl shadow-sm w-full md:max-w-sm relative group hover:scale-[1.02] transition-transform duration-300">
+                                {/* Year / Visual Side */}
+                                <div className={`md:w-1/2 flex justify-center ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'} w-full`}>
+                                    <div className="relative z-20 w-full md:w-auto flex justify-center md:block">
+                                        <div className="bg-[var(--bg-secondary)] border border-[var(--border-color)] p-4 md:p-6 rounded-2xl shadow-sm w-full md:max-w-sm relative group hover:scale-[1.02] transition-transform duration-300 text-center md:text-left">
                                             <span className="inline-block px-3 py-1 bg-[var(--foreground)] text-[var(--background)] rounded-md text-xs font-bold font-mono uppercase tracking-wider mb-2">
                                                 {item.date}
                                             </span>
@@ -94,12 +96,12 @@ export default function ParcoursContent() {
                                 </div>
 
                                 {/* Content Side */}
-                                <div className={`md:w-1/2 w-full pl-10 md:pl-0 text-left ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
+                                <div className={`md:w-1/2 w-full text-center ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
                                     <h3 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-[var(--foreground)]">{item.title}</h3>
-                                    <p className="text-base md:text-lg text-[var(--text-secondary)] leading-relaxed mb-6 max-w-md md:mx-0 inline-block">
+                                    <p className="text-base md:text-lg text-[var(--text-secondary)] leading-relaxed mb-6 max-w-md mx-auto md:mx-0 inline-block">
                                         {item.description}
                                     </p>
-                                    <div className={`flex flex-wrap gap-2 ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'} justify-start`}>
+                                    <div className={`flex flex-wrap gap-2 justify-center ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}>
                                         {item.stack.map((stack) => (
                                             <span key={stack} className="text-[10px] md:text-xs font-bold px-3 py-1 bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-full text-[var(--text-secondary)]">
                                                 {stack}

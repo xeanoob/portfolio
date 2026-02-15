@@ -5,36 +5,16 @@
   --font-serif: var(--font-playfair), serif;
   --font-sans: var(--font-inter), sans-serif;
 
-  /* Couleurs "Cinematic White" (Noir & Blanc Minimaliste) */
-  --color-primary-950: #ffffff;
-  /* Pure White Background */
-  --color-primary-900: #fafafa;
-  /* Zinc 50 */
-  --color-primary-800: #f4f4f5;
-  /* Zinc 100 */
-
-  --color-accent-500: #18181b;
-  /* Zinc 950 (Black Accent) */
-  --color-accent-400: #000000;
-  /* Pure Black */
-  --color-accent-600: #52525b;
-  /* Zinc 600 (Dark Grey) */
-
-  --color-surface-100: #ffffff;
-  /* White Surface */
-  --color-surface-200: #fafafa;
-  /* Light Surface */
-
+  /* Animation */
   --animate-fade-in: fade-in 1s ease-out forwards;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Page Transition Curtain */
 /* Page Transition Curtain */
 #page-transition-curtain {
   transform: translateY(100%);
   transition: transform 0.6s cubic-bezier(0.83, 0, 0.17, 1);
-  background-color: var(--bg-inverse) !important;
-  /* Ensure black */
+  background-color: #ffffff !important;
   opacity: 1 !important;
 }
 
@@ -44,35 +24,29 @@ body.page-transition-exit #page-transition-curtain {
   opacity: 1 !important;
 }
 
-/* Base Styles */
-/* Base Styles & Dark Mode */
+/* Base Styles & Dark Mode (Monochrome Luxury) */
 :root {
-  --background: #ffffff;
-  --foreground: #18181b;
-  --text-primary: #18181b;
-  --text-secondary: rgba(24, 24, 27, 0.6);
-  --text-inverse: #ffffff;
-  --bg-primary: #ffffff;
-  --bg-secondary: #f4f4f5;
-  --bg-inverse: #000000;
-  --border-color: rgba(0, 0, 0, 0.1);
-}
+  /* Palette Monochrome Luxe */
+  --background: #050505;
+  /* Deepest Black */
+  --foreground: #ffffff;
+  /* Pure White */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    /* Pure Black */
-    --foreground: #ffffff;
-    /* Pure White */
-    --text-primary: #ffffff;
-    --text-secondary: rgba(255, 255, 255, 0.6);
-    --text-inverse: #000000;
-    --bg-primary: #000000;
-    --bg-secondary: #0e0e11;
-    /* Lighter than background */
-    --bg-inverse: #ffffff;
-    --border-color: rgba(255, 255, 255, 0.15);
-  }
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  /* Zinc 400 - Silver */
+  --text-tertiary: #52525b;
+  /* Zinc 600 - Dark Silver */
+
+  --bg-primary: #050505;
+  --bg-secondary: #0a0a0a;
+  /* Slightly lighter black */
+  --bg-glass: rgba(255, 255, 255, 0.03);
+  /* Subtle Glass */
+
+  --border-color: rgba(255, 255, 255, 0.08);
+  /* Very subtle white border */
+  --border-hover: rgba(255, 255, 255, 0.2);
 }
 
 html {
@@ -85,36 +59,34 @@ body {
   font-family: var(--font-sans);
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
+  selection-background-color: #ffffff;
+  selection-color: #000000;
 }
 
-/* Texture Grain (Luxe) */
-.bg-noise {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-
-/* Custom Scrollbar (Minimal) */
+/* Custom Scrollbar (Invisible/Minimal) */
 ::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-primary-950);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--color-primary-800);
-  border-radius: 3px;
+  width: 0px;
+  background: transparent;
 }
 
 /* Utility Classes */
+/* Utility Classes */
 @utility text-balance {
   text-wrap: balance;
+}
+
+.glass-panel {
+  background-color: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+}
+
+.glass-panel-hover {
+  transition: all 0.5s ease;
+}
+
+.glass-panel-hover:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
 }

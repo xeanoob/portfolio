@@ -1,16 +1,13 @@
 import Hero from "@/components/Hero";
-import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
-import History from "@/components/History";
+import Manifesto from "@/components/Manifesto";
+import Services from "@/components/Services";
 
 export default function Home() {
   return (
     <main className="relative z-10">
       <Hero />
-      <Skills />
-      <Projects />
-      <History />
-
+      <Manifesto />
+      {/* Services Component removed as requested, replaced by Packages in Services page */}
     </main>
   );
 }

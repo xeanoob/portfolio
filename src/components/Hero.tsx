@@ -10,18 +10,13 @@ export default function Hero() {
     return (
         <section className="min-h-screen py-20 flex items-center justify-center relative overflow-hidden">
 
-            {/* Fond abstrait léger */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-blue-500/10 blur-[60px] md:blur-[120px] rounded-full mix-blend-multiply opacity-30 md:opacity-50" />
-                <div className="absolute top-1/3 left-1/3 w-[200px] h-[200px] md:w-[400px] md:h-[400px] bg-purple-500/10 blur-[50px] md:blur-[100px] rounded-full mix-blend-multiply opacity-20 md:opacity-40" />
-            </div>
+            {/* Fond Grid Géométrique */}
+            <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_200px,var(--background),transparent)]"></div>
 
             <div className="flex flex-col items-center justify-center text-center z-10 relative px-4">
 
                 {/* Titre Principal */}
-                {/* CHANGEMENT ICI : Ajout de 'mt-12' pour descendre le texte */}
-                {/* Titre Principal */}
-                {/* CHANGEMENT ICI : Ajout de 'mt-12' pour descendre le texte */}
                 <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl text-[var(--foreground)] leading-[0.9] tracking-tighter mb-6">
                     <motion.span
                         initial={{ y: 100, opacity: 0 }}
@@ -41,6 +36,15 @@ export default function Hero() {
                     </motion.span>
                 </h1>
 
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.8 }}
+                    className="text-2xl md:text-4xl font-light mb-8 text-[var(--foreground)]"
+                >
+                    Concepteur d'expériences digitales <span className="italic font-serif">sur mesure</span>.
+                </motion.h2>
+
                 {/* Sous-titre et Localisation */}
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -49,7 +53,7 @@ export default function Hero() {
                     className="flex flex-col items-center gap-4"
                 >
                     <p className="text-xl md:text-2xl text-[var(--text-secondary)] font-light max-w-2xl mx-auto leading-relaxed">
-                        Développeur Fullstack spécialisé en <span className="font-medium text-[var(--foreground)]">React</span> & <span className="font-medium text-[var(--foreground)]">Next.js</span>.
+                        J'aide les entreprises et entrepreneurs à bâtir leur présence en ligne avec des <span className="font-medium text-[var(--foreground)]">sites web modernes</span> et performants.
                     </p>
 
                     <div className="flex items-center gap-2 text-[var(--text-secondary)] text-sm font-medium uppercase tracking-wide">
@@ -63,26 +67,25 @@ export default function Hero() {
                     <div className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full">
 
                         {/* Bouton Projets (Inverse) */}
-                        <Link href="/projets" className="group relative">
+                        <Link href="/contact" className="group relative">
                             <motion.div
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 className="bg-[var(--foreground)] text-[var(--background)] px-8 py-4 rounded-full font-medium flex items-center gap-2 shadow-xl shadow-black/10 hover:shadow-2xl hover:shadow-black/20 transition-all cursor-pointer"
                             >
-                                Voir mes projets
+                                Démarrer mon projet
                                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                             </motion.div>
                         </Link>
 
                         {/* Bouton Contact (Outline interactif) */}
-                        <Link href="/contact">
+                        <Link href="/projets">
                             <motion.div
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 className="px-8 py-4 rounded-full font-medium border border-[var(--border-color)] hover:border-[var(--foreground)] bg-[var(--bg-secondary)] backdrop-blur-sm text-[var(--foreground)] transition-all flex items-center gap-2 cursor-pointer"
                             >
-                                <Mail size={18} className="text-[var(--text-secondary)]" />
-                                Me contacter
+                                Voir mes réalisations
                             </motion.div>
                         </Link>
                     </div>
@@ -98,7 +101,7 @@ export default function Hero() {
                     <a href="https://github.com/xeanoob" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--foreground)] hover:scale-110 transition-all duration-300 p-2" aria-label="Profil GitHub d'Ambroise Boutrin">
                         <Github size={24} />
                     </a>
-                    <a href="https://www.linkedin.com/in/ambroise-boutrin/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 hover:scale-110 transition-all duration-300 p-2" aria-label="Profil LinkedIn d'Ambroise Boutrin">
+                    <a href="https://www.linkedin.com/in/ambroise-boutrin/" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:scale-110 transition-all duration-300 p-2" aria-label="Profil LinkedIn d'Ambroise Boutrin">
                         <Linkedin size={24} />
                     </a>
                 </motion.div>

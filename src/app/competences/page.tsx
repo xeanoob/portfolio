@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Database, Layout, Smartphone, Terminal, PenTool } from "lucide-react";
+import { Code, Database, Layout, Smartphone, Terminal, PenTool, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+
 
 // Updated Data Structure: No arbitrary percentages, focused on "Stacks"
 const skillStacks = [
@@ -27,8 +29,11 @@ const skillStacks = [
 
 export default function SkillsPage() {
     return (
-        <main className="min-h-screen pt-32 pb-20 px-6 md:px-12 flex flex-col justify-center">
-            <div className="container mx-auto max-w-6xl">
+        <main className="min-h-screen pt-32 pb-20 px-6 md:px-12 flex flex-col justify-center relative overflow-hidden bg-[var(--background)]">
+            {/* Ambient Light */}
+            <div className="absolute bottom-0 left-0 w-[800px] h-[600px] bg-white opacity-[0.02] blur-[200px] rounded-full pointer-events-none"></div>
+
+            <div className="container mx-auto max-w-6xl relative z-10">
 
                 {/* Header - Compact & Impactful */}
                 <div className="mb-16 md:mb-24 text-center md:text-left">
@@ -98,6 +103,9 @@ export default function SkillsPage() {
                     ))}
                 </div>
 
+
+
+
                 {/* Detailed Technical Arsenal */}
                 <div className="mt-32">
                     <h2 className="text-4xl md:text-5xl font-serif mb-12 border-b border-[var(--border-color)] pb-6 text-[var(--foreground)]">Arsenal Technique Détaillé</h2>
@@ -107,7 +115,7 @@ export default function SkillsPage() {
                         {/* Frontend Column */}
                         <div className="space-y-6">
                             <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2 text-[var(--foreground)]">
-                                <span className="w-2 h-2 bg-blue-500 rounded-full"></span> Frontend
+                                <span className="w-2 h-2 bg-white rounded-full"></span> Frontend
                             </h3>
                             <ul className="space-y-3">
                                 <SkillItem name="React.js" level="Avancé" detail="Hooks, Context, Performance" />
@@ -122,7 +130,7 @@ export default function SkillsPage() {
                         {/* Backend Column */}
                         <div className="space-y-6">
                             <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2 text-[var(--foreground)]">
-                                <span className="w-2 h-2 bg-green-500 rounded-full"></span> Backend
+                                <span className="w-2 h-2 bg-gray-400 rounded-full"></span> Backend
                             </h3>
                             <ul className="space-y-3">
                                 <SkillItem name="Node.js" level="Intermédiaire" detail="Express, API REST" />
@@ -136,7 +144,7 @@ export default function SkillsPage() {
                         {/* Database & DevOps Column */}
                         <div className="space-y-6">
                             <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2 text-[var(--foreground)]">
-                                <span className="w-2 h-2 bg-purple-500 rounded-full"></span> Ops & Data
+                                <span className="w-2 h-2 bg-gray-600 rounded-full"></span> Ops & Data
                             </h3>
                             <ul className="space-y-3">
                                 <SkillItem name="PostgreSQL" level="Solide" detail="Relations, Indexing" />
@@ -150,7 +158,7 @@ export default function SkillsPage() {
                         {/* Tools & Soft Skills Column */}
                         <div className="space-y-6">
                             <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2 text-[var(--foreground)]">
-                                <span className="w-2 h-2 bg-orange-500 rounded-full"></span> Outils &+
+                                <span className="w-2 h-2 border border-white/50 rounded-full"></span> Outils &+
                             </h3>
                             <ul className="space-y-3">
                                 <SkillItem name="Figma" level="Créatif" detail="Maquettage, Prototypage" />
@@ -163,10 +171,29 @@ export default function SkillsPage() {
                     </div>
                 </div>
 
+                {/* Final CTA - Business Oriented */}
+                <div className="mt-32 mb-20 p-12 rounded-[2rem] bg-[var(--bg-secondary)] border border-[var(--border-color)] text-center relative overflow-hidden">
+                    <div className="relative z-10">
+                        <h2 className="text-3xl md:text-5xl font-serif mb-6 text-[var(--foreground)]">Un projet en tête ?</h2>
+                        <p className="text-[var(--text-secondary)] max-w-2xl mx-auto mb-10 text-lg">
+                            Transformons vos objectifs commerciaux en solution technique performante.
+                            Devis gratuit et réponse sous 24h.
+                        </p>
+                        <Link
+                            href="/contact"
+                            className="inline-flex items-center gap-3 px-8 py-4 bg-[var(--foreground)] text-[var(--background)] rounded-full font-bold uppercase tracking-wider hover:scale-105 transition-transform"
+                        >
+                            Demander un Devis <ArrowUpRight size={20} />
+                        </Link>
+                    </div>
+                    {/* Background Glow */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-white opacity-[0.03] blur-[100px] rounded-full pointer-events-none"></div>
+                </div>
+
                 {/* Bottom spacer is minimal because Footer is right there */}
                 <div className="h-20 md:h-0"></div>
             </div>
-        </main>
+        </main >
     );
 }
 

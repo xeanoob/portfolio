@@ -84,17 +84,24 @@ export default function ProjectsContent() {
     });
 
     return (
-        <main ref={container} className="relative mt-20">
-            <ProjectsJsonLd projects={projects} />
-            <div className="container mx-auto px-6 h-[80vh] flex flex-col justify-center items-center text-center relative">
-                <div>
-                    <h1 className="text-4xl sm:text-6xl md:text-9xl font-serif mb-6 text-[var(--foreground)]">Tous les Projets</h1>
-                    <p className="text-lg md:text-xl text-[var(--text-secondary)]">Une collection de défis techniques et créatifs.</p>
-                </div>
-                <div className="w-px h-20 bg-[var(--border-color)] mx-auto mt-10"></div>
+        <main ref={container} className="relative mt-20 bg-[var(--background)]">
+            {/* Ambient Light (Monochrome) */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-white opacity-[0.03] blur-[150px] rounded-full pointer-events-none"></div>
 
-                <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
-                    <ScrollIndicator />
+            <ProjectsJsonLd projects={projects} />
+            <ProjectsJsonLd projects={projects} />
+
+            <div className="container mx-auto px-6 pt-24 md:pt-32 mb-16 md:mb-24">
+                <div className="text-center mb-16 md:mb-24">
+                    <h1 className="text-5xl md:text-8xl font-serif mb-6 text-[var(--foreground)] tracking-tight">
+                        Travaux<span className="text-[var(--text-secondary)]">.</span>
+                    </h1>
+                    <p className="text-sm md:text-base font-mono text-[var(--text-secondary)] uppercase tracking-[0.2em] max-w-2xl mx-auto leading-relaxed">
+                        Sélection R&D et Clients &mdash; Problèmes complexes, solutions simples.
+                    </p>
+                    <div className="mt-8 flex justify-center">
+                        <ScrollIndicator />
+                    </div>
                 </div>
             </div>
 
@@ -107,15 +114,23 @@ export default function ProjectsContent() {
             {/* Next Section Cue */}
             <div className="h-screen bg-[var(--bg-inverse)] text-[var(--text-inverse)] flex items-center justify-center">
                 <div className="text-center">
-                    <h2 className="text-4xl md:text-6xl font-serif mb-6">Envie d'en voir plus ?</h2>
-                    <a
-                        href="/images/fichiers/CV%20AMBROISE%20BOUTRIN%20INFORMATIQUE.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block border-b border-[var(--text-inverse)] pb-1 hover:opacity-50 transition-opacity text-xl"
-                    >
-                        Consulter mon CV
-                    </a>
+                    <h2 className="text-4xl md:text-6xl font-serif mb-6">Vous avez un projet similaire ?</h2>
+                    <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+                        <Link
+                            href="/contact"
+                            className="px-8 py-4 bg-[var(--background)] text-[var(--foreground)] rounded-full font-bold uppercase tracking-wider hover:scale-105 transition-transform flex items-center gap-2"
+                        >
+                            Demander un devis <ArrowUpRight size={20} />
+                        </Link>
+                        <a
+                            href="/images/fichiers/CV%20AMBROISE%20BOUTRIN%20INFORMATIQUE.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="border-b border-[var(--text-inverse)] pb-1 hover:opacity-50 transition-opacity text-lg"
+                        >
+                            Ou consulter mon CV
+                        </a>
+                    </div>
                 </div>
             </div>
         </main>

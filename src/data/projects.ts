@@ -1,5 +1,28 @@
 export const projects = [
     {
+        id: "00", // New Top Project
+        title: "Bellenippe - L'Art de l'Unicité",
+        slug: "bellenippe-fashion",
+        category: "E-Commerce Luxury",
+        role: "Direction Artistique & Dev",
+        description: "Maison de couture digitale prônant l'artisanat et l'unicité. Une expérience e-commerce immersive pour des pièces limitées.",
+        tech: ["Next.js", "Shopify", "Framer Motion", "Tailwind"],
+        mainTech: "Next.js / Shopify",
+        color: "bg-[#0a0a0a]",
+        textColor: "text-white",
+        github: null, // Private client
+        demo: "https://bellenippe.vercel.app/",
+        image: "/images/bellenippelogo.png",
+        images: ["/images/bellenippelogo.png"],
+        longDescription: "Conception complète de l'identité numérique de Bellenippe, une marque de couture française. L'objectif était de traduire la texture et la rareté des pièces physiques dans une interface digitale. Utilisation de transitions fluides et d'une typographie éditoriale pour sublimer chaque vêtement.",
+        problem: "Comment vendre des pièces 'uniques' en ligne sans perdre l'émotion du toucher et de l'essayage ? Réponse : Une direction artistique centrée sur la matière et le détail visuel.",
+        stackDetails: [
+            { name: "Next.js 14", reason: "Performance et SEO pour le luxe" },
+            { name: "Shopify Headless", reason: "Gestion robuste du catalogue back-office" },
+            { name: "Framer Motion", reason: "Animations 'page-turn' pour l'immersion" }
+        ]
+    },
+    {
         id: "01",
         title: "E-Commerce de Vins Premium",
         slug: "garanches-ecommerce",
@@ -54,8 +77,8 @@ export const projects = [
         description: "Solution complète pour l'administration des épreuves et des résultats des Jeux Olympiques. Interface Java Swing moderne avec base de données relationnelle.",
         tech: ["Java", "Swing", "MySQL", "JDBC"],
         mainTech: "Java / SQL",
-        color: "bg-[#f0f0f0]",
-        textColor: "text-black",
+        color: "bg-[#1f1f1f]",
+        textColor: "text-white",
         github: "https://github.com/xeanoob/GSBcompterendu",
         demo: null,
         image: "/images/jo.png",
@@ -76,8 +99,8 @@ export const projects = [
         description: "Application de gestion des visites médicales pour les laboratoires Galaxy Swiss Bourdin. Suivi des comptes rendus, frais et planning des visiteurs.",
         tech: ["PHP", "Symfony", "Java", "Android"],
         mainTech: "PHP / Symfony",
-        color: "bg-[#f0f0f0]",
-        textColor: "text-black",
+        color: "bg-[#252525]",
+        textColor: "text-white",
         github: "https://github.com/xeanoob/GSBcompterendu",
         demo: null,
         image: "/images/gsb.png",
@@ -98,8 +121,8 @@ export const projects = [
         description: "Plugin développé pour ADENES permettant d'automatiser le traitement des emails entrants. Analyse de contenu et classement automatique.",
         tech: ["C#", ".NET VSTO", "Outlook API"],
         mainTech: "C# / .NET",
-        color: "bg-[#e0e0e0]",
-        textColor: "text-black",
+        color: "bg-[#2a2a2a]",
+        textColor: "text-white",
         github: null,
         demo: null,
         image: "/images/outlook.png",

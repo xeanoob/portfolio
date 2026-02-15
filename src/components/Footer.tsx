@@ -10,7 +10,8 @@ export default function Footer() {
 
                 <div className="text-sm font-mono uppercase tracking-widest text-[var(--text-secondary)] text-center md:text-left order-2 md:order-1 flex flex-col gap-1">
                     <span>&copy; 2026 Ambroise Boutrin</span>
-                    <span className="text-[10px] opacity-70">Basé à Orléans, France</span>
+                    <span className="text-[10px] opacity-70">17 Rue du Pressoir Neuf, 45000 Orléans</span>
+                    <span className="text-[10px] opacity-70">SIRET : 933 250 873 00019</span>
                     <TransitionLink href="/mentions-legales" className="text-[10px] hover:text-[var(--foreground)] transition-colors underline mt-2">
                         Mentions Légales
                     </TransitionLink>

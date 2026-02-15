@@ -16,11 +16,14 @@ export default function ContactContent() {
     };
 
     return (
-        <main className="min-h-screen bg-[var(--background)] pt-32 pb-20 px-6">
-            <ScrollReveal className="max-w-6xl mx-auto flex flex-col md:flex-row gap-20">
+        <main className="min-h-screen bg-[var(--background)] pt-32 pb-20 px-6 relative overflow-hidden">
+            {/* Ambient Light */}
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white opacity-[0.02] blur-[150px] rounded-full pointer-events-none"></div>
+
+            <ScrollReveal className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 md:gap-20 relative z-10">
 
                 {/* Left: Info */}
-                <div className="md:w-1/2">
+                <div className="md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
                     <h1 className="text-5xl md:text-8xl font-serif mb-10 tracking-tighter text-[var(--foreground)]">
                         Parlons <br />
                         <span className="italic text-[var(--text-secondary)]">Projets</span>

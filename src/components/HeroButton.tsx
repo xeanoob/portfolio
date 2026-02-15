@@ -25,7 +25,7 @@ export default function HeroButton() {
                     </svg>
                 </span>
                 {/* Effet de fond au survol */}
-                <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                <div className="absolute inset-0 h-full w-full bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
             </motion.button>
         </Link>
     );

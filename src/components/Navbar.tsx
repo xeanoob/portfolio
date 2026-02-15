@@ -21,7 +21,7 @@ export default function Navbar() {
     return (
         <>
             <motion.nav
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4 flex justify-between items-center ${scrolled ? "bg-[var(--background)]/80 backdrop-blur-md border-b border-[var(--border-color)]" : "bg-transparent"}`}
+                className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 px-6 py-4 flex justify-between items-center ${scrolled ? "bg-[var(--background)]/80 backdrop-blur-md border-b border-[var(--border-color)]" : "bg-transparent"}`}
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -34,6 +34,7 @@ export default function Navbar() {
                 <div className="hidden md:flex items-center bg-[var(--bg-secondary)]/50 backdrop-blur-sm p-1 rounded-full border border-[var(--border-color)] relative">
                     {[
                         { name: "Accueil", path: "/" },
+                        { name: "Services", path: "/services" },
                         { name: "Projets", path: "/projets" },
                         { name: "Compétences", path: "/competences" },
                         { name: "Parcours", path: "/parcours" }
@@ -67,32 +68,40 @@ export default function Navbar() {
                         Contact
                     </TransitionLink>
                 </div>
-
-                {/* Mobile Menu Button */}
-                <button onClick={() => setIsOpen(!isOpen)} className="md:hidden z-50 text-[var(--foreground)]">
-                    {isOpen ? <X /> : <Menu />}
-                </button>
             </motion.nav>
 
-            {/* Mobile Menu Overlay - Modernized */}
+            {/* Mobile Menu Button - Fixed to Top Right (OUTSIDE NAV) - Clean Icon Only */}
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="md:hidden flex items-center justify-center p-2 text-[var(--foreground)] hover:scale-105 transition-transform"
+                style={{
+                    position: 'fixed',
+                    top: '0.75rem', // Moved up as requested
+                    right: '0.75rem', // Moved right as requested
+                    zIndex: 2147483647
+                }}
+                aria-label="Menu"
+            >
+                {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+
+            {/* Mobile Menu Overlay */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-40 bg-[var(--background)]/90 backdrop-blur-xl flex flex-col justify-between p-6"
+                        className="fixed inset-0 z-[2147483646] bg-[var(--background)]/95 backdrop-blur-xl flex flex-col justify-between p-6"
                     >
-                        {/* Background Accent */}
-                        <div className="absolute inset-0 bg-[var(--background)]/90 z-[-1]"></div>
-
                         <div className="flex justify-end">
-                            {/* Close button is handled by the main nav button z-index, but we add safe space */}
+                            {/* Close button space reserved for fixed button */}
                         </div>
 
                         <nav className="flex flex-col gap-6 mt-20">
                             {[
                                 { name: "Accueil", path: "/" },
+                                { name: "Services", path: "/services" },
                                 { name: "Projets", path: "/projets" },
                                 { name: "Compétences", path: "/competences" },
                                 { name: "Parcours", path: "/parcours" },
@@ -108,7 +117,7 @@ export default function Navbar() {
                                     <TransitionLink
                                         href={item.path}
                                         onClick={() => setIsOpen(false)}
-                                        className="text-5xl md:text-6xl font-serif font-bold text-[var(--foreground)] hover:opacity-50 transition-opacity block"
+                                        className="text-5xl font-serif font-bold text-[var(--foreground)] hover:opacity-50 transition-opacity block"
                                     >
                                         {item.name}
                                     </TransitionLink>
