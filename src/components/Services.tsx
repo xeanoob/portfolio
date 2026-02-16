@@ -33,31 +33,33 @@ const services = [
 export default function Services() {
     const [hoveredService, setHoveredService] = useState<string | null>(null);
     const containerRef = useRef(null);
-    const servicesRef = useRef([]);
+    const servicesRef = useRef<HTMLDivElement[]>([]);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
             // Animate services list
-            ScrollTrigger.batch(servicesRef.current, {
-                onEnter: (batch) => {
-                    gsap.to(batch, {
-                        y: 0,
-                        opacity: 1,
-                        stagger: 0.2,
-                        duration: 1,
-                        ease: "power4.out",
-                        overwrite: true
-                    });
-                },
-                start: "top 85%",
-                once: true
-            });
+            if (servicesRef.current.length > 0) {
+                ScrollTrigger.batch(servicesRef.current, {
+                    onEnter: (batch) => {
+                        gsap.to(batch, {
+                            y: 0,
+                            opacity: 1,
+                            stagger: 0.2,
+                            duration: 1,
+                            ease: "power4.out",
+                            overwrite: true
+                        });
+                    },
+                    start: "top 85%",
+                    once: true
+                });
+            }
         }, containerRef);
 
         return () => ctx.revert();
     }, []);
 
-    const addToRefs = (el: any) => {
+    const addToRefs = (el: HTMLDivElement | null) => {
         if (el && !servicesRef.current.includes(el)) {
             servicesRef.current.push(el);
         }

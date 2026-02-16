@@ -20,25 +20,31 @@ export default function Hero() {
             const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
 
             // Title Reveal (Staggered lines)
-            const titleLines = titleRef.current.querySelectorAll(".reveal-text");
-            tl.fromTo(titleLines,
-                { y: "100%" },
-                { y: "0%", duration: 1.5, stagger: 0.1, delay: 0.2 }
-            );
+            if (titleRef.current) {
+                const titleLines = (titleRef.current as HTMLElement).querySelectorAll(".reveal-text");
+                tl.fromTo(titleLines,
+                    { y: "100%" },
+                    { y: "0%", duration: 1.5, stagger: 0.1, delay: 0.2 }
+                );
+            }
 
             // Subtitle Reveal
-            tl.fromTo(subtitleRef.current,
-                { opacity: 0, y: 20 },
-                { opacity: 1, y: 0, duration: 1 },
-                "-=1"
-            );
+            if (subtitleRef.current) {
+                tl.fromTo(subtitleRef.current,
+                    { opacity: 0, y: 20 },
+                    { opacity: 1, y: 0, duration: 1 },
+                    "-=1"
+                );
+            }
 
             // Description and Links
-            tl.fromTo([descRef.current, linksRef.current],
-                { opacity: 0, y: 20 },
-                { opacity: 1, y: 0, duration: 1, stagger: 0.2 },
-                "-=0.8"
-            );
+            if (descRef.current && linksRef.current) {
+                tl.fromTo([descRef.current, linksRef.current],
+                    { opacity: 0, y: 20 },
+                    { opacity: 1, y: 0, duration: 1, stagger: 0.2 },
+                    "-=0.8"
+                );
+            }
 
         }, containerRef);
 
