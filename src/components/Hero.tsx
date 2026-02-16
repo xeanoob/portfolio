@@ -9,19 +9,20 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Hero() {
-    const containerRef = useRef(null);
-    const titleRef = useRef(null);
-    const subtitleRef = useRef(null);
-    const descRef = useRef(null);
-    const linksRef = useRef(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const titleRef = useRef<HTMLHeadingElement>(null);
+    const subtitleRef = useRef<HTMLHeadingElement>(null);
+    const descRef = useRef<HTMLDivElement>(null);
+    const linksRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
             const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
 
             // Title Reveal (Staggered lines)
+            // Title Reveal (Staggered lines)
             if (titleRef.current) {
-                const titleLines = (titleRef.current as HTMLElement).querySelectorAll(".reveal-text");
+                const titleLines = titleRef.current.querySelectorAll(".reveal-text");
                 tl.fromTo(titleLines,
                     { y: "100%" },
                     { y: "0%", duration: 1.5, stagger: 0.1, delay: 0.2 }

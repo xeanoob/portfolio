@@ -60,6 +60,7 @@ export const viewport: Viewport = {
 import Navbar from "@/components/Navbar";
 import CookieBanner from "@/components/CookieBanner";
 import GoogleTagManager from "@/components/GoogleTagManager";
+import VercelAnalytics from "@/components/VercelAnalytics";
 
 // ...
 
@@ -69,7 +70,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="fr" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
       <body className="antialiased font-sans bg-[var(--background)] text-[var(--foreground)] selection:bg-[var(--foreground)] selection:text-[var(--background)] select-none overflow-x-hidden">
         <GoogleTagManager GTM_ID="GTM-PKMDC4HR" />
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[9999] px-4 py-2 bg-black text-white font-bold rounded-md">Passer au contenu</a>
@@ -86,6 +87,7 @@ export default function RootLayout({
           <CookieBanner />
         </SmoothScroll>
         <JsonLd />
+        <VercelAnalytics />
       </body>
     </html>
   );
