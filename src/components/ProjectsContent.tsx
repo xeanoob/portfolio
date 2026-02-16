@@ -1,30 +1,67 @@
 "use client";
 
-import { motion, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { projects } from "@/data/projects";
 import ProjectsJsonLd from "@/components/ProjectsJsonLd";
 import ScrollIndicator from "@/components/ScrollIndicator";
 
 const ProjectCard = ({ project, index }: any) => {
+    const cardRef = useRef(null);
+    const imageContainerRef = useRef(null);
+    const imageRef = useRef(null);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            // Reveal animation
+            gsap.to(cardRef.current, {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: cardRef.current,
+                    start: "top 85%",
+                    once: true
+                }
+            });
+
+            // Parallax image effect
+            if (imageRef.current) {
+                gsap.fromTo(imageRef.current,
+                    { yPercent: -10 },
+                    {
+                        yPercent: 10,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: imageContainerRef.current,
+                            start: "top bottom",
+                            end: "bottom top",
+                            scrub: true
+                        }
+                    }
+                );
+            }
+        }, cardRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            style={{ willChange: "transform, opacity" }}
-            className="min-h-[80vh] py-10 flex items-center justify-center relative"
+        <div
+            ref={cardRef}
+            className="min-h-[80vh] py-10 flex items-center justify-center relative opacity-0 translate-y-[100px]" // Initial state matching "from" logic
         >
             <div
                 className={`flex flex-col relative w-[90vw] md:w-[70vw] max-w-[100%] h-[70vh] rounded-[2rem] p-6 md:p-10 shadow-2xl border border-[var(--border-color)] ${['bg-white', 'bg-[#f0f0f0]', 'bg-[#e0e0e0]'].includes(project.color) ? 'bg-[var(--bg-secondary)]' : project.color} ${project.textColor === 'text-black' ? 'text-[var(--foreground)]' : project.textColor} overflow-hidden group`}
             >
                 {/* Make whole card clickable via overlay link */}
-                <Link href={`/projets/${project.slug}`} className="absolute inset-0 z-20" aria-label={`Voir le détail du projet ${project.title}`} />
+                <Link href={`/projets/${project.slug}`} className="absolute inset-0 z-20 cursor-pointer" aria-label={`Voir le détail du projet ${project.title}`} />
 
                 <div className="flex justify-between items-start mb-4 md:mb-8">
                     <h2 className="text-2xl md:text-5xl font-bold text-center md:text-left leading-tight flex-1 mr-4">{project.title}</h2>
@@ -58,14 +95,16 @@ const ProjectCard = ({ project, index }: any) => {
 
                     <div className="md:w-1/2 h-full min-h-[200px] flex items-center justify-center relative order-1 md:order-2 p-4 md:p-10">
                         {project.image ? (
-                            <div className="relative w-full h-[80%] rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-105 bg-white/5">
-                                <Image
-                                    src={project.image}
-                                    alt={project.imageAlt || `Aperçu du projet ${project.title}`}
-                                    fill
-                                    className="object-contain p-4" // Padding interne pour que l'image ne touche pas les bords du cadre
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                />
+                            <div ref={imageContainerRef} className="relative w-full h-[80%] rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-105 bg-white/5">
+                                <div ref={imageRef} className="absolute inset-0 w-full h-[120%] -top-[10%]"> {/* Taller container for parallax */}
+                                    <Image
+                                        src={project.image}
+                                        alt={project.imageAlt || `Aperçu du projet ${project.title}`}
+                                        fill
+                                        className="object-contain p-4"
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                    />
+                                </div>
                             </div>
                         ) : (
                             <div className="w-full h-full flex items-center justify-center bg-[var(--foreground)]/5 text-[var(--foreground)]/10 font-serif text-8xl select-none rounded-xl">
@@ -75,24 +114,15 @@ const ProjectCard = ({ project, index }: any) => {
                     </div>
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 };
 
 export default function ProjectsContent() {
-    const container = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: container,
-        offset: ['start start', 'end end']
-    });
-
     return (
-        <main ref={container} className="relative mt-20 bg-[var(--background)]">
+        <main className="relative mt-20 bg-[var(--background)]">
             {/* Ambient Light (Monochrome) */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-white opacity-[0.03] blur-[150px] rounded-full pointer-events-none"></div>
-
-            <ProjectsJsonLd projects={projects} />
-            <ProjectsJsonLd projects={projects} />
 
             <div className="container mx-auto px-6 pt-24 md:pt-32 mb-16 md:mb-24">
                 <div className="text-center mb-16 md:mb-24">

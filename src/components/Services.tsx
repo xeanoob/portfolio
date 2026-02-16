@@ -1,10 +1,10 @@
 "use client";
 
-import ScrollReveal from "@/components/ScrollReveal";
-import { motion } from "framer-motion";
 import { ArrowUpRight, Globe, Smartphone, Code2 } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const services = [
     {
@@ -32,10 +32,40 @@ const services = [
 
 export default function Services() {
     const [hoveredService, setHoveredService] = useState<string | null>(null);
+    const containerRef = useRef(null);
+    const servicesRef = useRef([]);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            // Animate services list
+            ScrollTrigger.batch(servicesRef.current, {
+                onEnter: (batch) => {
+                    gsap.to(batch, {
+                        y: 0,
+                        opacity: 1,
+                        stagger: 0.2,
+                        duration: 1,
+                        ease: "power4.out",
+                        overwrite: true
+                    });
+                },
+                start: "top 85%",
+                once: true
+            });
+        }, containerRef);
+
+        return () => ctx.revert();
+    }, []);
+
+    const addToRefs = (el: any) => {
+        if (el && !servicesRef.current.includes(el)) {
+            servicesRef.current.push(el);
+        }
+    };
 
     return (
-        <section id="services" className="py-32 bg-[var(--background)] px-6">
-            <ScrollReveal className="max-w-7xl mx-auto">
+        <section ref={containerRef} id="services" className="py-32 bg-[var(--background)] px-6">
+            <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-[var(--border-color)] pb-8">
                     <div>
                         <h2 className="text-5xl md:text-8xl font-serif text-[var(--foreground)] mb-6">Expertise</h2>
@@ -49,17 +79,15 @@ export default function Services() {
                 </div>
 
                 <div className="flex flex-col">
-                    {services.map((service) => (
-                        <motion.div
+                    {services.map((service, index) => (
+                        <div
                             key={service.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            ref={addToRefs}
                             onMouseEnter={() => setHoveredService(service.id)}
                             onMouseLeave={() => setHoveredService(null)}
-                            className="group relative border-b border-[var(--border-color)] py-12 md:py-20 transition-all duration-500 hover:border-[var(--foreground)]"
+                            className="group relative border-b border-[var(--border-color)] py-12 md:py-20 transition-all duration-500 hover:border-[var(--foreground)] opacity-0 translate-y-[60px]"
                         >
-                            <Link href="/contact" className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                            <Link href="/contact" className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center cursor-pointer">
                                 {/* Index Number */}
                                 <div className="hidden md:block col-span-1">
                                     <span className="text-sm font-mono text-[var(--text-secondary)]">({service.id})</span>
@@ -89,7 +117,7 @@ export default function Services() {
                                     </div>
                                 </div>
                             </Link>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
 
@@ -98,7 +126,7 @@ export default function Services() {
                         Démarrer un projet
                     </Link>
                 </div>
-            </ScrollReveal>
+            </div>
         </section>
     );
 }
