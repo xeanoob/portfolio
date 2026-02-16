@@ -60,6 +60,7 @@ export const viewport: Viewport = {
 import Navbar from "@/components/Navbar";
 import CookieBanner from "@/components/CookieBanner";
 import GoogleTagManager from "@/components/GoogleTagManager";
+import { Analytics } from '@vercel/analytics/next';
 
 // ...
 
@@ -86,6 +87,7 @@ export default function RootLayout({
           <CookieBanner />
         </SmoothScroll>
         <JsonLd />
+        <Analytics />
       </body>
     </html>
   );
