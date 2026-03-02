@@ -37,7 +37,8 @@ export default function Navbar() {
                         { name: "Services", path: "/services" },
                         { name: "Projets", path: "/projets" },
                         { name: "Compétences", path: "/competences" },
-                        { name: "Parcours", path: "/parcours" }
+                        { name: "Parcours", path: "/parcours" },
+                        { name: "Veille", path: "/veille" }
                     ].map((item) => {
                         const isActive = pathname === item.path;
                         return (
@@ -105,6 +106,7 @@ export default function Navbar() {
                                 { name: "Projets", path: "/projets" },
                                 { name: "Compétences", path: "/competences" },
                                 { name: "Parcours", path: "/parcours" },
+                                { name: "Veille", path: "/veille" },
                                 { name: "Contact", path: "/contact" }
                             ].map((item, i) => (
                                 <motion.div
