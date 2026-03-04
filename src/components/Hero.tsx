@@ -62,7 +62,7 @@ export default function Hero() {
             <div className="flex flex-col items-center justify-center text-center z-10 relative px-4">
 
                 {/* Titre Principal */}
-                <h1 ref={titleRef} className="font-serif text-6xl md:text-8xl lg:text-9xl text-[var(--foreground)] leading-[0.9] tracking-tighter mb-6">
+                <h1 ref={titleRef} className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-[var(--foreground)] leading-[0.9] tracking-tighter mb-6">
                     <div className="overflow-hidden">
                         <span className="block reveal-text">Ambroise</span>
                     </div>
@@ -71,7 +71,7 @@ export default function Hero() {
                     </div>
                 </h1>
 
-                <h2 ref={subtitleRef} className="text-2xl md:text-3xl font-light mb-8 text-[var(--foreground)] mt-6">
+                <h2 ref={subtitleRef} className="text-xl md:text-3xl font-light mb-8 text-[var(--foreground)] mt-6 max-w-3xl">
                     Je transforme vos idées complexes en interfaces web <span className="font-semibold text-[var(--text-secondary)]">fluides</span> et <span className="font-semibold text-[var(--text-secondary)]">performantes</span>.
                 </h2>
 
@@ -88,8 +88,8 @@ export default function Hero() {
                 </div>
 
                 {/* Boutons d'action */}
-                <ParallaxItem offset={0} className="w-full mt-8 opacity-0">
-                    <div ref={linksRef} className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full">
+                <ParallaxItem offset={0} className="w-full mt-8">
+                    <div ref={linksRef} className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full opacity-0">
 
                         {/* Bouton Projets (Inverse) */}
                         <Link href="/contact" className="group relative">
@@ -113,7 +113,7 @@ export default function Hero() {
                     <a href="https://github.com/xeanoob" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--foreground)] hover:scale-110 transition-all duration-300 p-2" aria-label="Profil GitHub d'Ambroise Boutrin">
                         <Github size={24} />
                     </a>
-                    <a href="https://www.linkedin.com/in/ambroise-boutrin/" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:scale-110 transition-all duration-300 p-2" aria-label="Profil LinkedIn d'Ambroise Boutrin">
+                    <a href="https://www.linkedin.com/in/ambroise-boutrin/" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--foreground)] hover:scale-110 transition-all duration-300 p-2" aria-label="Profil LinkedIn d'Ambroise Boutrin">
                         <Linkedin size={24} />
                     </a>
                 </div>

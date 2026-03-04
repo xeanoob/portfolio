@@ -1,42 +1,50 @@
 "use client";
 
 import Link, { LinkProps } from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import React from "react";
 
 interface TransitionLinkProps extends LinkProps {
     children: React.ReactNode;
     href: string;
     className?: string;
+    onClick?: () => void;
 }
-
-// Global function to trigger transition (could be in a context context but simple export works for now if imported)
-// Actually, we'll just use a sleep function.
 
 function sleep(ms: number) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export default function TransitionLink({ children, href, className, ...props }: TransitionLinkProps) {
+export default function TransitionLink({ children, href, className, onClick, ...props }: TransitionLinkProps) {
     const router = useRouter();
+    const pathname = usePathname();
 
     const handleTransition = async (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         e.preventDefault();
 
-        // 1. Dispatch event to trigger "Exit" animation
-        // We'll listen for this in the Template or Layout
+        // Call any additional onClick handler (e.g. closing mobile menu)
+        if (onClick) onClick();
+
+        // If already on the target page, skip the transition entirely
+        if (pathname === href) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+
         const body = document.querySelector("body");
-        console.log("Transition Triggered", body);
         body?.classList.add("page-transition-exit");
 
-        // 2. Wait for animation
-        await sleep(500); // Wait for veil to fade in
+        // Wait for curtain animation
+        await sleep(500);
 
-        // 3. Navigate
+        // Navigate
         router.push(href);
 
-        // 4. Cleanup handled by Template mounting new page which removes class
-        // body?.classList.remove("page-transition-exit"); 
+        // Safety fallback: if template doesn't unmount/remount (edge case),
+        // force-remove the curtain class after a generous timeout
+        setTimeout(() => {
+            document.querySelector("body")?.classList.remove("page-transition-exit");
+        }, 1500);
     };
 
     return (

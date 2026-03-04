@@ -54,30 +54,30 @@ export default function ServicesContent() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1, duration: 0.5 }}
-                        className={`relative p-8 md:p-12 border border-white/10 flex flex-col justify-between group hover:border-white/30 transition-colors duration-500 ${pkg.isPopular ? 'bg-white/5' : ''}`}
+                        className={`relative p-8 md:p-12 border border-[var(--border-color)] flex flex-col justify-between group hover:border-[var(--border-hover)] transition-colors duration-500 ${pkg.isPopular ? 'bg-[var(--bg-secondary)]' : ''}`}
                     >
                         {/* Popular Badge */}
                         {pkg.isPopular && (
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-black text-xs font-mono uppercase tracking-widest px-4 py-1">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--foreground)] text-[var(--background)] text-xs font-mono uppercase tracking-widest px-4 py-1">
                                 Recommandé
                             </div>
                         )}
 
                         <div>
                             {/* Header */}
-                            <h3 className="text-4xl font-serif text-white mb-2">{pkg.name}</h3>
-                            <p className="text-white/60 font-light mb-8">{pkg.subtitle}</p>
+                            <h3 className="text-4xl font-serif text-[var(--foreground)] mb-2">{pkg.name}</h3>
+                            <p className="text-[var(--text-secondary)] font-light mb-8">{pkg.subtitle}</p>
 
                             {/* Description */}
-                            <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-10 border-l border-white/10 pl-4">
+                            <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-10 border-l border-[var(--border-color)] pl-4">
                                 {pkg.description}
                             </p>
 
                             {/* Features */}
                             <ul className="space-y-4 mb-12">
                                 {pkg.features.map((feat, i) => (
-                                    <li key={i} className="flex items-start gap-3 text-sm text-white/80">
-                                        <Check size={16} className="mt-0.5 text-white/40 shrink-0" />
+                                    <li key={i} className="flex items-start gap-3 text-sm text-[var(--foreground)]">
+                                        <Check size={16} className="mt-0.5 text-[var(--text-tertiary)] shrink-0" />
                                         <span>{feat}</span>
                                     </li>
                                 ))}
@@ -87,7 +87,7 @@ export default function ServicesContent() {
                         {/* CTA */}
                         <Link
                             href="/contact"
-                            className={`w-full py-4 flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-widest border transition-all duration-300 ${pkg.isPopular ? 'bg-white text-black border-white hover:bg-transparent hover:text-white' : 'border-white/20 text-white hover:bg-white hover:text-black'}`}
+                            className={`w-full py-4 flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-widest border transition-all duration-300 ${pkg.isPopular ? 'bg-[var(--foreground)] text-[var(--background)] border-[var(--foreground)] hover:bg-transparent hover:text-[var(--foreground)]' : 'border-[var(--border-color)] text-[var(--foreground)] hover:bg-[var(--foreground)] hover:text-[var(--background)]'}`}
                         >
                             {pkg.cta}
                         </Link>
@@ -97,27 +97,27 @@ export default function ServicesContent() {
             </div>
 
             {/* FAQ / Process Teaser */}
-            <div className="max-w-7xl mx-auto px-6 mt-32 border-t border-white/10 pt-20 flex flex-col md:flex-row justify-between items-start gap-12">
+            <div className="max-w-7xl mx-auto px-6 mt-32 border-t border-[var(--border-color)] pt-20 flex flex-col md:flex-row justify-between items-start gap-12">
                 <div className="md:w-1/3">
-                    <h4 className="text-2xl font-serif text-white mb-4">Le Processus</h4>
+                    <h4 className="text-2xl font-serif text-[var(--foreground)] mb-4">Le Processus</h4>
                     <p className="text-[var(--text-secondary)]">De la conception à la mise en ligne, chaque étape est validée pour garantir l'excellence.</p>
                 </div>
                 <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                        <span className="text-xs font-mono text-white/40 block mb-2">01. Discovery</span>
-                        <p className="text-white/80">Analyse de vos besoins, audit de l'existant et définition de la stratégie.</p>
+                        <span className="text-xs font-mono text-[var(--text-tertiary)] block mb-2">01. Discovery</span>
+                        <p className="text-[var(--foreground)]">Analyse de vos besoins, audit de l'existant et définition de la stratégie.</p>
                     </div>
                     <div>
-                        <span className="text-xs font-mono text-white/40 block mb-2">02. Design</span>
-                        <p className="text-white/80">Recherche visuelle, direction artistique et prototypage directement dans le navigateur.</p>
+                        <span className="text-xs font-mono text-[var(--text-tertiary)] block mb-2">02. Design</span>
+                        <p className="text-[var(--foreground)]">Recherche visuelle, direction artistique et prototypage directement dans le navigateur.</p>
                     </div>
                     <div>
-                        <span className="text-xs font-mono text-white/40 block mb-2">03. Development</span>
-                        <p className="text-white/80">Intégration pixel-perfect, animations et développement backend.</p>
+                        <span className="text-xs font-mono text-[var(--text-tertiary)] block mb-2">03. Development</span>
+                        <p className="text-[var(--foreground)]">Intégration pixel-perfect, animations et développement backend.</p>
                     </div>
                     <div>
-                        <span className="text-xs font-mono text-white/40 block mb-2">04. Delivery</span>
-                        <p className="text-white/80">Tests, mise en production, formation et suivi post-lancement.</p>
+                        <span className="text-xs font-mono text-[var(--text-tertiary)] block mb-2">04. Delivery</span>
+                        <p className="text-[var(--foreground)]">Tests, mise en production, formation et suivi post-lancement.</p>
                     </div>
                 </div>
             </div>

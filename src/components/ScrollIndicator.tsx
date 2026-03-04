@@ -10,7 +10,15 @@ export default function ScrollIndicator({ className = "" }: { className?: string
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.5, duration: 1 }}
             className={`flex flex-col items-center gap-2 cursor-pointer ${className}`}
-            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+            onClick={() => {
+                const manifestoSec = document.getElementById("manifesto");
+                if (manifestoSec) {
+                    const y = manifestoSec.getBoundingClientRect().top + window.scrollY - 80;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                } else {
+                    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+                }
+            }}
         >
             <motion.div
                 animate={{ y: [0, 10, 0] }}

@@ -27,7 +27,7 @@ const pillars = [
 
 export default function BentoGrid() {
     return (
-        <section className="w-full pt-8 pb-20 border-t border-white/10 mt-12">
+        <section className="w-full pt-8 pb-20 border-t border-[var(--border-color)] mt-12">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 pt-8">
                 {pillars.map((pillar, index) => (
                     <motion.div
@@ -38,7 +38,7 @@ export default function BentoGrid() {
                         transition={{ delay: index * 0.1, duration: 0.6 }}
                         className="flex flex-col group pr-4"
                     >
-                        <span className="text-[10px] font-mono text-[var(--text-secondary)] mb-4 block opacity-50 uppercase tracking-widest border-b border-white/10 pb-2 w-10 group-hover:w-full transition-all duration-700">
+                        <span className="text-[10px] font-mono text-[var(--text-secondary)] mb-4 block opacity-50 uppercase tracking-widest border-b border-[var(--border-color)] pb-2 w-10 group-hover:w-full transition-all duration-700">
                             {pillar.id}
                         </span>
                         <h3 className="text-xl font-serif text-[var(--foreground)] mb-4">
@@ -46,7 +46,7 @@ export default function BentoGrid() {
                         </h3>
                         <ul className="space-y-2">
                             {pillar.items.map((item, i) => (
-                                <li key={i} className="text-xs font-mono text-[var(--text-secondary)] uppercase tracking-wide opacity-70 group-hover:opacity-100 group-hover:text-white transition-opacity duration-300">
+                                <li key={i} className="text-xs font-mono text-[var(--text-secondary)] uppercase tracking-wide opacity-70 group-hover:opacity-100 group-hover:text-[var(--foreground)] transition-opacity duration-300">
                                     {item}
                                 </li>
                             ))}

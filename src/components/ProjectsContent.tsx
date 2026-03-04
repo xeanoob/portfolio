@@ -58,7 +58,7 @@ const ProjectCard = ({ project, index }: any) => {
             className="min-h-[80vh] py-10 flex items-center justify-center relative opacity-0 translate-y-[100px]" // Initial state matching "from" logic
         >
             <div
-                className={`flex flex-col relative w-[90vw] md:w-[70vw] max-w-[100%] h-[70vh] rounded-[2rem] p-6 md:p-10 shadow-2xl border border-[var(--border-color)] ${['bg-white', 'bg-[#f0f0f0]', 'bg-[#e0e0e0]'].includes(project.color) ? 'bg-[var(--bg-secondary)]' : project.color} ${project.textColor === 'text-black' ? 'text-[var(--foreground)]' : project.textColor} overflow-hidden group`}
+                className={`flex flex-col relative w-[90vw] md:w-[70vw] max-w-[100%] h-auto min-h-[500px] md:h-[70vh] rounded-[2rem] p-6 md:p-10 shadow-2xl border border-[var(--border-color)] ${['bg-white', 'bg-[#f0f0f0]', 'bg-[#e0e0e0]'].includes(project.color) ? 'bg-[var(--bg-secondary)] text-[var(--foreground)]' : `${project.color} ${project.textColor}`} overflow-hidden group`}
             >
                 {/* Make whole card clickable via overlay link */}
                 <Link href={`/projets/${project.slug}`} className="absolute inset-0 z-20 cursor-pointer" aria-label={`Voir le détail du projet ${project.title}`} />
@@ -67,7 +67,7 @@ const ProjectCard = ({ project, index }: any) => {
                     <h2 className="text-2xl md:text-5xl font-bold text-center md:text-left leading-tight flex-1 mr-4">{project.title}</h2>
                     <Link
                         href={`/projets/${project.slug}`}
-                        className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold uppercase tracking-wider text-xs transition-all duration-300 shadow-lg relative z-30 ${project.textColor === 'text-white' ? 'bg-white text-black group-hover:scale-105' : 'bg-[var(--foreground)] text-[var(--background)] group-hover:scale-105'}`}
+                        className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold uppercase tracking-wider text-xs transition-all duration-300 shadow-lg relative z-30 ${['bg-white', 'bg-[#f0f0f0]', 'bg-[#e0e0e0]'].includes(project.color) ? 'bg-[var(--foreground)] text-[var(--background)]' : 'bg-white text-black hover:bg-white/90'}`}
                     >
                         <span className="hidden md:inline">Voir le détail</span>
                         <span className="md:hidden">Voir</span>
@@ -86,7 +86,7 @@ const ProjectCard = ({ project, index }: any) => {
 
                         <div className="flex flex-wrap gap-2 mt-4 md:mt-0 justify-center md:justify-start">
                             {project.tech.map((t: string, i: number) => (
-                                <span key={i} className={`px-3 md:px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold shadow-sm ${project.textColor === 'text-white' ? 'bg-white text-black' : 'bg-[var(--foreground)] text-[var(--background)]'}`}>
+                                <span key={i} className={`px-3 md:px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold shadow-sm ${['bg-white', 'bg-[#f0f0f0]', 'bg-[#e0e0e0]'].includes(project.color) ? 'bg-[var(--foreground)]/10 text-[var(--foreground)]' : 'bg-white/10 text-white'}`}>
                                     {t}
                                 </span>
                             ))}
@@ -95,7 +95,7 @@ const ProjectCard = ({ project, index }: any) => {
 
                     <div className="md:w-1/2 h-full min-h-[200px] flex items-center justify-center relative order-1 md:order-2 p-4 md:p-10">
                         {project.image ? (
-                            <div ref={imageContainerRef} className="relative w-full h-[80%] rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-105 bg-white/5">
+                            <div ref={imageContainerRef} className="relative w-full h-full min-h-[300px] md:h-[80%] rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-105 bg-white/5">
                                 <div ref={imageRef} className="absolute inset-0 w-full h-[120%] -top-[10%]"> {/* Taller container for parallax */}
                                     <Image
                                         src={project.image}
@@ -103,6 +103,8 @@ const ProjectCard = ({ project, index }: any) => {
                                         fill
                                         className="object-contain p-4"
                                         sizes="(max-width: 768px) 100vw, 50vw"
+                                        priority={index === 0}
+                                        loading={index === 0 ? undefined : "lazy"}
                                     />
                                 </div>
                             </div>
@@ -147,7 +149,7 @@ export default function ProjectsContent() {
             {/* Next Section Cue */}
             <div className="h-screen bg-[var(--bg-inverse)] text-[var(--text-inverse)] flex items-center justify-center">
                 <div className="text-center">
-                    <h2 className="text-4xl md:text-6xl font-serif mb-6">Vous avez un projet similaire ?</h2>
+                    <h2 className="text-4xl md:text-6xl font-serif mb-6 text-[var(--text-inverse)]">Vous avez un projet similaire ?</h2>
                     <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
                         <Link
                             href="/contact"
@@ -159,7 +161,7 @@ export default function ProjectsContent() {
                             href="/images/fichiers/CV%20AMBROISE%20BOUTRIN%20INFORMATIQUE.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="border-b border-[var(--text-inverse)] pb-1 hover:opacity-50 transition-opacity text-lg"
+                            className="border-b border-[var(--text-inverse)] pb-1 hover:opacity-50 transition-opacity text-lg text-[var(--text-inverse)]"
                         >
                             Ou consulter mon CV
                         </a>
