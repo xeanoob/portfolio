@@ -1,20 +1,17 @@
 import { ImageResponse } from 'next/og'
 
-// Image metadata
-export const size = {
-    width: 32,
-    height: 32,
-}
 export const contentType = 'image/png'
+export const size = {
+    width: 192,
+    height: 192,
+}
 
-// Image generation
 export default function Icon() {
     return new ImageResponse(
         (
-            // ImageResponse JSX element
             <div
                 style={{
-                    fontSize: 20,
+                    fontSize: 120,
                     background: 'black',
                     width: '100%',
                     height: '100%',
@@ -22,7 +19,6 @@ export default function Icon() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     color: 'white',
-                    borderRadius: '50%',
                     fontFamily: 'serif',
                     fontWeight: 600,
                 }}
@@ -30,11 +26,6 @@ export default function Icon() {
                 AB.
             </div>
         ),
-        // ImageResponse options
-        {
-            // For convenience, we can re-use the exported icons size metadata
-            // config to also set the ImageResponse's width and height.
-            ...size,
-        }
+        { ...size }
     )
 }
