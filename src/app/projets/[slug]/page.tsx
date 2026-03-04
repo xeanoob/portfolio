@@ -32,6 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         alternates: { canonical: `/projets/${slug}` },
     };
 }
+import ProjectJsonLd from "@/components/ProjectJsonLd";
 
 export default async function ProjectDetail({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
@@ -43,6 +44,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 
     return (
         <main className="min-h-screen bg-[var(--background)]">
+            <ProjectJsonLd project={project} />
 
             {/* Hero Section */}
             <header className="pt-32 pb-20 px-6 container mx-auto max-w-6xl">

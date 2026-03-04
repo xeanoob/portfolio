@@ -38,12 +38,7 @@ const JsonLd = () => {
                             "@context": "https://schema.org",
                             "@type": "WebSite",
                             "name": "Ambroise B. Portfolio",
-                            "url": "https://ambroise-boutrin.fr",
-                            "potentialAction": {
-                                "@type": "SearchAction",
-                                "target": "https://ambroise-boutrin.fr/?q={search_term_string}",
-                                "query-input": "required name=search_term_string"
-                            }
+                            "url": "https://ambroise-boutrin.fr"
                         },
                         {
                             "@context": "https://schema.org",
