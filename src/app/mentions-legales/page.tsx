@@ -1,3 +1,10 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Mentions Légales | Ambroise Boutrin',
+    alternates: { canonical: '/mentions-legales' }
+};
+
 export default function MentionsLegales() {
     return (
         <main className="min-h-screen pt-32 pb-20 px-6 md:px-12 bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">

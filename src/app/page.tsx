@@ -1,6 +1,11 @@
 import Hero from "@/components/Hero";
 import Manifesto from "@/components/Manifesto";
 import Services from "@/components/Services";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' }
+};
 
 export default function Home() {
   return (

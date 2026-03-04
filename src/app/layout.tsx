@@ -7,6 +7,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://ambroise-boutrin.fr'),
   title: "Ambroise B. | Studio Créatif & Développement Web",
   description: "Studio de développement web et design basé à Orléans. Création de sites internet sur-mesure, e-commerce et applications mobiles. Une approche artisanale du numérique.",
   keywords: ["Studio Web Orléans", "Création Site Internet Luxe", "Développeur Freelance", "Ambroise Boutrin", "Design Minimaliste", "Next.js Expert"],
