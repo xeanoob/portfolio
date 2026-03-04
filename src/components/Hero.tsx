@@ -71,19 +71,19 @@ export default function Hero() {
                     </div>
                 </h1>
 
-                <h2 ref={subtitleRef} className="text-2xl md:text-4xl font-light mb-8 text-[var(--foreground)]">
-                    Concepteur d'expériences digitales <span className="italic font-serif">sur mesure</span>.
+                <h2 ref={subtitleRef} className="text-2xl md:text-3xl font-light mb-8 text-[var(--foreground)] mt-6">
+                    Je transforme vos idées complexes en interfaces web <span className="font-semibold text-[var(--text-secondary)]">fluides</span> et <span className="font-semibold text-[var(--text-secondary)]">performantes</span>.
                 </h2>
 
                 {/* Sous-titre et Localisation */}
                 <div ref={descRef} className="flex flex-col items-center gap-4 opacity-0">
-                    <p className="text-xl md:text-2xl text-[var(--text-secondary)] font-light max-w-2xl mx-auto leading-relaxed">
-                        J'aide les entreprises et entrepreneurs à bâtir leur présence en ligne avec des <span className="font-medium text-[var(--foreground)]">sites web modernes</span> et performants.
+                    <p className="text-xl text-[var(--text-secondary)] font-light max-w-2xl mx-auto leading-relaxed">
+                        Des sites web rapides, <span className="font-medium text-[var(--foreground)]">éco-conçus (Green IT)</span> et orientés conversion.
                     </p>
 
-                    <div className="flex items-center gap-2 text-[var(--text-secondary)] text-sm font-medium uppercase tracking-wide">
+                    <div className="flex items-center gap-2 text-[var(--foreground)] text-sm font-medium uppercase tracking-wide mt-4">
                         <MapPin size={16} />
-                        <span>Basé à Orléans, France</span>
+                        <span>Développeur Web - Orléans, France</span>
                     </div>
                 </div>
 

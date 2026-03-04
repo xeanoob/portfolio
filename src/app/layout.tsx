@@ -8,9 +8,9 @@ import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ambroise-boutrin.fr'),
-  title: "Ambroise B. | Studio Créatif & Développement Web",
-  description: "Studio de développement web et design basé à Orléans. Création de sites internet sur-mesure, e-commerce et applications mobiles. Une approche artisanale du numérique.",
-  keywords: ["Studio Web Orléans", "Création Site Internet Luxe", "Développeur Freelance", "Ambroise Boutrin", "Design Minimaliste", "Next.js Expert"],
+  title: "Ambroise Boutrin | Développeur Web Orléans - Studio Créatif",
+  description: "Je transforme vos idées complexes en interfaces web fluides et performantes. Des sites rapides, éco-conçus et orientés conversion, basé à Orléans.",
+  keywords: ["Développeur Web Orléans", "Studio Créatif Orléans", "Création Site Internet Loiret", "Ambroise Boutrin", "Next.js Expert", "Freelance Orléans", "Green IT"],
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
