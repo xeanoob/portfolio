@@ -12,7 +12,6 @@ export default function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
     const titleRef = useRef<HTMLHeadingElement>(null);
     const subtitleRef = useRef<HTMLHeadingElement>(null);
-    const descRef = useRef<HTMLDivElement>(null);
     const linksRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -38,11 +37,11 @@ export default function Hero() {
                 );
             }
 
-            // Description and Links
-            if (descRef.current && linksRef.current) {
-                tl.fromTo([descRef.current, linksRef.current],
+            // Links
+            if (linksRef.current) {
+                tl.fromTo(linksRef.current,
                     { opacity: 0, y: 20 },
-                    { opacity: 1, y: 0, duration: 1, stagger: 0.2 },
+                    { opacity: 1, y: 0, duration: 1 },
                     "-=0.8"
                 );
             }
@@ -53,7 +52,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section ref={containerRef} className="min-h-screen py-20 flex items-center justify-center relative overflow-hidden">
+        <section ref={containerRef} className="min-h-screen py-16 flex items-center justify-center relative overflow-hidden">
 
             {/* Fond Grid Géométrique */}
             <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
@@ -62,7 +61,7 @@ export default function Hero() {
             <div className="flex flex-col items-center justify-center text-center z-10 relative px-4">
 
                 {/* Titre Principal */}
-                <h1 ref={titleRef} className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-[var(--foreground)] leading-[0.9] tracking-tighter mb-6">
+                <h1 ref={titleRef} className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-[var(--foreground)] leading-[0.9] tracking-tighter mb-4">
                     <div className="overflow-hidden">
                         <span className="block reveal-text">Ambroise</span>
                     </div>
@@ -71,24 +70,18 @@ export default function Hero() {
                     </div>
                 </h1>
 
-                <h2 ref={subtitleRef} className="text-xl md:text-3xl font-light mb-8 text-[var(--foreground)] mt-6 max-w-3xl">
+                <h2 ref={subtitleRef} className="text-xl md:text-3xl font-light mb-6 text-[var(--foreground)] mt-4 max-w-3xl">
                     Je transforme vos idées complexes en interfaces web <span className="font-semibold text-[var(--text-secondary)]">fluides</span> et <span className="font-semibold text-[var(--text-secondary)]">performantes</span>.
                 </h2>
 
-                {/* Sous-titre et Localisation */}
-                <div ref={descRef} className="flex flex-col items-center gap-4 opacity-0">
-                    <p className="text-xl text-[var(--text-secondary)] font-light max-w-2xl mx-auto leading-relaxed">
-                        Des sites web rapides, <span className="font-medium text-[var(--foreground)]">éco-conçus (Green IT)</span> et orientés conversion.
-                    </p>
-
-                    <div className="flex items-center gap-2 text-[var(--foreground)] text-sm font-medium uppercase tracking-wide mt-4">
-                        <MapPin size={16} />
-                        <span>Développeur Web - Orléans, France</span>
-                    </div>
+                {/* Localisation */}
+                <div className="flex items-center gap-2 text-[var(--foreground)] text-sm font-medium uppercase tracking-wide mb-6">
+                    <MapPin size={16} />
+                    <span>Développeur Web - Orléans, France</span>
                 </div>
 
                 {/* Boutons d'action */}
-                <ParallaxItem offset={0} className="w-full mt-8">
+                <ParallaxItem offset={0} className="w-full">
                     <div ref={linksRef} className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full opacity-0">
 
                         {/* Bouton Projets (Inverse) */}
@@ -109,7 +102,7 @@ export default function Hero() {
                 </ParallaxItem>
 
                 {/* Réseaux Sociaux */}
-                <div className="mt-12 flex gap-6 text-[var(--text-secondary)] justify-center pb-4">
+                <div className="mt-8 flex gap-6 text-[var(--text-secondary)] justify-center pb-4">
                     <a href="https://github.com/xeanoob" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--foreground)] hover:scale-110 transition-all duration-300 p-2" aria-label="Profil GitHub d'Ambroise Boutrin">
                         <Github size={24} />
                     </a>
