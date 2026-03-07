@@ -12,9 +12,9 @@ export const projects = [
         textColor: "text-white",
         github: null, // Private client
         demo: "https://bellenippe.vercel.app/",
-        image: "/images/bellenippelogo.png",
+        image: "/images/capturebellenippe.png",
         imageAlt: "Logo et interface sombre du site e-commerce de luxe Bellenippe",
-        images: ["/images/bellenippelogo.png"],
+        images: ["/images/capturebellenippe.png"],
         longDescription: "Conception complète de l'identité numérique de Bellenippe, une marque de couture française. L'objectif était de traduire la texture et la rareté des pièces physiques dans une interface digitale. Utilisation de transitions fluides et d'une typographie éditoriale pour sublimer chaque vêtement.",
         challenge: "Comment vendre des pièces 'uniques' en ligne sans perdre l'émotion du toucher et de l'essayage ? Le site se devait de refléter les codes du luxe, en imposant une esthétique précise, épurée et très fluide.",
         solution: "Une direction artistique centrée sur de larges visuels, une typographie élégante, soutenue par Next.js pour fluidifier la navigation sans rechargement. Shopify gère la vente en back-office de manière invisible via l'API Storefront (Headless).",
@@ -39,9 +39,9 @@ export const projects = [
         textColor: "text-white",
         github: "https://github.com/xeanoob", // Placeholder if private
         demo: "https://garanches.vercel.app/",
-        image: "/images/garanches.png",
+        image: "/images/capturegaranches.png",
         imageAlt: "Page d'accueil du site e-commerce de vins Garances, design sombre et élégant",
-        images: ["/images/garanches.png"], // For detail gallery
+        images: ["/images/capturegaranches.png"], // For detail gallery
         longDescription: "Développement d'une plateforme e-commerce complète pour une cave à vin. Le défi principal était de créer une expérience utilisateur fluide et haut de gamme tout en assurant une gestion robuste des stocks et des paiements via Stripe.",
         challenge: "Le client avait besoin d'une solution sur mesure pour vendre ses vins exclusifs, avec une identité visuelle forte que les solutions clés en main (Shopify) ne permettaient pas d'atteindre facilement.",
         solution: "Développement from scratch d'une application Next.js Fullstack, avec base de données Postgres (Prisma) pour la gestion des stocks. Stripe gère les paiements en toute sécurité.",
@@ -56,28 +56,28 @@ export const projects = [
     },
     {
         id: "05",
-        title: "Plugin Outlook (Privé)",
-        slug: "outlook-automation",
-        category: "Outil Professionnel",
-        role: "Développeur .NET",
-        description: "Plugin développé pour ADENES permettant d'automatiser le traitement des emails entrants. Analyse de contenu et classement automatique.",
-        tech: ["C#", ".NET VSTO", "Outlook API"],
-        mainTech: "C# / .NET",
-        color: "bg-[#2a2a2a]",
+        title: "Application ERP Web",
+        slug: "erp-fullstack",
+        category: "Outil Professionnel Web",
+        role: "Développeur Fullstack",
+        description: "Solution ERP complète pour la gestion d'entreprise. Développement fullstack avec interface moderne et backend robuste.",
+        tech: ["React", "Vite", "Node.js", "Express"],
+        mainTech: "React / Node.js",
+        color: "bg-[#0f172a]", // Dark blue/navy based on the vercel link name "eight-navy"
         textColor: "text-white",
         github: null,
-        demo: null,
-        image: "/images/outlook.png",
-        imageAlt: "Capture d'écran de l'interface Outlook avec le plugin d'automatisation activé",
-        images: ["/images/outlook.png"],
-        longDescription: "Extension Outlook pour automatiser le tri et l'extraction de données des emails de sinistres. (Projet sous NDA, code non disponible).",
-        challenge: "Réduire le temps de traitement manuel des emails par les gestionnaires de sinistres dans un environnement d'entreprise ultra-sécurisé.",
-        solution: "Développement d'un add-in Microsoft VSTO en C# qui s'intègre directement dans le client lourd Outlook, parse les courriels cibles et exécute des règles métiers complexes.",
-        result: "Gain d'environ 2h/jour par gestionnaire. Erreurs de classement de dossiers réduites à zéro.",
-        problem: "Réduire le temps de traitement manuel des emails par les gestionnaires de sinistres.",
+        demo: "https://erp-eight-navy.vercel.app/",
+        image: "/images/captureerp.png",
+        imageAlt: "Dashboard de l'application ERP Web",
+        images: ["/images/captureerp.png"],
+        longDescription: "Développement d'une application ERP fullstack sur-mesure pour centraliser la gestion des processus métiers. L'architecture sépare clairement le frontend (React/Vite) du backend (Node.js/Express).",
+        challenge: "Créer une interface d'administration complexe tout en conservant une excellente expérience utilisateur et des temps de réponse rapides.",
+        solution: "Mise en place d'une SPA réactive avec React, connectée à une API RESTful Node.js performante pour le traitement des données en temps réel.",
+        result: "Une plateforme centralisée fluide, sécurisée et facilement maintenable, prête pour un déploiement cloud à grande échelle.",
+        problem: "Besoin d'un outil de gestion interne moderne, rapide et accessible depuis n'importe quel navigateur web.",
         stackDetails: [
-            { name: "VSTO", reason: "Intégration native Office" },
-            { name: "C#", reason: "Performance et typage fort" }
+            { name: "React & Vite", reason: "Interface utilisateur dynamique et build ultra-rapide" },
+            { name: "Node.js & Express", reason: "API robuste et traitement asynchrone des données" }
         ]
     },
     {
