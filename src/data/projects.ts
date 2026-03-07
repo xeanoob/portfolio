@@ -1,36 +1,5 @@
 export const projects = [
     {
-        id: "00", // New Top Project
-        title: "Bellenippe - L'Art de l'Unicité",
-        slug: "bellenippe-fashion",
-        category: "E-Commerce Luxury",
-        role: "Direction Artistique & Dev",
-        description: "Maison de couture digitale prônant l'artisanat et l'unicité. Une expérience e-commerce immersive pour des pièces limitées.",
-        tech: ["Next.js", "Shopify", "Framer Motion", "Tailwind"],
-        mainTech: "Next.js / Shopify",
-        color: "bg-[#0a0a0a]",
-        textColor: "text-white",
-        github: null, // Private client
-        demo: "https://bellenippe.vercel.app/",
-        image: "/images/capturebellenippe.png",
-        imageAlt: "Logo et interface sombre du site e-commerce de luxe Bellenippe",
-        images: [
-            "/images/gallery/bellenippe/bellenippe_hero_1772901186956.png",
-            "/images/gallery/bellenippe/bellenippe_la_maison_1772901878889.png",
-            "/images/gallery/bellenippe/bellenippe_contact_1772901891116.png",
-        ],
-        longDescription: "Conception complète de l'identité numérique de Bellenippe, une marque de couture française. L'objectif était de traduire la texture et la rareté des pièces physiques dans une interface digitale. Utilisation de transitions fluides et d'une typographie éditoriale pour sublimer chaque vêtement.",
-        challenge: "Comment vendre des pièces 'uniques' en ligne sans perdre l'émotion du toucher et de l'essayage ? Le site se devait de refléter les codes du luxe, en imposant une esthétique précise, épurée et très fluide.",
-        solution: "Une direction artistique centrée sur de larges visuels, une typographie élégante, soutenue par Next.js pour fluidifier la navigation sans rechargement. Shopify gère la vente en back-office de manière invisible via l'API Storefront (Headless).",
-        result: "Un e-commerce ultra rapide (Green IT), une forte hausse d'engagement client (>30%) et une identité de marque parfaitement retranscrite dans le digital.",
-        problem: "Comment vendre des pièces 'uniques' en ligne sans perdre l'émotion du toucher et de l'essayage ? Réponse : Une direction artistique centrée sur la matière et le détail visuel.",
-        stackDetails: [
-            { name: "Next.js 14", reason: "Performance et SEO pour le luxe" },
-            { name: "Shopify Headless", reason: "Gestion robuste du catalogue back-office" },
-            { name: "Framer Motion", reason: "Animations 'page-turn' pour l'immersion" }
-        ]
-    },
-    {
         id: "01",
         title: "E-Commerce de Vins Premium",
         slug: "garanches-ecommerce",
@@ -43,10 +12,11 @@ export const projects = [
         textColor: "text-white",
         github: "https://github.com/xeanoob", // Placeholder if private
         demo: "https://garanches.vercel.app/",
+        logo: "/images/garanches.png",
+        invertLogo: true,
         image: "/images/capturegaranches.png",
         imageAlt: "Page d'accueil du site e-commerce de vins Garances, design sombre et élégant",
         images: [
-            "/images/gallery/garanches/garanches_hero_1772901313266.png",
             "/images/gallery/garanches/garanches_boutique_1772901963034.png",
             "/images/gallery/garanches/garanches_domaine_1772902008131.png",
             "/images/gallery/garanches/garanches_engagements_1772901366104.png",
@@ -78,6 +48,8 @@ export const projects = [
         textColor: "text-white",
         github: null,
         demo: "https://erp-eight-navy.vercel.app/",
+        logo: "/images/GSB.png",
+        invertLogo: false,
         image: "/images/captureerp.png",
         imageAlt: "Dashboard de l'application ERP Web",
         images: [
@@ -98,6 +70,39 @@ export const projects = [
         ]
     },
     {
+        id: "00", // New Top Project
+        title: "Bellenippe - L'Art de l'Unicité",
+        slug: "bellenippe-fashion",
+        category: "E-Commerce Luxury",
+        role: "Direction Artistique & Dev",
+        description: "Maison de couture digitale prônant l'artisanat et l'unicité. Une expérience e-commerce immersive pour des pièces limitées.",
+        tech: ["Next.js", "Shopify", "Framer Motion", "Tailwind"],
+        mainTech: "Next.js / Shopify",
+        color: "bg-[#0a0a0a]",
+        textColor: "text-white",
+        github: null, // Private client
+        demo: "https://bellenippe.vercel.app/",
+        logo: "/images/bellenippelogo.png",
+        invertLogo: true,
+        image: "/images/capturebellenippe.png",
+        imageAlt: "Logo et interface sombre du site e-commerce de luxe Bellenippe",
+        images: [
+            "/images/gallery/bellenippe/bellenippe_hero_1772901186956.png",
+            "/images/gallery/bellenippe/bellenippe_la_maison_1772901878889.png",
+            "/images/gallery/bellenippe/bellenippe_contact_1772901891116.png",
+        ],
+        longDescription: "Conception complète de l'identité numérique de Bellenippe, une marque de couture française. L'objectif était de traduire la texture et la rareté des pièces physiques dans une interface digitale. Utilisation de transitions fluides et d'une typographie éditoriale pour sublimer chaque vêtement.",
+        challenge: "Comment vendre des pièces 'uniques' en ligne sans perdre l'émotion du toucher et de l'essayage ? Le site se devait de refléter les codes du luxe, en imposant une esthétique précise, épurée et très fluide.",
+        solution: "Une direction artistique centrée on de larges visuels, une typographie élégante, soutenue par Next.js pour fluidifier la navigation sans rechargement. Shopify gère la vente en back-office de manière invisible via l'API Storefront (Headless).",
+        result: "Un e-commerce ultra rapide (Green IT), une forte hausse d'engagement client (>30%) et une identité de marque parfaitement retranscrite dans le digital.",
+        problem: "Comment vendre des pièces 'uniques' en ligne sans perdre l'émotion du toucher et de l'essayage ? Réponse : Une direction artistique centrée sur la matière et le détail visuel.",
+        stackDetails: [
+            { name: "Next.js 14", reason: "Performance et SEO pour le luxe" },
+            { name: "Shopify Headless", reason: "Gestion robuste du catalogue back-office" },
+            { name: "Framer Motion", reason: "Animations 'page-turn' pour l'immersion" }
+        ]
+    },
+    {
         id: "02",
         title: "Outil d'Analyse Réseau",
         slug: "analyse-graphes",
@@ -110,9 +115,11 @@ export const projects = [
         textColor: "text-white",
         github: "https://github.com/Xeananas/SAEGRAH",
         demo: null,
+        logo: "/images/graph.png",
+        invertLogo: false,
         image: "/images/graph.png",
         imageAlt: "Visualisation de graphe de réseau complexe générée avec NetworkX et Matplotlib",
-        images: ["/images/graph.png"],
+        images: [],
         longDescription: "Analyse approfondie d'un réseau de collaboration scientifique. Utilisation de métriques de centralité (PageRank, Betweenness) pour identifier les acteurs clés.",
         challenge: "Comprendre les dynamiques de groupe au sein d'un large réseau de données non structurées.",
         solution: "Création d'un pipeline Python d'ingestion des datas et modélisation via algorithmiques de graphe.",
@@ -136,9 +143,11 @@ export const projects = [
         textColor: "text-white",
         github: "https://github.com/xeanoob/GSBcompterendu",
         demo: null,
+        logo: "/images/jo.png",
+        invertLogo: false,
         image: "/images/jo.png",
         imageAlt: "Interface dashboard de l'application Java Swing pour la gestion des JO",
-        images: ["/images/jo.png"],
+        images: [],
         longDescription: "Application de bureau pour la gestion centralisée des JO : athlètes, épreuves, résultats et médailles.",
         problem: "Besoin d'une interface robuste pour la saisie et la consultation rapide de grandes quantités de données sportives.",
         stackDetails: [

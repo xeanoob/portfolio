@@ -31,7 +31,7 @@ export default function SkillsPage() {
     return (
         <main className="min-h-screen pt-32 pb-20 px-6 md:px-12 flex flex-col justify-center relative overflow-hidden bg-[var(--background)]">
             {/* Ambient Light */}
-            <div className="absolute bottom-0 left-0 w-[800px] h-[600px] bg-white opacity-[0.02] blur-[200px] rounded-full pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-[800px] h-[600px] bg-[var(--foreground)] opacity-[0.02] blur-[200px] rounded-full pointer-events-none"></div>
 
             <div className="container mx-auto max-w-6xl relative z-10">
 
@@ -187,7 +187,7 @@ export default function SkillsPage() {
                         </Link>
                     </div>
                     {/* Background Glow */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-white opacity-[0.03] blur-[100px] rounded-full pointer-events-none"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-[var(--foreground)] opacity-[0.03] blur-[100px] rounded-full pointer-events-none"></div>
                 </div>
 
                 {/* Bottom spacer is minimal because Footer is right there */}

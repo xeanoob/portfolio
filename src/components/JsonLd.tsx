@@ -37,21 +37,23 @@ const JsonLd = () => {
                         {
                             "@context": "https://schema.org",
                             "@type": "WebSite",
-                            "name": "Ambroise B. Portfolio",
+                            "name": "Ambroise Boutrin - Studio Créatif Orléans",
                             "url": "https://ambroise-boutrin.fr"
                         },
                         {
                             "@context": "https://schema.org",
                             "@type": "ProfessionalService",
-                            "name": "Ambroise Boutrin - Développeur Web & Mobile",
-                            "image": "https://ambroise-boutrin.fr/me.png",
+                            "name": "Ambroise Boutrin - Création de Sites Web Orléans",
+                            "image": "https://ambroise-boutrin.fr/og-image.jpg",
                             "@id": "https://ambroise-boutrin.fr",
                             "url": "https://ambroise-boutrin.fr",
-                            "telephone": "",
-                            "priceRange": "$$-$$$",
+                            "telephone": "+33759878334",
+                            "priceRange": "€€",
                             "address": {
                                 "@type": "PostalAddress",
+                                "streetAddress": "Centre Ville",
                                 "addressLocality": "Orléans",
+                                "addressRegion": "Centre-Val de Loire",
                                 "postalCode": "45000",
                                 "addressCountry": "FR"
                             },
@@ -60,17 +62,23 @@ const JsonLd = () => {
                                 "latitude": 47.902964,
                                 "longitude": 1.909251
                             },
+                            "areaServed": [
+                                {
+                                    "@type": "City",
+                                    "name": "Orléans"
+                                },
+                                {
+                                    "@type": "State",
+                                    "name": "Centre-Val de Loire"
+                                }
+                            ],
                             "openingHoursSpecification": {
                                 "@type": "OpeningHoursSpecification",
                                 "dayOfWeek": [
-                                    "Monday",
-                                    "Tuesday",
-                                    "Wednesday",
-                                    "Thursday",
-                                    "Friday"
+                                    "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
                                 ],
                                 "opens": "09:00",
-                                "closes": "18:00"
+                                "closes": "18:30"
                             },
                             "sameAs": [
                                 "https://www.linkedin.com/in/ambroise-boutrin/",
@@ -82,11 +90,12 @@ const JsonLd = () => {
                             "@type": "Person",
                             "name": "Ambroise Boutrin",
                             "url": "https://ambroise-boutrin.fr",
-                            "jobTitle": "Développeur Fullstack",
+                            "jobTitle": "Développeur Fullstack & Expert Next.js",
                             "worksFor": {
                                 "@type": "Organization",
-                                "name": "Freelance"
-                            }
+                                "name": "Ambroise B. Studio"
+                            },
+                            "description": "Spécialiste en création d'applications web et sites internet performants à Orléans."
                         }
                     ])
                 }}

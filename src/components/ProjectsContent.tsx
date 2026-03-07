@@ -147,13 +147,13 @@ export default function ProjectsContent() {
             </div>
 
             {/* Next Section Cue */}
-            <div className="h-screen bg-[var(--bg-inverse)] text-[var(--text-inverse)] flex items-center justify-center">
+            <div className="h-screen bg-[var(--background)] text-[var(--foreground)] flex items-center justify-center border-t border-[var(--border-color)]">
                 <div className="text-center">
-                    <h2 className="text-4xl md:text-6xl font-serif mb-6 text-[var(--text-inverse)]">Vous avez un projet similaire ?</h2>
+                    <h2 className="text-4xl md:text-6xl font-serif mb-6 text-[var(--foreground)]">Vous avez un projet similaire ?</h2>
                     <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
                         <Link
                             href="/contact"
-                            className="px-8 py-4 bg-[var(--background)] text-[var(--foreground)] rounded-full font-bold uppercase tracking-wider hover:scale-105 transition-transform flex items-center gap-2"
+                            className="px-8 py-4 bg-[var(--foreground)] text-[var(--background)] rounded-full font-bold uppercase tracking-wider hover:scale-105 transition-transform flex items-center gap-2 shadow-xl"
                         >
                             Demander un devis <ArrowUpRight size={20} />
                         </Link>
@@ -161,7 +161,7 @@ export default function ProjectsContent() {
                             href="/images/fichiers/CV%20AMBROISE%20BOUTRIN%20INFORMATIQUE.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="border-b border-[var(--text-inverse)] pb-1 hover:opacity-50 transition-opacity text-lg text-[var(--text-inverse)]"
+                            className="border-b border-[var(--foreground)] pb-1 hover:opacity-50 transition-opacity text-lg text-[var(--foreground)]"
                         >
                             Ou consulter mon CV
                         </a>

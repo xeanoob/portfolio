@@ -44,6 +44,7 @@ body.page-transition-exit #page-transition-curtain {
 
   --border-color: rgba(0, 0, 0, 0.15);
   --border-hover: rgba(0, 0, 0, 0.3);
+  --logo-invert: 0;
 }
 
 /* Dark Mode (Monochrome Luxury) */
@@ -65,6 +66,7 @@ body.page-transition-exit #page-transition-curtain {
 
     --border-color: rgba(255, 255, 255, 0.1);
     --border-hover: rgba(255, 255, 255, 0.25);
+    --logo-invert: 1;
   }
 }
 

@@ -48,7 +48,7 @@ export default function ParcoursContent() {
     return (
         <main className="min-h-screen bg-[var(--background)] pt-24 md:pt-32 pb-20 px-6 relative overflow-hidden">
             {/* Ambient Light */}
-            <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-white opacity-[0.02] blur-[150px] rounded-full pointer-events-none -translate-y-1/2"></div>
+            <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-[var(--foreground)] opacity-[0.03] blur-[150px] rounded-full pointer-events-none -translate-y-1/2"></div>
 
             <ScrollReveal className="max-w-6xl mx-auto relative z-10">
 
@@ -116,7 +116,7 @@ export default function ParcoursContent() {
 
                 <div className="mt-32 flex justify-center">
                     <a
-                        href="/images/fichiers/CV%20AMBROISE%20BOUTRIN%20INFORMATIQUE.pdf"
+                        href="/images/fichiers/CV_Ambroise_Boutrin_Dev_Fullstack.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group flex items-center gap-4 text-xl font-serif border-b border-[var(--text-secondary)] pb-1 hover:opacity-50 transition-opacity text-[var(--foreground)]"

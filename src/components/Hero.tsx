@@ -71,7 +71,7 @@ export default function Hero() {
                 </h1>
 
                 <h2 ref={subtitleRef} className="text-xl md:text-3xl font-light mb-6 text-[var(--foreground)] mt-4 max-w-3xl">
-                    Je transforme vos idées complexes en interfaces web <span className="font-semibold text-[var(--text-secondary)]">fluides</span> et <span className="font-semibold text-[var(--text-secondary)]">performantes</span>.
+                    Je transforme vos idées complexes en <span className="font-semibold text-[var(--text-secondary)]">applications</span> et <span className="font-semibold text-[var(--text-secondary)]">interfaces web</span> fluides et performantes.
                 </h2>
 
                 {/* Localisation */}

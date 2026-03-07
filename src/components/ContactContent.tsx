@@ -18,7 +18,7 @@ export default function ContactContent() {
     return (
         <main className="min-h-screen bg-[var(--background)] pt-32 pb-20 px-6 relative overflow-hidden">
             {/* Ambient Light */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white opacity-[0.02] blur-[150px] rounded-full pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[var(--foreground)] opacity-[0.03] blur-[150px] rounded-full pointer-events-none"></div>
 
             <ScrollReveal className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 md:gap-20 relative z-10">
 
