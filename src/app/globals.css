@@ -110,3 +110,19 @@ body {
   border-color: var(--border-hover);
   transform: translateY(-2px);
 }
+
+/* React Medium Image Zoom overrides */
+[data-rmiz-modal-overlay="visible"] {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: blur(10px);
+}
+
+[data-rmiz-modal-overlay="hidden"] {
+  background-color: transparent !important;
+}
+
+[data-rmiz-btn-close] {
+  background-color: transparent !important;
+  color: white !important;
+  mix-blend-mode: difference;
+}

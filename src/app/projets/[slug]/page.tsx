@@ -2,6 +2,8 @@ import { projects } from "@/data/projects";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 import { Metadata } from "next";
 
@@ -113,6 +115,30 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                         )}
                     </div>
                 </div>
+
+                {/* Project Gallery */}
+                {project.images && project.images.length > 0 && (
+                    <div className="mb-20">
+                        <h2 className="text-3xl font-serif font-bold mb-10 border-b border-[var(--border-color)] pb-4 text-[var(--foreground)]">Galerie</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {project.images.map((imgUrl: string, index: number) => (
+                                <div key={index} className={`relative w-full overflow-hidden rounded-xl border border-[var(--border-color)] ${index === 0 ? "md:col-span-2 aspect-[16/9]" : "aspect-[16/9]"}`}>
+                                    <Zoom wrapElement="span" classDialog="custom-zoom-overlay">
+                                        <div className="relative w-full h-full aspect-[16/9]">
+                                            <Image
+                                                src={imgUrl}
+                                                alt={`${project.title} screenshot ${index + 1}`}
+                                                fill
+                                                className="object-cover hover:scale-105 transition-transform duration-700"
+                                                sizes={index === 0 ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
+                                            />
+                                        </div>
+                                    </Zoom>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
 
                 {/* CTA / Links */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mt-20">
