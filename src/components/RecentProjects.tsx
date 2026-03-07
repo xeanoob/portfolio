@@ -69,8 +69,10 @@ export default function RecentProjects() {
                         const isLarge = index === 0 || index === 3;
                         const colSpanClass = isLarge ? "md:col-span-8" : "md:col-span-4";
 
-                        // Adjust aspect ratios based on size
-                        const aspectRatioClass = isLarge ? "aspect-[4/3] md:aspect-[16/9]" : "aspect-[4/3] md:aspect-[3/4]";
+                        // Adjust aspect ratios based on size.
+                        // Since all images are now 16:9 desktop captures, we should use 16:9 for all of them to prevent cropping or awkward empty spaces.
+                        // The primary difference will just be the column span (size on screen)
+                        const aspectRatioClass = "aspect-[16/9]";
 
                         return (
                             <motion.div
@@ -91,12 +93,12 @@ export default function RecentProjects() {
                                         <div className="absolute inset-0 border border-white/10 opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-700 z-20 pointer-events-none rounded-sm"></div>
 
                                         {project.image ? (
-                                            <div className="relative w-full h-full p-8 md:p-12">
+                                            <div className="relative w-full h-full p-4 md:p-8">
                                                 <Image
                                                     src={project.image}
                                                     alt={project.imageAlt || project.title}
                                                     fill
-                                                    className="object-contain p-8 md:p-16 opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000 ease-[cubic-bezier(0.21,0.47,0.32,0.98)] z-0"
+                                                    className={`object-contain p-2 md:p-4 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-[cubic-bezier(0.21,0.47,0.32,0.98)] z-0`}
                                                     sizes={isLarge ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
                                                 />
                                             </div>
