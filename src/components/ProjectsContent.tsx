@@ -58,7 +58,7 @@ const ProjectCard = ({ project, index }: any) => {
             className="w-full py-12 md:py-24 flex items-center justify-center relative opacity-0 translate-y-[100px]"
         >
             <div
-                className={`flex flex-col relative w-[92vw] md:w-[75vw] max-w-[1400px] h-auto rounded-[2rem] p-6 md:p-12 shadow-2xl border border-[var(--border-color)] ${['bg-white', 'bg-[#f0f0f0]', 'bg-[#e0e0e0]'].includes(project.color) ? 'bg-[var(--bg-secondary)] text-[var(--foreground)]' : `${project.color} ${project.textColor}`} overflow-hidden group`}
+                className={`flex flex-col relative w-[calc(100vw-3rem)] md:w-[75vw] max-w-[1400px] h-auto rounded-[2rem] p-6 md:p-12 shadow-2xl border border-[var(--border-color)] ${['bg-white', 'bg-[#f0f0f0]', 'bg-[#e0e0e0]'].includes(project.color) ? 'bg-[var(--bg-secondary)] text-[var(--foreground)]' : `${project.color} ${project.textColor}`} overflow-hidden group`}
             >
                 {/* Make whole card clickable via overlay link */}
                 <Link href={`/projets/${project.slug}`} className="absolute inset-0 z-20 cursor-pointer" aria-label={`Voir le détail du projet ${project.title}`} />
