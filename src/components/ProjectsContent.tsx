@@ -55,36 +55,35 @@ const ProjectCard = ({ project, index }: any) => {
     return (
         <div
             ref={cardRef}
-            className="min-h-[80vh] py-10 flex items-center justify-center relative opacity-0 translate-y-[100px]" // Initial state matching "from" logic
+            className="w-full py-12 md:py-24 flex items-center justify-center relative opacity-0 translate-y-[100px]"
         >
             <div
-                className={`flex flex-col relative w-[90vw] md:w-[70vw] max-w-[100%] h-auto min-h-[500px] md:h-[70vh] rounded-[2rem] p-6 md:p-10 shadow-2xl border border-[var(--border-color)] ${['bg-white', 'bg-[#f0f0f0]', 'bg-[#e0e0e0]'].includes(project.color) ? 'bg-[var(--bg-secondary)] text-[var(--foreground)]' : `${project.color} ${project.textColor}`} overflow-hidden group`}
+                className={`flex flex-col relative w-[92vw] md:w-[75vw] max-w-[1400px] h-auto rounded-[2rem] p-6 md:p-12 shadow-2xl border border-[var(--border-color)] ${['bg-white', 'bg-[#f0f0f0]', 'bg-[#e0e0e0]'].includes(project.color) ? 'bg-[var(--bg-secondary)] text-[var(--foreground)]' : `${project.color} ${project.textColor}`} overflow-hidden group`}
             >
                 {/* Make whole card clickable via overlay link */}
                 <Link href={`/projets/${project.slug}`} className="absolute inset-0 z-20 cursor-pointer" aria-label={`Voir le détail du projet ${project.title}`} />
 
-                <div className="flex justify-between items-start mb-4 md:mb-8">
-                    <h2 className="text-2xl md:text-5xl font-bold text-center md:text-left leading-tight flex-1 mr-4">{project.title}</h2>
+                <div className="flex justify-between items-start mb-6 md:mb-12 gap-4 relative z-30">
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-left leading-[1.1] flex-1 pr-2">{project.title}</h2>
                     <Link
                         href={`/projets/${project.slug}`}
-                        className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold uppercase tracking-wider text-xs transition-all duration-300 shadow-lg relative z-30 ${['bg-white', 'bg-[#f0f0f0]', 'bg-[#e0e0e0]'].includes(project.color) ? 'bg-[var(--foreground)] text-[var(--background)]' : 'bg-white text-black hover:bg-white/90'}`}
+                        className={`flex items-center justify-center min-w-[3rem] h-12 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full font-bold uppercase tracking-wider text-xs transition-all duration-300 shadow-lg ${['bg-white', 'bg-[#f0f0f0]', 'bg-[#e0e0e0]'].includes(project.color) ? 'bg-[var(--foreground)] text-[var(--background)]' : 'bg-white text-black hover:bg-white/90'}`}
                     >
-                        <span className="hidden md:inline">Voir le détail</span>
-                        <span className="md:hidden">Voir</span>
-                        <ArrowUpRight size={18} />
+                        <span className="hidden md:inline mr-2">Voir le détail</span>
+                        <ArrowUpRight size={20} />
                     </Link>
                 </div>
 
-                <div className="flex flex-col md:flex-row gap-6 md:gap-10 flex-1 min-h-0">
-                    <div className="md:w-1/2 flex flex-col justify-between order-2 md:order-1 pb-2 md:pb-0 pointer-events-none items-center md:items-start text-center md:text-left">
-                        <div className="overflow-hidden">
-                            <span className="text-xs font-mono uppercase tracking-widest opacity-50 mb-2 md:mb-4 block">{project.category}</span>
-                            <p className="text-sm md:text-lg opacity-80 leading-relaxed line-clamp-6 md:line-clamp-none">
+                <div className="flex flex-col md:flex-row gap-8 md:gap-12 flex-1">
+                    <div className="md:w-1/2 flex flex-col justify-between order-2 md:order-1 pb-4 md:pb-0 pointer-events-none items-start text-left">
+                        <div className="w-full">
+                            <span className="text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] opacity-50 mb-3 md:mb-6 block">{project.category}</span>
+                            <p className="text-base md:text-lg opacity-80 leading-relaxed line-clamp-4 md:line-clamp-none mb-6">
                                 {project.description}
                             </p>
                         </div>
 
-                        <div className="flex flex-wrap gap-2 mt-4 md:mt-0 justify-center md:justify-start">
+                        <div className="flex flex-wrap gap-2 justify-start mt-auto">
                             {project.tech.map((t: string, i: number) => (
                                 <span key={i} className={`px-3 md:px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold shadow-sm ${['bg-white', 'bg-[#f0f0f0]', 'bg-[#e0e0e0]'].includes(project.color) ? 'bg-[var(--foreground)]/10 text-[var(--foreground)]' : 'bg-white/10 text-white'}`}>
                                     {t}
@@ -93,23 +92,23 @@ const ProjectCard = ({ project, index }: any) => {
                         </div>
                     </div>
 
-                    <div className="md:w-1/2 h-full min-h-[200px] flex items-center justify-center relative order-1 md:order-2 p-4 md:p-10">
+                    <div className="md:w-1/2 h-full min-h-[240px] md:min-h-[400px] flex items-center justify-center relative order-1 md:order-2 p-0 md:p-8">
                         {project.image ? (
-                            <div ref={imageContainerRef} className="relative w-full h-full min-h-[300px] md:h-[80%] rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-105 bg-white/5">
-                                <div ref={imageRef} className="absolute inset-0 w-full h-[120%] -top-[10%]"> {/* Taller container for parallax */}
+                            <div ref={imageContainerRef} className="relative w-full h-full min-h-[240px] md:h-full rounded-xl overflow-hidden shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] bg-black/5">
+                                <div ref={imageRef} className="absolute inset-0 w-full h-[120%] -top-[10%]">
                                     <Image
                                         src={project.image}
                                         alt={project.imageAlt || `Aperçu du projet ${project.title}`}
                                         fill
-                                        className="object-contain p-4"
-                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                        className="object-contain md:p-4"
+                                        sizes="(max-width: 768px) 90vw, 40vw"
                                         priority={index === 0}
                                         loading={index === 0 ? undefined : "lazy"}
                                     />
                                 </div>
                             </div>
                         ) : (
-                            <div className="w-full h-full flex items-center justify-center bg-[var(--foreground)]/5 text-[var(--foreground)]/10 font-serif text-8xl select-none rounded-xl">
+                            <div className="w-full h-full flex items-center justify-center bg-[var(--foreground)]/5 text-[var(--foreground)]/10 font-serif text-7xl md:text-9xl select-none rounded-xl">
                                 {project.title.charAt(0)}
                             </div>
                         )}
@@ -122,9 +121,9 @@ const ProjectCard = ({ project, index }: any) => {
 
 export default function ProjectsContent() {
     return (
-        <main className="relative mt-20 bg-[var(--background)]">
+        <main className="relative mt-20 bg-[var(--background)] overflow-x-hidden">
             {/* Ambient Light (Monochrome) */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-white opacity-[0.03] blur-[150px] rounded-full pointer-events-none"></div>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[400px] bg-white opacity-[0.03] blur-[150px] rounded-full pointer-events-none"></div>
 
             <div className="container mx-auto px-6 pt-24 md:pt-32 mb-16 md:mb-24">
                 <div className="text-center mb-16 md:mb-24">
