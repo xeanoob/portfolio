@@ -117,7 +117,7 @@ export const projects = [
         mainTech: "Java / SQL",
         color: "bg-[#1f1f1f]",
         textColor: "text-white",
-        github: "https://github.com/xeanoob/GSBcompterendu",
+        github: "https://github.com/clemencebc1/SAe_JEUXIUTO",
         demo: null,
         image: "/images/jo.png",
         imageAlt: "Interface dashboard de l'application Java Swing pour la gestion des JO",
