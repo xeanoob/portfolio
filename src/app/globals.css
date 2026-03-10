@@ -44,6 +44,7 @@ body.page-transition-exit #page-transition-curtain {
 
   --border-color: rgba(0, 0, 0, 0.15);
   --border-hover: rgba(0, 0, 0, 0.3);
+  --logo-invert: 0;
 }
 
 /* Dark Mode (Monochrome Luxury) */
@@ -65,12 +66,14 @@ body.page-transition-exit #page-transition-curtain {
 
     --border-color: rgba(255, 255, 255, 0.1);
     --border-hover: rgba(255, 255, 255, 0.25);
+    --logo-invert: 1;
   }
 }
 
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -78,6 +81,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
+  max-width: 100vw;
   transition: background-color 0.3s ease, color 0.3s ease;
   selection-background-color: #ffffff;
   selection-color: #000000;
@@ -109,4 +113,20 @@ body {
   background-color: rgba(255, 255, 255, 0.08);
   border-color: var(--border-hover);
   transform: translateY(-2px);
+}
+
+/* React Medium Image Zoom overrides */
+[data-rmiz-modal-overlay="visible"] {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: blur(10px);
+}
+
+[data-rmiz-modal-overlay="hidden"] {
+  background-color: transparent !important;
+}
+
+[data-rmiz-btn-close] {
+  background-color: transparent !important;
+  color: white !important;
+  mix-blend-mode: difference;
 }

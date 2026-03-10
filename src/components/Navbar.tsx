@@ -99,7 +99,7 @@ export default function Navbar() {
                             {/* Close button space reserved for fixed button */}
                         </div>
 
-                        <nav className="flex flex-col gap-6 mt-20">
+                        <nav className="flex flex-col gap-3 mt-16">
                             {[
                                 { name: "Accueil", path: "/" },
                                 { name: "Services", path: "/services" },
@@ -119,11 +119,11 @@ export default function Navbar() {
                                     <TransitionLink
                                         href={item.path}
                                         onClick={() => setIsOpen(false)}
-                                        className="text-5xl font-serif font-bold text-[var(--foreground)] hover:opacity-50 transition-opacity block"
+                                        className="text-3xl font-serif font-bold text-[var(--foreground)] hover:opacity-50 transition-opacity block"
                                     >
                                         {item.name}
                                     </TransitionLink>
-                                    <div className="h-px bg-[var(--border-color)] mt-4 w-full"></div>
+                                    <div className="h-px bg-[var(--border-color)] mt-2 w-full"></div>
                                 </motion.div>
                             ))}
                         </nav>
@@ -132,7 +132,7 @@ export default function Navbar() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.5 }}
-                            className="mb-10"
+                            className="mb-6"
                         >
                             <p className="text-sm font-mono uppercase text-[var(--text-secondary)] mb-2">Socials</p>
                             <div className="flex gap-4">

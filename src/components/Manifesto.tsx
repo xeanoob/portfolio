@@ -26,7 +26,7 @@ export default function Manifesto() {
                         className="w-full md:w-1/3 aspect-[3/4] relative group"
                     >
                         <div className="absolute inset-0 border border-[var(--border-color)] rounded-sm translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
-                        <div className="absolute inset-0 border border-[var(--border-color)] rounded-sm bg-[var(--foreground)] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+                        <div className="absolute inset-0 border border-[var(--border-color)] rounded-sm bg-[var(--background)] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
                             {/* Placeholder Image - User can replace src */}
                             <Image
                                 src="/images/ambroise.JPG"

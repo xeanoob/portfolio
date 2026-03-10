@@ -2,6 +2,8 @@ import { projects } from "@/data/projects";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 import { Metadata } from "next";
 
@@ -47,26 +49,41 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
             <ProjectJsonLd project={project} />
 
             {/* Hero Section */}
-            <header className="pt-32 pb-20 px-6 container mx-auto max-w-6xl">
-                <div className="flex flex-col gap-6 mb-12">
-                    <div className="flex flex-wrap gap-4 items-center mb-4">
-                        <span className="px-4 py-1.5 bg-[var(--foreground)] text-[var(--background)] rounded-full text-xs font-bold uppercase tracking-wider">
-                            {project.category}
-                        </span>
-                        {project.role && (
-                            <span className="px-4 py-1.5 border border-[var(--border-color)] rounded-full text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">
-                                {project.role}
+            <header className="bg-[var(--background)] text-[var(--foreground)] pt-32 pb-20 mb-20 transition-colors duration-300 border-b border-[var(--border-color)]">
+                <div className="px-6 container mx-auto max-w-6xl">
+                    <div className="flex flex-col gap-6 mb-12">
+                        <div className="flex flex-wrap gap-4 items-center mb-4">
+                            <span className="px-4 py-1.5 bg-[var(--foreground)] text-[var(--background)] rounded-full text-xs font-bold uppercase tracking-wider">
+                                {project.category}
                             </span>
-                        )}
+                            {project.role && (
+                                <span className="px-4 py-1.5 border border-[var(--border-color)] rounded-full text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">
+                                    {project.role}
+                                </span>
+                            )}
+                        </div>
+
+                        <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+                            {project.logo && (
+                                <div className="relative w-24 h-24 md:w-32 md:h-32 shrink-0">
+                                    <Image
+                                        src={project.logo}
+                                        alt={`Logo ${project.title}`}
+                                        fill
+                                        className="object-contain"
+                                        style={{ filter: project.invertLogo ? "brightness(0) invert(var(--logo-invert))" : "none" }}
+                                    />
+                                </div>
+                            )}
+                            <h1 className="text-5xl md:text-8xl font-serif font-bold tracking-tight">
+                                {project.title}
+                            </h1>
+                        </div>
+
+                        <p className="text-xl md:text-2xl text-[var(--text-secondary)] max-w-3xl leading-relaxed">
+                            {project.description}
+                        </p>
                     </div>
-
-                    <h1 className="text-5xl md:text-8xl font-serif font-bold tracking-tight text-[var(--foreground)]">
-                        {project.title}
-                    </h1>
-
-                    <p className="text-xl md:text-2xl text-[var(--text-secondary)] max-w-3xl leading-relaxed">
-                        {project.description}
-                    </p>
                 </div>
             </header>
 
@@ -113,6 +130,30 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                         )}
                     </div>
                 </div>
+
+                {/* Project Gallery */}
+                {project.images && project.images.length > 0 && (
+                    <div className="mb-20">
+                        <h2 className="text-3xl font-serif font-bold mb-10 border-b border-[var(--border-color)] pb-4 text-[var(--foreground)]">Galerie</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {project.images.map((imgUrl: string, index: number) => (
+                                <div key={index} className={`relative w-full overflow-hidden rounded-xl border border-[var(--border-color)] ${index === 0 ? "md:col-span-2 aspect-[16/9]" : "aspect-[16/9]"}`}>
+                                    <Zoom wrapElement="span" classDialog="custom-zoom-overlay">
+                                        <div className="relative w-full h-full aspect-[16/9]">
+                                            <Image
+                                                src={imgUrl}
+                                                alt={`${project.title} screenshot ${index + 1}`}
+                                                fill
+                                                className="object-cover hover:scale-105 transition-transform duration-700"
+                                                sizes={index === 0 ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
+                                            />
+                                        </div>
+                                    </Zoom>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
 
                 {/* CTA / Links */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mt-20">
