@@ -6,7 +6,7 @@ const JsonLd = () => {
         "@type": "Person",
         "name": "Ambroise Boutrin",
         "url": "https://ambroise-boutrin.fr",
-        "image": "https://ambroise-boutrin.fr/me.png", // Assurez-vous d'avoir une image de profil
+        "image": "https://ambroise-boutrin.fr/me.png",
         "jobTitle": "Développeur Fullstack",
         "worksFor": {
             "@type": "Organization",
@@ -22,7 +22,7 @@ const JsonLd = () => {
         "sameAs": [
             "https://www.linkedin.com/in/ambroise-boutrin/",
             "https://github.com/xeanoob",
-            "https://twitter.com/ambroise_b" // Si fin
+            "https://twitter.com/ambroise_b"
         ],
         "knowsAbout": ["React", "Next.js", "TypeScript", "Node.js", "Web Development", "UI/UX Design"]
     };
