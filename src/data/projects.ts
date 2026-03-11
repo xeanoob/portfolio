@@ -65,8 +65,43 @@ export const projects = [
         result: "Une plateforme centralisée fluide, sécurisée et facilement maintenable, prête pour un déploiement cloud à grande échelle.",
         problem: "Besoin d'un outil de gestion interne moderne, rapide et accessible depuis n'importe quel navigateur web.",
         stackDetails: [
-            { name: "React & Vite", reason: "Interface utilisateur dynamique et build ultra-rapide" },
+            { name: "React & Vite", reason: "Interface utilisateur dynamique et build ultra-fast" },
             { name: "Node.js & Express", reason: "API robuste et traitement asynchrone des données" }
+        ]
+    },
+    {
+        id: "06",
+        title: "NOMAD - House Music",
+        slug: "nomad-collective",
+        category: "Web & Art Expérience",
+        role: "Développeur Lead & Design",
+        description: "Collectif House Music & Évènementiel. Une exploration des textures sonores traduite dans une expérience web immersive et performante.",
+        tech: ["Next.js", "Framer Motion", "TailwindCSS", "Lenis"],
+        mainTech: "Next.js / Framer Motion",
+        color: "bg-[#050505]",
+        textColor: "text-white",
+        github: "https://github.com/xeanoob/nomad",
+        demo: "https://nomad-beige-phi.vercel.app/",
+        logo: "/images/nomadelogo.png",
+        invertLogo: true,
+        image: "/images/capturenomad.png",
+        imageAlt: "Interface immersive du site NOMAD, ambiance sombre et artistique",
+        images: [
+            "/images/gallery/nomad/nomad_hero.png",
+            "/images/gallery/nomad/nomad_vision.png",
+            "/images/gallery/nomad/nomad_about.png",
+            "/images/gallery/nomad/nomad_gallery.png"
+        ],
+        longDescription: "Plus qu'une série de morceaux, NOMAD est une exploration des textures sonores. Nous sculptons chaque set pour transformer le dancefloor en une expérience immersive, loin des standards classiques. Le site web reflète cette philosophie avec des animations fluides, un grain de texture cinématographique et une navigation haute performance.",
+        challenge: "Traduire l'atmosphère brute et sophistiquée des événements NOMAD dans une interface web sans compromettre les performances.",
+        solution: "Utilisation de Next.js (App Router) pour la rapidité, Framer Motion pour les micro-interactions élégantes et Lenis pour un scroll fluide 'premium'.",
+        result: "Une identité numérique forte qui complète l'expérience physique du collectif, avec un taux d'immersion maximal dès le splash screen.",
+        problem: "Besoin d'une vitrine digitale qui ne soit pas juste un site informatif, mais une extension de l'expérience artistique du collectif.",
+        stackDetails: [
+            { name: "Next.js", reason: "Pour l'architecture moderne et le rendu ultra-rapide" },
+            { name: "Framer Motion", reason: "Animations fluides et immersives" },
+            { name: "Lenis", reason: "Smooth scrolling haute performance" },
+            { name: "Tailwind CSS", reason: "Design système minimaliste et robuste" }
         ]
     },
     {

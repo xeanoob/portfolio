@@ -63,9 +63,12 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                             )}
                         </div>
 
-                        <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-10">
+                            <h1 className="text-5xl md:text-8xl font-serif font-bold tracking-tight order-2 md:order-1">
+                                {project.title}
+                            </h1>
                             {project.logo && (
-                                <div className="relative w-24 h-24 md:w-32 md:h-32 shrink-0">
+                                <div className="relative w-24 h-24 md:w-32 md:h-32 shrink-0 order-1 md:order-2">
                                     <Image
                                         src={project.logo}
                                         alt={`Logo ${project.title}`}
@@ -75,9 +78,6 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                                     />
                                 </div>
                             )}
-                            <h1 className="text-5xl md:text-8xl font-serif font-bold tracking-tight">
-                                {project.title}
-                            </h1>
                         </div>
 
                         <p className="text-xl md:text-2xl text-[var(--text-secondary)] max-w-3xl leading-relaxed">
