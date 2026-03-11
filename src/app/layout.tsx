@@ -9,7 +9,7 @@ import JsonLd from "@/components/JsonLd";
 export const metadata: Metadata = {
   metadataBase: new URL('https://ambroise-boutrin.fr'),
   title: "Ambroise Boutrin | Développeur Web Orléans - Studio Créatif",
-  description: "Expert Next.js & Web Design à Orléans. Je conçois des applications web et sites internet haute-performance pour transformer vos idées en succès digitaux.",
+  description: "Développeur Web Orléans. Je conçois des applications web et sites internet haute-performance pour transformer vos idées en succès digitaux.",
   keywords: ["Développeur Web Orléans", "Agence Web Orléans", "Création de site internet Orléans", "Application Web sur mesure", "Next.js Orléans", "Freelance React Orléans", "Ambroise Boutrin"],
   openGraph: {
     type: 'website',
