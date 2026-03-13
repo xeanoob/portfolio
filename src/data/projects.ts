@@ -1,5 +1,37 @@
 export const projects = [
     {
+        id: "offtime",
+        title: "OffTime | Creative Studio",
+        slug: "offtime-studio",
+        category: "Cinematic & Digital Art",
+        role: "Creative Studio",
+        description: "Experience. In Motion. THE ART OF THE CUT. THE SOUL OF THE FRAME. Une exploration des textures temporelles traduite dans une expérience web immersive.",
+        tech: ["Next.js", "Three.js", "TailwindCSS", "GSAP"],
+        mainTech: "Next.js / GSAP",
+        color: "bg-[#050505]",
+        textColor: "text-white",
+        github: null,
+        demo: "https://awwwards-lyart.vercel.app/",
+        logo: null,
+        invertLogo: false,
+        image: "/images/offtime.png",
+        imageAlt: "Aperçu de la page d'accueil de OffTime Studio",
+        images: [
+            "/images/offtime.png"
+        ],
+        longDescription: "Chez OffTime, nous ne nous contentons pas de capturer la lumière. Nous manipulons la perception du temps. À travers un montage méticuleux, une typographie cinétique et un design numérique fluide, nous transformons des secondes en moments profonds. Studio avant-gardiste opérant globalement, notre travail se situe à l'intersection du cinéma et de l'art interactif.",
+        challenge: "Concevoir une expérience numérique qui traduit l'esthétique cinématographique et la vision avant-gardiste du studio.",
+        solution: "Une direction artistique audacieuse couplée à des animations avancées (GSAP, Three.js) pour une immersion totale.",
+        result: "Un portfolio immersif, rapide et mémorable qui agit comme une extension numérique de leur art.",
+        problem: "Concevoir une expérience numérique qui traduit l'esthétique cinématographique et la vision avant-gardiste du studio sans compromettre les performances.",
+        stackDetails: [
+            { name: "Next.js", reason: "Performance, rendu hybride, architecture moderne" },
+            { name: "Three.js", reason: "Rendu 3D et expériences visuelles complexes" },
+            { name: "GSAP", reason: "Animations fluides haute-fidélité et scroll interactif" },
+            { name: "Tailwind CSS", reason: "Stylisation agile et système de design sur-mesure" }
+        ]
+    },
+    {
         id: "01",
         title: "E-Commerce de Vins Premium",
         slug: "garanches-ecommerce",
