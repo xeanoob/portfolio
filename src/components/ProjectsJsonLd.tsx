@@ -13,7 +13,7 @@ const ProjectsJsonLd = ({ projects }: { projects: any[] }) => {
                 "description": project.description,
                 "applicationCategory": project.category,
                 "operatingSystem": "Web, Windows, Android",
-                "url": project.link !== "#" ? project.link : "https://ambroise-boutrin.fr/projets",
+                "url": project.link !== "#" ? project.link : "https://www.ambroise-boutrin.fr/projets",
                 "offers": {
                     "@type": "Offer",
                     "price": "0",

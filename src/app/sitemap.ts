@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { projects } from '@/data/projects'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://ambroise-boutrin.fr' // Remplacez par votre domaine réel
+    const baseUrl = 'https://www.ambroise-boutrin.fr' // Remplacez par votre domaine réel
 
     const projectUrls = projects.map((project) => ({
         url: `${baseUrl}/projets/${project.slug}`,
