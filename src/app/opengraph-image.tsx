@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const runtime = 'edge';
+// export const runtime = 'edge'; // Commenté pour permettre la génération statique (SSG)
 
 export const alt = 'Ambroise B. | Studio Créatif & Développement Web';
 export const size = {
