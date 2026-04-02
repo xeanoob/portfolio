@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: '*',
             allow: '/',
-            disallow: '/private/',
+            disallow: ['/private/', '/*?q=*'],
         },
         sitemap: 'https://ambroise-boutrin.fr/sitemap.xml',
     }
