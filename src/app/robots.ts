@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/private/', '/*?q=*'],
         },
-        sitemap: 'https://ambroise-boutrin.fr/sitemap.xml',
+        sitemap: 'https://www.ambroise-boutrin.fr/sitemap.xml',
     }
 }

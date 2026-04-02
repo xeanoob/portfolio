@@ -5,8 +5,8 @@ const JsonLd = () => {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Ambroise Boutrin",
-        "url": "https://ambroise-boutrin.fr",
-        "image": "https://ambroise-boutrin.fr/me.png",
+        "url": "https://www.ambroise-boutrin.fr",
+        "image": "https://www.ambroise-boutrin.fr/me.png",
         "jobTitle": "Développeur Fullstack",
         "worksFor": {
             "@type": "Organization",
@@ -38,15 +38,28 @@ const JsonLd = () => {
                             "@context": "https://schema.org",
                             "@type": "WebSite",
                             "name": "Ambroise Boutrin - Studio Créatif Orléans",
-                            "url": "https://ambroise-boutrin.fr"
+                            "url": "https://www.ambroise-boutrin.fr"
+                        },
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "ItemList",
+                            "itemListElement": [
+                                { "@type": "SiteNavigationElement", "position": 1, "name": "Accueil", "url": "https://www.ambroise-boutrin.fr/" },
+                                { "@type": "SiteNavigationElement", "position": 2, "name": "Services", "url": "https://www.ambroise-boutrin.fr/services" },
+                                { "@type": "SiteNavigationElement", "position": 3, "name": "Projets", "url": "https://www.ambroise-boutrin.fr/projets" },
+                                { "@type": "SiteNavigationElement", "position": 4, "name": "Compétences", "url": "https://www.ambroise-boutrin.fr/competences" },
+                                { "@type": "SiteNavigationElement", "position": 5, "name": "Parcours", "url": "https://www.ambroise-boutrin.fr/parcours" },
+                                { "@type": "SiteNavigationElement", "position": 6, "name": "Veille", "url": "https://www.ambroise-boutrin.fr/veille" },
+                                { "@type": "SiteNavigationElement", "position": 7, "name": "Contact", "url": "https://www.ambroise-boutrin.fr/contact" }
+                            ]
                         },
                         {
                             "@context": "https://schema.org",
                             "@type": "ProfessionalService",
                             "name": "Ambroise Boutrin - Création de Sites Web Orléans",
-                            "image": "https://ambroise-boutrin.fr/og-image.jpg",
-                            "@id": "https://ambroise-boutrin.fr",
-                            "url": "https://ambroise-boutrin.fr",
+                            "image": "https://www.ambroise-boutrin.fr/og-image.jpg",
+                            "@id": "https://www.ambroise-boutrin.fr",
+                            "url": "https://www.ambroise-boutrin.fr",
                             "telephone": "+33759878334",
                             "priceRange": "€€",
                             "address": {
@@ -89,7 +102,7 @@ const JsonLd = () => {
                             "@context": "https://schema.org",
                             "@type": "Person",
                             "name": "Ambroise Boutrin",
-                            "url": "https://ambroise-boutrin.fr",
+                            "url": "https://www.ambroise-boutrin.fr",
                             "jobTitle": "Développeur Fullstack & Expert Next.js",
                             "worksFor": {
                                 "@type": "Organization",

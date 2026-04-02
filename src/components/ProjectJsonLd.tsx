@@ -17,19 +17,19 @@ export default function ProjectJsonLd({ project }: { project: ProjectData }) {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Accueil",
-                "item": "https://ambroise-boutrin.fr"
+                "item": "https://www.ambroise-boutrin.fr"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Projets",
-                "item": "https://ambroise-boutrin.fr/projets"
+                "item": "https://www.ambroise-boutrin.fr/projets"
             },
             {
                 "@type": "ListItem",
                 "position": 3,
                 "name": project.title,
-                "item": `https://ambroise-boutrin.fr/projets/${project.slug}`
+                "item": `https://www.ambroise-boutrin.fr/projets/${project.slug}`
             }
         ]
     };
@@ -39,12 +39,12 @@ export default function ProjectJsonLd({ project }: { project: ProjectData }) {
         "@type": project.category.includes('Web') ? "WebApplication" : "CreativeWork",
         "name": project.title,
         "description": project.description,
-        "url": `https://ambroise-boutrin.fr/projets/${project.slug}`,
+        "url": `https://www.ambroise-boutrin.fr/projets/${project.slug}`,
         "author": {
             "@type": "Person",
             "name": "Ambroise Boutrin"
         },
-        ...(project.image ? { "image": `https://ambroise-boutrin.fr${project.image}` } : {})
+        ...(project.image ? { "image": `https://www.ambroise-boutrin.fr${project.image}` } : {})
     };
 
     return (
