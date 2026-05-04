@@ -38,6 +38,7 @@ export default function Navbar() {
                         { name: "Projets", path: "/projets" },
                         { name: "Compétences", path: "/competences" },
                         { name: "Parcours", path: "/parcours" },
+                        { name: "Certifications", path: "/certifications" },
                         { name: "Veille", path: "/veille" }
                     ].map((item) => {
                         const isActive = pathname === item.path;
@@ -106,6 +107,7 @@ export default function Navbar() {
                                 { name: "Projets", path: "/projets" },
                                 { name: "Compétences", path: "/competences" },
                                 { name: "Parcours", path: "/parcours" },
+                                { name: "Certifications", path: "/certifications" },
                                 { name: "Veille", path: "/veille" },
                                 { name: "Contact", path: "/contact" }
                             ].map((item, i) => (
