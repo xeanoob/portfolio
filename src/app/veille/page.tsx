@@ -13,67 +13,67 @@ interface Article {
 
 const curatedArticles: Article[] = [
     {
-        title: "L'IA locale et la souveraineté du code : L'émergence des Small Language Models (SLM)",
+        title: "L'avènement des Value Objects en Java avec le Projet Valhalla",
         pubDate: "2026-05-02T00:00:00Z",
-        link: "https://www.microsoft.com/en-us/research/blog/phi-3-mini-a-highly-capable-language-model-locally-on-your-phone/",
-        thumbnail: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=800&auto=format&fit=crop",
-        description: "Face aux enjeux de confidentialité, 2026 marque le tournant vers les SLM (Small Language Models) exécutés localement. Ces modèles spécialisés égalent désormais les performances des géants du Cloud pour les tâches de programmation pure, garantissant une souveraineté totale du code source."
+        link: "https://openjdk.org/projects/valhalla/",
+        thumbnail: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=800&auto=format&fit=crop",
+        description: "Le Projet Valhalla redéfinit la conception orientée objet en Java en introduisant les 'Value Types'. Cela permet de créer des objets immuables et légers qui se comportent comme des primitives, réduisant massivement l'empreinte mémoire et améliorant la performance."
     },
     {
-        title: "WebAssembly Garbage Collection (WasmGC) et l'explosion des langages managés",
+        title: "Domain-Driven Design (DDD) simplifié par les Sealed Classes",
         pubDate: "2026-04-12T00:00:00Z",
-        link: "https://web.dev/articles/wasm-gc",
-        thumbnail: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=800&auto=format&fit=crop",
-        description: "L'adoption massive de WasmGC par les navigateurs majeurs a ouvert la porte à une nouvelle génération de frameworks web. Il est désormais possible de faire tourner des langages comme Kotlin, Dart et Java nativement dans le navigateur avec des performances exceptionnelles."
-    },
-    {
-        title: "Vite 8.0, C++26 et de nouvelles standardisations",
-        pubDate: "2026-03-10T00:00:00Z",
-        link: "https://vitejs.dev/blog/",
-        thumbnail: "https://images.unsplash.com/photo-1618401471353-b98a5233c591?q=80&w=800&auto=format&fit=crop",
-        description: "L'écosystème JavaScript salue l'arrivée de Vite 8.0 avec le bundler Rolldown, décuplant la vélocité des builds. Parallèlement, le comité ISO finalise C++26, apportant des améliorations majeures sur la sécurité mémoire et la gestion de la concurrence."
-    },
-    {
-        title: "Démocratisation et redéfinition du rôle de l'ingénieur",
-        pubDate: "2026-02-18T00:00:00Z",
-        link: "https://www.forbes.com/sites/forbestechcouncil/2024/03/11/the-evolution-of-the-software-engineer-in-the-age-of-ai/",
+        link: "https://openjdk.org/jeps/409",
         thumbnail: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop",
-        description: "Avec 97 % des entreprises utilisant l'IA, le développeur devient un orchestrateur d'agents. Ce mois marque une transition où la compréhension de l'architecture et la validation de l'intention deviennent plus critiques que l'écriture manuelle de syntaxe."
+        description: "Les 'Sealed Classes' offrent un contrôle strict sur la hiérarchie d'héritage. Cet article explore comment cette fonctionnalité clé de l'orienté objet moderne permet d'implémenter un Domain-Driven Design plus sécurisé, en limitant explicitement l'extension des classes."
     },
     {
-        title: "Le 'Platform Engineering' contre la dette technique",
-        pubDate: "2026-01-15T00:00:00Z",
-        link: "https://platformengineering.org/blog/what-is-platform-engineering",
-        thumbnail: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
-        description: "Pour contrer le 'vibe coding' qui génère une dette technique incontrôlée, les entreprises adoptent massivement le Platform Engineering. L'objectif est de créer des 'Internal Developer Platforms' (IDP) qui automatisent la conformité et les standards."
+        title: "Composition vs Héritage : Le nouveau paradigme Java",
+        pubDate: "2026-03-10T00:00:00Z",
+        link: "https://blogs.oracle.com/javamagazine/post/java-inheritance-composition",
+        thumbnail: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=800&auto=format&fit=crop",
+        description: "La communauté Java se tourne massivement vers le principe 'Favoriser la composition plutôt que l'héritage'. Analyse des limites de l'héritage multiple (via interfaces par défaut) et comment les Records et la délégation redéfinissent l'architecture des applications."
     },
     {
-        title: "GPT-5.2 Codex et la modernisation du 'Legacy Code'",
-        pubDate: "2025-12-10T00:00:00Z",
-        link: "https://openai.com/news/devday-2024-api-updates/",
+        title: "Le Pattern Matching réinvente le polymorphisme",
+        pubDate: "2026-02-18T00:00:00Z",
+        link: "https://openjdk.org/jeps/441",
         thumbnail: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
-        description: "OpenAI dévoile GPT-5.2 Codex, capable de comprendre des bases de code gigantesques. Cette avancée rend enfin financièrement viable la migration massive de systèmes critiques (COBOL, vieux Java) vers des architectures modernes et sécurisées."
+        description: "Le 'Pattern Matching' pour les switch redéfinit la façon de traiter le polymorphisme en Java. Fini les longues chaînes de 'instanceof' ou le Visitor Pattern complexe, le code devient plus expressif et concis."
     },
     {
-        title: "L'impact croissant du DevSecOps face aux supply chains",
+        title: "Impact de Project Loom sur la conception Orientée Objet",
+        pubDate: "2026-01-15T00:00:00Z",
+        link: "https://openjdk.org/projects/loom/",
+        thumbnail: "https://images.unsplash.com/photo-1618401471353-b98a5233c591?q=80&w=800&auto=format&fit=crop",
+        description: "Avec l'intégration des Virtual Threads, la manière de concevoir des objets concurrents en Java change drastiquement. L'approche traditionnelle basée sur des pools de threads lourds laisse place à un modèle orienté objet beaucoup plus naturel et séquentiel."
+    },
+    {
+        title: "La fin des POJOs classiques : L'ère des Records",
+        pubDate: "2025-12-10T00:00:00Z",
+        link: "https://openjdk.org/jeps/395",
+        thumbnail: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+        description: "L'introduction des 'Records' a marqué un tournant dans la gestion des données en Java. En automatisant la création des getters, equals() et hashCode(), les développeurs peuvent enfin se concentrer sur la vraie logique métier orientée objet, en éliminant le boilerplate."
+    },
+    {
+        title: "L'Immutabilité par défaut dans les architectures Java",
         pubDate: "2025-11-20T00:00:00Z",
-        link: "https://snyk.io/blog/state-of-open-source-security-2024/",
+        link: "https://dzone.com/articles/immutability-in-java",
         thumbnail: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
-        description: "Suite à des attaques sophistiquées sur les dépôts NPM, le DevSecOps devient une priorité absolue. La détection des vulnérabilités 'Shift-Left' s'automatise pour protéger les pipelines de déploiement contre l'injection de code malicieux via des dépendances tierces."
+        description: "Dans la conception moderne orientée objet, l'immutabilité est devenue la norme. Analyse de la manière dont les API Java récentes encouragent la création de structures de données non modifiables pour garantir la sécurité thread-safe."
     },
     {
-        title: "Microsoft Agent Framework et l'IA comme socle",
+        title: "Project Panama : Encapsulation Objet de la mémoire native",
         pubDate: "2025-10-05T00:00:00Z",
-        link: "https://microsoft.github.io/autogen/",
-        thumbnail: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
-        description: "Le lancement du framework AutoGen de Microsoft marque une rupture : on ne programme plus une IA, on conçoit des agents qui collaborent entre eux. Ce changement de paradigme transforme radicalement la manière de concevoir les architectures logicielles complexes."
+        link: "https://openjdk.org/projects/panama/",
+        thumbnail: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=800&auto=format&fit=crop",
+        description: "La Foreign Function & Memory API (Project Panama) permet désormais de manipuler de la mémoire hors du tas (off-heap) tout en conservant une abstraction purement orientée objet en Java, remplaçant l'ancien et complexe JNI."
     },
     {
-        title: "L'ascension des workflows agentiques",
+        title: "Généricité et Reification : Le futur du typage Java",
         pubDate: "2025-09-15T00:00:00Z",
-        link: "https://www.anthropic.com/news/claude-3-5-sonnet",
+        link: "https://cr.openjdk.org/~briangoetz/valhalla/erasure.html",
         thumbnail: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop",
-        description: "Septembre 2025 voit l'émergence des assistants de code capables d'agir sur le système de fichiers et d'exécuter des tests. Claude 3.5 et GitHub Copilot Workspace ouvrent la voie à une productivité décuplée pour les tâches de refactorisation et de débogage."
+        description: "Retour sur l'évolution du système de types Java et la discussion autour de la réification des génériques. Un aspect complexe de l'orienté objet où l''erasure' montre ses limites, et comment la plateforme compte évoluer."
     }
 ];
 
