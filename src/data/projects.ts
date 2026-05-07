@@ -1,5 +1,117 @@
 export const projects = [
     {
+        id: "10",
+        title: "Complément Outlook",
+        slug: "complement-outlook",
+        category: "Productivité & Add-ins",
+        role: "Développeur Fullstack",
+        description: "Développement d'un complément Outlook sur mesure pour automatiser et enrichir la gestion des emails directement depuis le client de messagerie.",
+        tech: ["Office.js", "React", "Node.js", "Microsoft Graph API"],
+        mainTech: "Office.js / React",
+        color: "bg-[#0078d4]",
+        textColor: "text-white",
+        github: null,
+        demo: null,
+        logo: null,
+        invertLogo: false,
+        image: "/microsoft_outlook_dark_mode_0.webp",
+        video: "/Présentation V2 Complément(2).mp4",
+        imageAlt: "Interface du Complément Outlook",
+        images: ["/microsoft_outlook_dark_mode_0.webp"],
+        longDescription: "Conception et développement d'un add-in pour Microsoft Outlook afin d'intégrer des fonctionnalités métiers directement dans l'interface de messagerie de l'utilisateur. Le complément permet d'extraire des informations des emails et de les synchroniser avec un système d'information interne.",
+        challenge: "Intégrer une application web complète au sein de l'écosystème strict et sécurisé d'Outlook tout en garantissant une expérience utilisateur fluide sur les versions web et desktop.",
+        solution: "Utilisation du framework Office.js avec React pour le frontend, connecté à un backend Node.js et communiquant avec la Microsoft Graph API pour l'authentification et l'accès aux données.",
+        result: "Un gain de productivité significatif pour les utilisateurs, évitant les allers-retours entre la boîte mail et les applications métiers.",
+        problem: "Les collaborateurs perdaient beaucoup de temps à copier-coller manuellement les informations des emails vers d'autres outils internes.",
+        stackDetails: [
+            { name: "Office.js", reason: "API officielle pour interagir avec les clients Office" },
+            { name: "React", reason: "Création d'une interface utilisateur dynamique et réactive" },
+            { name: "Microsoft Graph API", reason: "Accès sécurisé aux données de l'écosystème Microsoft 365" }
+        ]
+    },
+    {
+        id: "09",
+        title: "Hound Search",
+        slug: "hound-search",
+        category: "Outil Interne & DevOps",
+        role: "DevOps / Déploiement",
+        description: "Déploiement et configuration d'un moteur de recherche de code ultra-rapide basé sur des expressions régulières pour l'exploration de dépôts volumineux.",
+        tech: ["Docker", "Linux", "Git", "JSON"],
+        mainTech: "Docker / Linux",
+        color: "bg-[#2b2b2b]",
+        textColor: "text-white",
+        github: "https://github.com/hound-search/hound",
+        demo: null,
+        logo: null,
+        invertLogo: false,
+        image: "/images/screen_capture.gif",
+        imageAlt: "Interface de Hound Search",
+        images: ["/images/screen_capture.gif"],
+        longDescription: "Mise en place de Hound Search, un outil open-source développé par Etsy, permettant de faire des recherches ultra-rapides sur d'énormes bases de code en utilisant des expressions régulières. Ce projet illustre mes compétences en déploiement de services internes, configuration via Docker, et gestion de l'intégration avec de multiples dépôts Git.",
+        challenge: "Faciliter la navigation et la recherche de code source au sein d'une organisation possédant de nombreux dépôts de code dispersés.",
+        solution: "Déploiement de Hound via des conteneurs Docker, avec une configuration centralisée en JSON permettant de cibler et d'indexer efficacement tous les dépôts pertinents.",
+        result: "Un outil de recherche interne centralisé, extrêmement performant, réduisant drastiquement le temps passé par les développeurs à chercher des extraits de code.",
+        problem: "Les développeurs perdaient un temps précieux à chercher des bouts de code spécifiques à travers des dizaines de dépôts différents.",
+        stackDetails: [
+            { name: "Docker", reason: "Conteneurisation pour un déploiement reproductible et isolé" },
+            { name: "JSON", reason: "Format de configuration natif et flexible pour définir les dépôts" }
+        ],
+        deploymentDocs: [
+            {
+                step: "1. Prérequis & Préparation",
+                content: "Assurez-vous d'avoir un serveur Linux (Ubuntu/Debian) avec Docker et Docker Compose installés.\n\n```bash\nsudo apt update\nsudo apt install docker.io docker-compose\n```"
+            },
+            {
+                step: "2. Fichier de Configuration (config.json)",
+                content: "Créez un fichier `config.json` pour déclarer les dépôts Git que Hound devra indexer. Voici un exemple basique :\n\n```json\n{\n  \"max-concurrent-indexers\": 2,\n  \"dbpath\": \"data\",\n  \"repos\": {\n    \"Portfolio\": {\n      \"url\": \"https://github.com/xeanoob/portfolio.git\"\n    }\n  }\n}\n```"
+            },
+            {
+                step: "3. Fichier Docker Compose",
+                content: "Créez un fichier `docker-compose.yml` pour définir et lancer le service Hound facilement.\n\n```yaml\nversion: '3'\nservices:\n  hound:\n    image: etsylabs/hound\n    ports:\n      - \"6080:6080\"\n    volumes:\n      - ./data:/data\n      - ./config.json:/config.json\n```"
+            },
+            {
+                step: "4. Lancement et Utilisation",
+                content: "Démarrez le conteneur en arrière-plan en utilisant Docker Compose.\n\n```bash\ndocker-compose up -d\n```\n\nUne fois le conteneur lancé, Hound va cloner les dépôts et construire son index. Vous pouvez accéder à l'interface web via `http://votre-ip:6080`."
+            }
+        ]
+
+    },
+    {
+        id: "05",
+        title: "Stocko - ERP Web",
+        slug: "stocko-erp",
+        category: "Outil Professionnel Web",
+        role: "Développeur Fullstack",
+        description: "Solution ERP complète pour la gestion d'entreprise. Développement fullstack avec interface moderne et backend robuste.",
+        tech: ["React", "Vite", "Node.js", "Express"],
+        mainTech: "React / Node.js",
+        color: "bg-[#0f172a]",
+        textColor: "text-white",
+        github: null,
+        demo: "https://erp-eight-navy.vercel.app/",
+        logo: "/images/GSB.png",
+        invertLogo: false,
+        image: "/images/captureerp.png",
+        imageAlt: "Dashboard de l'application Stocko ERP Web",
+        images: [
+            "/images/gallery/erp/erp_dashboard_1772901504214.png",
+            "/images/gallery/erp/erp_catalogue_1772901543892.png",
+            "/images/gallery/erp/erp_ventes_1772901553289.png",
+            "/images/gallery/erp/erp_history_1772901558133.png",
+            "/images/gallery/erp/erp_users_1772901595491.png"
+        ],
+        longDescription: "Développement de Stocko, une application ERP fullstack sur-mesure pour centraliser la gestion des processus métiers : stocks, ventes, achats, fournisseurs et utilisateurs. L'architecture sépare clairement le frontend (React/Vite) du backend (Node.js/Express).",
+        challenge: "Créer une interface d'administration complexe tout en conservant une excellente expérience utilisateur et des temps de réponse rapides.",
+        solution: "Mise en place d'une SPA réactive avec React, connectée à une API RESTful Node.js performante pour le traitement des données en temps réel.",
+        result: "Une plateforme centralisée fluide, sécurisée et facilement maintenable, prête pour un déploiement cloud à grande échelle.",
+        problem: "Besoin d'un outil de gestion interne moderne, rapide et accessible depuis n'importe quel navigateur web.",
+        stackDetails: [
+            { name: "React & Vite", reason: "Interface utilisateur dynamique et build ultra-fast" },
+            { name: "Node.js & Express", reason: "API robuste et traitement asynchrone des données" }
+        ]
+
+    },
+    {
         id: "offtime",
         title: "OffTime | Creative Studio",
         slug: "offtime-studio",
@@ -30,6 +142,7 @@ export const projects = [
             { name: "GSAP", reason: "Animations fluides haute-fidélité et scroll interactif" },
             { name: "Tailwind CSS", reason: "Stylisation agile et système de design sur-mesure" }
         ]
+
     },
     {
         id: "01",
@@ -66,40 +179,7 @@ export const projects = [
             { name: "Tailwind", reason: "Design rapide et responsive" },
             { name: "Prisma", reason: "Remplacement de Supabase pour l'ORM" }
         ]
-    },
-    {
-        id: "05",
-        title: "Stocko - ERP Web",
-        slug: "stocko-erp",
-        category: "Outil Professionnel Web",
-        role: "Développeur Fullstack",
-        description: "Solution ERP complète pour la gestion d'entreprise. Développement fullstack avec interface moderne et backend robuste.",
-        tech: ["React", "Vite", "Node.js", "Express"],
-        mainTech: "React / Node.js",
-        color: "bg-[#0f172a]",
-        textColor: "text-white",
-        github: null,
-        demo: "https://erp-eight-navy.vercel.app/",
-        logo: "/images/GSB.png",
-        invertLogo: false,
-        image: "/images/captureerp.png",
-        imageAlt: "Dashboard de l'application Stocko ERP Web",
-        images: [
-            "/images/gallery/erp/erp_dashboard_1772901504214.png",
-            "/images/gallery/erp/erp_catalogue_1772901543892.png",
-            "/images/gallery/erp/erp_ventes_1772901553289.png",
-            "/images/gallery/erp/erp_history_1772901558133.png",
-            "/images/gallery/erp/erp_users_1772901595491.png"
-        ],
-        longDescription: "Développement de Stocko, une application ERP fullstack sur-mesure pour centraliser la gestion des processus métiers : stocks, ventes, achats, fournisseurs et utilisateurs. L'architecture sépare clairement le frontend (React/Vite) du backend (Node.js/Express).",
-        challenge: "Créer une interface d'administration complexe tout en conservant une excellente expérience utilisateur et des temps de réponse rapides.",
-        solution: "Mise en place d'une SPA réactive avec React, connectée à une API RESTful Node.js performante pour le traitement des données en temps réel.",
-        result: "Une plateforme centralisée fluide, sécurisée et facilement maintenable, prête pour un déploiement cloud à grande échelle.",
-        problem: "Besoin d'un outil de gestion interne moderne, rapide et accessible depuis n'importe quel navigateur web.",
-        stackDetails: [
-            { name: "React & Vite", reason: "Interface utilisateur dynamique et build ultra-fast" },
-            { name: "Node.js & Express", reason: "API robuste et traitement asynchrone des données" }
-        ]
+
     },
     {
         id: "06",
@@ -135,6 +215,7 @@ export const projects = [
             { name: "Lenis", reason: "Smooth scrolling haute performance" },
             { name: "Tailwind CSS", reason: "Design système minimaliste et robuste" }
         ]
+
     },
     {
         id: "00", // New Top Project
@@ -168,6 +249,7 @@ export const projects = [
             { name: "Shopify Headless", reason: "Gestion robuste du catalogue back-office" },
             { name: "Framer Motion", reason: "Animations 'page-turn' pour l'immersion" }
         ]
+
     },
     {
         id: "02",
@@ -196,6 +278,7 @@ export const projects = [
             { name: "Python", reason: "Langage de référence pour la Data Science" },
             { name: "NetworkX", reason: "Manipulation de graphes complexes" }
         ]
+
     },
     {
         id: "03",
@@ -221,6 +304,7 @@ export const projects = [
             { name: "Java Swing", reason: "Interface graphique native" },
             { name: "MySQL", reason: "Stockage relationnel structuré" }
         ]
+
     },
     {
         id: "07",
@@ -250,6 +334,7 @@ export const projects = [
             { name: "MySQL", reason: "Base de données relationnelle pour les données métiers" },
             { name: "Bootstrap", reason: "Interface responsive et professionnelle" }
         ]
+
     },
     {
         id: "08",
@@ -284,5 +369,6 @@ export const projects = [
             { name: "Tailwind CSS", reason: "Design cohérent et responsive" },
             { name: "Framer Motion", reason: "Animations douces pour un site accueillant" }
         ]
+
     }
 ];
