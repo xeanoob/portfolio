@@ -69,21 +69,21 @@ export const projects = [
     },
     {
         id: "05",
-        title: "Application ERP Web",
-        slug: "erp-fullstack",
+        title: "Stocko - ERP Web",
+        slug: "stocko-erp",
         category: "Outil Professionnel Web",
         role: "Développeur Fullstack",
         description: "Solution ERP complète pour la gestion d'entreprise. Développement fullstack avec interface moderne et backend robuste.",
         tech: ["React", "Vite", "Node.js", "Express"],
         mainTech: "React / Node.js",
-        color: "bg-[#0f172a]", // Dark blue/navy based on the vercel link name "eight-navy"
+        color: "bg-[#0f172a]",
         textColor: "text-white",
         github: null,
         demo: "https://erp-eight-navy.vercel.app/",
         logo: "/images/GSB.png",
         invertLogo: false,
         image: "/images/captureerp.png",
-        imageAlt: "Dashboard de l'application ERP Web",
+        imageAlt: "Dashboard de l'application Stocko ERP Web",
         images: [
             "/images/gallery/erp/erp_dashboard_1772901504214.png",
             "/images/gallery/erp/erp_catalogue_1772901543892.png",
@@ -91,7 +91,7 @@ export const projects = [
             "/images/gallery/erp/erp_history_1772901558133.png",
             "/images/gallery/erp/erp_users_1772901595491.png"
         ],
-        longDescription: "Développement d'une application ERP fullstack sur-mesure pour centraliser la gestion des processus métiers. L'architecture sépare clairement le frontend (React/Vite) du backend (Node.js/Express).",
+        longDescription: "Développement de Stocko, une application ERP fullstack sur-mesure pour centraliser la gestion des processus métiers : stocks, ventes, achats, fournisseurs et utilisateurs. L'architecture sépare clairement le frontend (React/Vite) du backend (Node.js/Express).",
         challenge: "Créer une interface d'administration complexe tout en conservant une excellente expérience utilisateur et des temps de réponse rapides.",
         solution: "Mise en place d'une SPA réactive avec React, connectée à une API RESTful Node.js performante pour le traitement des données en temps réel.",
         result: "Une plateforme centralisée fluide, sécurisée et facilement maintenable, prête pour un déploiement cloud à grande échelle.",
@@ -220,6 +220,69 @@ export const projects = [
         stackDetails: [
             { name: "Java Swing", reason: "Interface graphique native" },
             { name: "MySQL", reason: "Stockage relationnel structuré" }
+        ]
+    },
+    {
+        id: "07",
+        title: "GSB - Compte Rendu",
+        slug: "gsb-compte-rendu",
+        category: "Web Fullstack",
+        role: "Développeur Fullstack",
+        description: "Application web de gestion des comptes rendus de visite pour les visiteurs médicaux du laboratoire Galaxy Swiss Bourdin. Interface CRUD complète avec authentification.",
+        tech: ["PHP", "CodeIgniter 4", "MySQL", "Bootstrap"],
+        mainTech: "CodeIgniter 4 / PHP",
+        color: "bg-[#1a1a2e]",
+        textColor: "text-white",
+        github: "https://github.com/xeanoob/GSBcompterendu",
+        demo: null,
+        logo: "/images/gsb_logo.png",
+        invertLogo: false,
+        image: "/images/gsb_logo.png",
+        imageAlt: "Interface de l'application GSB Compte Rendu",
+        images: [],
+        longDescription: "Application web développée dans le cadre du contexte GSB (Galaxy Swiss Bourdin) pour la gestion des comptes rendus de visite des visiteurs médicaux. Le système permet la saisie, la consultation et la modification des rapports de visite auprès des praticiens.",
+        challenge: "Mettre en place un système de gestion complet avec authentification sécurisée et une interface intuitive pour les visiteurs médicaux.",
+        solution: "Utilisation du framework CodeIgniter 4 pour une architecture MVC propre, avec une base de données MySQL pour le stockage structuré des données.",
+        result: "Une application fonctionnelle et sécurisée permettant aux visiteurs médicaux de gérer efficacement leurs comptes rendus de visite.",
+        problem: "Besoin d'un outil centralisé pour la saisie et le suivi des visites médicales, remplaçant les processus manuels.",
+        stackDetails: [
+            { name: "CodeIgniter 4", reason: "Framework PHP MVC léger et performant" },
+            { name: "MySQL", reason: "Base de données relationnelle pour les données métiers" },
+            { name: "Bootstrap", reason: "Interface responsive et professionnelle" }
+        ]
+    },
+    {
+        id: "08",
+        title: "Alunisson",
+        slug: "alunisson",
+        category: "Web Associatif",
+        role: "Développeur Web",
+        description: "Site vitrine pour l'association Alunisson, un collectif de couture solidaire. Ateliers créatifs accessibles dès 8 ans, partenariats sociaux et réservation en ligne.",
+        tech: ["Next.js", "TailwindCSS", "Framer Motion"],
+        mainTech: "Next.js / Tailwind",
+        color: "bg-[#f5e6e0]",
+        textColor: "text-[#1a1a1a]",
+        github: "https://github.com/xeanoob/alunisson",
+        demo: "https://alunisson.eu",
+        logo: null,
+        invertLogo: false,
+        image: "/images/capturealunisson.png",
+        imageAlt: "Page d'accueil du site Alunisson, association de couture solidaire",
+        images: [
+            "/images/gallery/alunisson/alunisson_hero.png",
+            "/images/gallery/alunisson/alunisson_ateliers.png",
+            "/images/gallery/alunisson/alunisson_infolab.png",
+            "/images/gallery/alunisson/alunisson_footer.png"
+        ],
+        longDescription: "Conception et développement du site vitrine de l'association Alunisson, un collectif de couture solidaire basé à Orléans. Le site met en avant les ateliers créatifs accessibles dès 8 ans, les partenariats sociaux avec l'ODAS et les centres aérés, ainsi que la possibilité de réserver un atelier en ligne.",
+        challenge: "Créer un site chaleureux et accueillant qui reflète les valeurs d'inclusion et de partage de l'association, tout en facilitant les réservations d'ateliers.",
+        solution: "Un design moderne aux couleurs douces avec Next.js pour la performance et Tailwind pour un style cohérent. Intégration d'un système de réservation et d'une newsletter.",
+        result: "Un site engageant qui a permis d'augmenter la visibilité de l'association et de faciliter les inscriptions aux ateliers de couture.",
+        problem: "L'association avait besoin d'une présence en ligne professionnelle pour attirer de nouveaux membres et faciliter l'organisation des ateliers.",
+        stackDetails: [
+            { name: "Next.js", reason: "Performance et SEO pour la visibilité associative" },
+            { name: "Tailwind CSS", reason: "Design cohérent et responsive" },
+            { name: "Framer Motion", reason: "Animations douces pour un site accueillant" }
         ]
     }
 ];
