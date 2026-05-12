@@ -114,6 +114,22 @@ export default function ContactContent() {
                             <textarea name="message" required rows={4} className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors resize-none text-[var(--foreground)] placeholder-[var(--text-secondary)]/50" placeholder="Parlez-moi de votre projet..." disabled={status === "loading"}></textarea>
                         </div>
 
+                        {/* RGPD Consent */}
+                        <div className="flex items-start gap-3">
+                            <input
+                                type="checkbox"
+                                name="consent"
+                                id="rgpd-consent"
+                                required
+                                disabled={status === "loading"}
+                                className="mt-1.5 w-4 h-4 accent-[var(--foreground)] shrink-0 cursor-pointer"
+                            />
+                            <label htmlFor="rgpd-consent" className="text-sm text-[var(--text-secondary)] leading-relaxed cursor-pointer">
+                                J&apos;accepte que mes données soient utilisées pour me recontacter. Aucune donnée n&apos;est stockée.
+                                Consultez les <a href="/mentions-legales" target="_blank" className="underline text-[var(--foreground)] hover:opacity-70 transition-opacity">mentions légales</a> pour en savoir plus.
+                            </label>
+                        </div>
+
                         {/* Status messages */}
                         {status === "success" && (
                             <div className="flex items-center gap-3 text-green-500 bg-green-500/10 px-5 py-4 rounded-xl animate-in fade-in">
