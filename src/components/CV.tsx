@@ -148,7 +148,7 @@ export default function CVPage() {
             {/* Floating Action Button */}
             <div className="fixed bottom-10 right-10 z-50 print:hidden">
                 <a
-                    href="/images/fichiers/CV%20AMBROISE%20BOUTRIN%20INFORMATIQUE.pdf"
+                    href="/images/fichiers/CV_Ambroise_Boutrin_Dev_Fullstack.pdf"
                     download="CV_Ambroise_Boutrin.pdf"
                     className="flex items-center gap-3 px-8 py-5 bg-[var(--foreground)] text-[var(--background)] rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all font-bold group"
                     target="_blank"
