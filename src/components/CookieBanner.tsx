@@ -20,8 +20,8 @@ export default function CookieBanner() {
     const handleAccept = () => {
         localStorage.setItem("cookie_consent", "granted");
         setShowBanner(false);
-        // Reload to activate analytics immediately or trigger an event
-        window.location.reload();
+        // Dispatch custom event so other components (like GTM) can react without reload
+        window.dispatchEvent(new Event("cookie_consent_updated"));
     };
 
     const handleDecline = () => {

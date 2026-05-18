@@ -17,9 +17,13 @@ export default function GoogleTagManager({ GTM_ID }: { GTM_ID: string }) {
 
         checkConsent();
 
-        // Listen to custom event for immediate reaction when user clicks 'Accept'
+        // Listen to custom event and storage event
+        window.addEventListener("cookie_consent_updated", checkConsent);
         window.addEventListener("storage", checkConsent);
-        return () => window.removeEventListener("storage", checkConsent);
+        return () => {
+            window.removeEventListener("cookie_consent_updated", checkConsent);
+            window.removeEventListener("storage", checkConsent);
+        };
     }, []);
 
     if (!consentGranted) return null;

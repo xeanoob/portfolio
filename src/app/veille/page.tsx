@@ -8,50 +8,72 @@ interface Article {
     pubDate: string;
     thumbnail?: string;
     description: string;
+    link: string;
 }
 
 const curatedArticles: Article[] = [
     {
-        title: "Vite 8.0, C++26 et de nouvelles standardisations",
-        pubDate: "2026-03-10T00:00:00Z",
-        thumbnail: "https://images.unsplash.com/photo-1618401471353-b98a5233c591?q=80&w=800&auto=format&fit=crop",
-        description: "L'écosystème web front-end JavaScript a salué l'arrivée de Vite 8.0 avec l'intégration fulgurante du nouveau bundler Rolldown, décuplant la vélocité des builds applicatives. Du côté des systèmes critiques, le comité ISO a mis sur les rails les spécifications techniques de C++26."
+        title: "L'avènement des Value Objects en Java avec le Projet Valhalla",
+        pubDate: "2026-05-02T00:00:00Z",
+        link: "https://openjdk.org/projects/valhalla/",
+        thumbnail: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=800&auto=format&fit=crop",
+        description: "Le Projet Valhalla redéfinit la conception orientée objet en Java en introduisant les 'Value Types'. Cela permet de créer des objets immuables et légers qui se comportent comme des primitives, réduisant massivement l'empreinte mémoire et améliorant la performance."
     },
     {
-        title: "Démocratisation et redéfinition du rôle de l'ingénieur",
-        pubDate: "2026-02-18T00:00:00Z",
+        title: "Domain-Driven Design (DDD) simplifié par les Sealed Classes",
+        pubDate: "2026-04-12T00:00:00Z",
+        link: "https://openjdk.org/jeps/409",
         thumbnail: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop",
-        description: "Un rapport révèle que 97 % des entreprises tech utilisent désormais l'IA en production. Le métier de développeur a drastiquement évolué, devenant de plus en plus un rôle d'orchestrateur. Le langage naturel redevient une interface de programmation."
+        description: "Les 'Sealed Classes' offrent un contrôle strict sur la hiérarchie d'héritage. Cet article explore comment cette fonctionnalité clé de l'orienté objet moderne permet d'implémenter un Domain-Driven Design plus sécurisé, en limitant explicitement l'extension des classes."
     },
     {
-        title: "Le 'Platform Engineering' contre la dette technique",
-        pubDate: "2026-01-15T00:00:00Z",
-        thumbnail: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
-        description: "L'industrie a tiré la sonnette d'alarme face au 'vibe coding' générant de la dette technique. La réponse a été l'adoption accélérée du Platform Engineering, fournissant aux développeurs des portails internes standardisés qui intègrent nativement la conformité."
+        title: "Composition vs Héritage : Le nouveau paradigme Java",
+        pubDate: "2026-03-10T00:00:00Z",
+        link: "https://blogs.oracle.com/javamagazine/post/java-inheritance-composition",
+        thumbnail: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=800&auto=format&fit=crop",
+        description: "La communauté Java se tourne massivement vers le principe 'Favoriser la composition plutôt que l'héritage'. Analyse des limites de l'héritage multiple (via interfaces par défaut) et comment les Records et la délégation redéfinissent l'architecture des applications."
     },
     {
-        title: "GPT-5.2 Codex et la modernisation du 'Legacy Code'",
-        pubDate: "2025-12-10T00:00:00Z",
+        title: "Le Pattern Matching réinvente le polymorphisme",
+        pubDate: "2026-02-18T00:00:00Z",
+        link: "https://openjdk.org/jeps/441",
         thumbnail: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
-        description: "De nouvelles annonces comme l'arrivée du modèle avancé GPT-5.2 Codex ont bouleversé un postulat classique : la complexité liée à la réécriture d'applications vieillissantes. En automatisant la refactorisation, cette tâche jadis considérée comme un gouffre financier est devenue plus accessible."
+        description: "Le 'Pattern Matching' pour les switch redéfinit la façon de traiter le polymorphisme en Java. Fini les longues chaînes de 'instanceof' ou le Visitor Pattern complexe, le code devient plus expressif et concis."
     },
     {
-        title: "L'impact croissant du DevSecOps face aux supply chains",
+        title: "Impact de Project Loom sur la conception Orientée Objet",
+        pubDate: "2026-01-15T00:00:00Z",
+        link: "https://openjdk.org/projects/loom/",
+        thumbnail: "https://images.unsplash.com/photo-1618401471353-b98a5233c591?q=80&w=800&auto=format&fit=crop",
+        description: "Avec l'intégration des Virtual Threads, la manière de concevoir des objets concurrents en Java change drastiquement. L'approche traditionnelle basée sur des pools de threads lourds laisse place à un modèle orienté objet beaucoup plus naturel et séquentiel."
+    },
+    {
+        title: "La fin des POJOs classiques : L'ère des Records",
+        pubDate: "2025-12-10T00:00:00Z",
+        link: "https://openjdk.org/jeps/395",
+        thumbnail: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+        description: "L'introduction des 'Records' a marqué un tournant dans la gestion des données en Java. En automatisant la création des getters, equals() et hashCode(), les développeurs peuvent enfin se concentrer sur la vraie logique métier orientée objet, en éliminant le boilerplate."
+    },
+    {
+        title: "L'Immutabilité par défaut dans les architectures Java",
         pubDate: "2025-11-20T00:00:00Z",
+        link: "https://dzone.com/articles/immutability-in-java",
         thumbnail: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
-        description: "Novembre a vu une vague de standardisation autour des paradigmes de sécurité. La nécessité d'un DevSecOps ultra-intégrée s'est fait sentir, notamment suite à des attaques visant des vulnérabilités de dépendances telles que la célèbre attaque NPM."
+        description: "Dans la conception moderne orientée objet, l'immutabilité est devenue la norme. Analyse de la manière dont les API Java récentes encouragent la création de structures de données non modifiables pour garantir la sécurité thread-safe."
     },
     {
-        title: "Microsoft Agent Framework et l'IA comme socle",
+        title: "Project Panama : Encapsulation Objet de la mémoire native",
         pubDate: "2025-10-05T00:00:00Z",
-        thumbnail: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
-        description: "Microsoft a dévoilé en open-source son Agent Framework (pour .NET et Python). Ce mois a officialisé une bascule : l'IA n'est plus une simple aide à la saisie de code, mais devient le socle structurel autour duquel gravitent la conception logicielle."
+        link: "https://openjdk.org/projects/panama/",
+        thumbnail: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=800&auto=format&fit=crop",
+        description: "La Foreign Function & Memory API (Project Panama) permet désormais de manipuler de la mémoire hors du tas (off-heap) tout en conservant une abstraction purement orientée objet en Java, remplaçant l'ancien et complexe JNI."
     },
     {
-        title: "L'ascension des workflows agentiques",
+        title: "Généricité et Reification : Le futur du typage Java",
         pubDate: "2025-09-15T00:00:00Z",
+        link: "https://cr.openjdk.org/~briangoetz/valhalla/erasure.html",
         thumbnail: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop",
-        description: "Arrivée à maturité d'outils d'IA dits 'agentiques' capables d'exécuter des tâches de code complexes de manière autonome. Des sorties majeures comme Claude Sonnet 4.5 ont poussé les architectes logiciels à revoir leurs pipelines CI/CD."
+        description: "Retour sur l'évolution du système de types Java et la discussion autour de la réification des génériques. Un aspect complexe de l'orienté objet où l''erasure' montre ses limites, et comment la plateforme compte évoluer."
     }
 ];
 
@@ -75,9 +97,12 @@ export default function VeillePage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {curatedArticles.map((article, i) => (
-                        <motion.div
+                        <motion.a
                             key={i}
-                            className="glass-panel glass-panel-hover rounded-2xl p-6 flex flex-col group overflow-hidden relative h-full"
+                            href={article.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="glass-panel glass-panel-hover rounded-2xl p-6 flex flex-col group overflow-hidden relative h-full transition-all duration-300 hover:border-[var(--text-secondary)]"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.1, duration: 0.5 }}
@@ -89,23 +114,37 @@ export default function VeillePage() {
                                         alt={article.title}
                                         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                                     />
+                                    <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-md px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1 text-[10px] text-white uppercase tracking-widest font-bold">
+                                        <span>Source</span>
+                                        <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
+                                    </div>
                                 </div>
                             )}
                             <div className="flex-1 flex flex-col">
-                                <p className="text-xs text-[var(--text-tertiary)] font-mono mb-3">
+                                <p className="text-xs text-[var(--text-tertiary)] font-mono mb-3 uppercase tracking-tighter">
                                     {new Date(article.pubDate).toLocaleDateString("fr-FR", {
                                         month: "long",
                                         year: "numeric"
                                     })}
                                 </p>
-                                <h2 className="text-xl font-bold mb-3 line-clamp-2 text-[var(--foreground)] transition-colors">
+                                <h2 className="text-xl font-bold mb-4 line-clamp-2 text-[var(--foreground)] group-hover:text-[var(--text-secondary)] transition-colors leading-tight">
                                     {article.title}
                                 </h2>
-                                <p className="text-sm text-[var(--text-secondary)] leading-relaxed flex-1">
-                                    {article.description}
-                                </p>
+                                <div className="space-y-4">
+                                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed flex-1">
+                                        {article.description}
+                                    </p>
+                                    <div className="pt-2 flex items-center text-[10px] font-bold uppercase tracking-widest text-[var(--text-tertiary)] group-hover:text-[var(--foreground)] transition-colors">
+                                        Consulter l'article original
+                                        <svg className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                        </svg>
+                                    </div>
+                                </div>
                             </div>
-                        </motion.div>
+                        </motion.a>
                     ))}
                 </div>
             </div>

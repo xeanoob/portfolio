@@ -4,7 +4,7 @@ import { projects } from '@/data/projects'
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.ambroise-boutrin.fr' // Remplacez par votre domaine réel
 
-    const lastMod = '2024-03-18' // Date fixe pour éviter les re-indexations inutiles
+    const lastMod = '2026-05-12' // Updated to current date
 
     const projectUrls = projects.map((project) => ({
         url: `${baseUrl}/projets/${project.slug}`,
@@ -43,6 +43,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: lastMod,
             changeFrequency: 'yearly',
             priority: 0.5,
+        },
+        {
+            url: `${baseUrl}/certifications`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.6,
         },
         {
             url: `${baseUrl}/contact`,

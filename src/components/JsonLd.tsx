@@ -109,6 +109,24 @@ const JsonLd = () => {
                                 "name": "Ambroise B. Studio"
                             },
                             "description": "Spécialiste en création d'applications web et sites internet performants à Orléans."
+                        },
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "ContactPage",
+                            "name": "Contactez Ambroise Boutrin - Développeur Fullstack Orléans",
+                            "description": "Formulaire de contact pour discuter de vos projets web. Disponible pour freelance ou opportunités à Orléans et en remote.",
+                            "url": "https://www.ambroise-boutrin.fr/contact",
+                            "mainEntity": {
+                                "@type": "Person",
+                                "name": "Ambroise Boutrin",
+                                "email": "boutrinambroise@gmail.com",
+                                "telephone": "+33759878334",
+                                "address": {
+                                    "@type": "PostalAddress",
+                                    "addressLocality": "Orléans",
+                                    "addressCountry": "FR"
+                                }
+                            }
                         }
                     ])
                 }}

@@ -36,6 +36,30 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 import ProjectJsonLd from "@/components/ProjectJsonLd";
 
+const renderContent = (content: string) => {
+    const parts = content.split(/(```[\s\S]*?```)/g);
+    return parts.map((part, index) => {
+        if (part.startsWith('```')) {
+            const lines = part.split('\n');
+            const language = lines[0].replace('```', '').trim();
+            const code = lines.slice(1, -1).join('\n');
+            return (
+                <div key={index} className="my-4 bg-[#1e1e1e] rounded-lg overflow-hidden border border-[#333]">
+                    {language && (
+                        <div className="px-4 py-1.5 bg-[#2d2d2d] text-xs text-gray-400 font-mono border-b border-[#333]">
+                            {language}
+                        </div>
+                    )}
+                    <pre className="p-4 overflow-x-auto text-sm text-gray-300 font-mono">
+                        <code>{code}</code>
+                    </pre>
+                </div>
+            );
+        }
+        return <p key={index} className="whitespace-pre-wrap leading-relaxed">{part}</p>;
+    });
+};
+
 export default async function ProjectDetail({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const project = projects.find((p) => p.slug === slug);
@@ -149,6 +173,40 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                                             />
                                         </div>
                                     </Zoom>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* Project Video */}
+                {(project as any).video && (
+                    <div className="mb-20">
+                        <h2 className="text-3xl font-serif font-bold mb-10 border-b border-[var(--border-color)] pb-4 text-[var(--foreground)]">Démonstration Vidéo</h2>
+                        <div className="relative w-full overflow-hidden rounded-xl border border-[var(--border-color)] aspect-[16/9] bg-black">
+                            <video 
+                                src={(project as any).video} 
+                                controls 
+                                className="w-full h-full object-contain"
+                                preload="metadata"
+                            >
+                                Votre navigateur ne supporte pas la balise vidéo.
+                            </video>
+                        </div>
+                    </div>
+                )}
+
+                {/* Deployment Documentation */}
+                {(project as any).deploymentDocs && (
+                    <div className="mb-20">
+                        <h2 className="text-3xl font-serif font-bold mb-10 border-b border-[var(--border-color)] pb-4 text-[var(--foreground)]">Documentation de Déploiement</h2>
+                        <div className="space-y-8">
+                            {(project as any).deploymentDocs.map((doc: any, i: number) => (
+                                <div key={i} className="p-6 bg-[var(--bg-secondary)] rounded-2xl border border-[var(--border-color)]">
+                                    <h3 className="text-xl font-bold mb-4 text-[var(--foreground)]">{doc.step}</h3>
+                                    <div className="text-[var(--text-secondary)]">
+                                        {renderContent(doc.content)}
+                                    </div>
                                 </div>
                             ))}
                         </div>
