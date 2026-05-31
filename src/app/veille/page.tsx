@@ -29,7 +29,7 @@ const curatedArticles: Article[] = [
     {
         title: "Composition vs Héritage : Le nouveau paradigme Java",
         pubDate: "2026-03-10T00:00:00Z",
-        link: "https://blogs.oracle.com/javamagazine/post/java-inheritance-composition",
+        link: "https://www.infoworld.com/article/2255818/java-composition-vs-inheritance.html",
         thumbnail: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=800&auto=format&fit=crop",
         description: "La communauté Java se tourne massivement vers le principe 'Favoriser la composition plutôt que l'héritage'. Analyse des limites de l'héritage multiple (via interfaces par défaut) et comment les Records et la délégation redéfinissent l'architecture des applications."
     },
@@ -57,7 +57,7 @@ const curatedArticles: Article[] = [
     {
         title: "L'Immutabilité par défaut dans les architectures Java",
         pubDate: "2025-11-20T00:00:00Z",
-        link: "https://dzone.com/articles/immutability-in-java",
+        link: "https://www.baeldung.com/java-immutable-object",
         thumbnail: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
         description: "Dans la conception moderne orientée objet, l'immutabilité est devenue la norme. Analyse de la manière dont les API Java récentes encouragent la création de structures de données non modifiables pour garantir la sécurité thread-safe."
     },
