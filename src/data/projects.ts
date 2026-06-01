@@ -1,4 +1,45 @@
-export const projects = [
+export interface Competence {
+    bloc: string;
+    items: string[];
+}
+
+export interface StackDetail {
+    name: string;
+    reason: string;
+}
+
+export interface DeploymentDoc {
+    step: string;
+    content: string;
+}
+
+export interface Project {
+    id: string;
+    title: string;
+    slug: string;
+    category: string;
+    role: string;
+    description: string;
+    tech: string[];
+    mainTech: string;
+    color: string;
+    textColor: string;
+    github: string | null;
+    demo: string | null;
+    logo: string | null;
+    invertLogo: boolean;
+    image: string;
+    video?: string;
+    imageAlt: string;
+    images: string[];
+    longDescription: string;
+    competences: Competence[];
+    problem?: string;
+    stackDetails: StackDetail[];
+    deploymentDocs?: DeploymentDoc[];
+}
+
+export const projects: Project[] = [
     {
         id: "10",
         title: "Complément Outlook",
@@ -19,9 +60,41 @@ export const projects = [
         imageAlt: "Interface du Complément Outlook",
         images: ["/microsoft_outlook_dark_mode_0.webp"],
         longDescription: "Conception et développement d'un add-in pour Microsoft Outlook afin d'intégrer des fonctionnalités métiers directement dans l'interface de messagerie de l'utilisateur. Le complément permet d'extraire des informations des emails et de les synchroniser avec un système d'information interne.",
-        challenge: "Intégrer une application web complète au sein de l'écosystème strict et sécurisé d'Outlook tout en garantissant une expérience utilisateur fluide sur les versions web et desktop.",
-        solution: "Utilisation du framework Office.js avec React pour le frontend, connecté à un backend Node.js et communiquant avec la Microsoft Graph API pour l'authentification et l'accès aux données.",
-        result: "Un gain de productivité significatif pour les utilisateurs, évitant les allers-retours entre la boîte mail et les applications métiers.",
+        competences: [
+            {
+                bloc: "Gérer le patrimoine informatique",
+                items: [
+                    "API Microsoft Graph, licences Office 365",
+                    "SDK Office.js, documentation Microsoft",
+                    "Authentification OAuth2, permissions Graph API"
+                ]
+            },
+            {
+                bloc: "Répondre aux incidents et aux demandes d'assistance et d'évolution",
+                items: [
+                    "Recueil des besoins utilisateurs pour les fonctionnalités du complément",
+                    "Développement de nouvelles fonctionnalités d'extraction d'emails"
+                ]
+            },
+            {
+                bloc: "Travailler en mode projet",
+                items: [
+                    "Cadrage des besoins avec l'équipe métier",
+                    "Sprints de développement, livrables itératifs",
+                    "Tests sur versions web et desktop d'Outlook",
+                    "Déploiement du complément via le manifeste XML Office",
+                    "Formation à l'utilisation du complément"
+                ]
+            },
+            {
+                bloc: "Mettre à disposition des utilisateurs un service informatique",
+                items: [
+                    "Compatibilité multi-plateforme Outlook",
+                    "Publication du complément dans l'environnement Microsoft 365",
+                    "Documentation utilisateur et support"
+                ]
+            }
+        ],
         problem: "Les collaborateurs perdaient beaucoup de temps à copier-coller manuellement les informations des emails vers d'autres outils internes.",
         stackDetails: [
             { name: "Office.js", reason: "API officielle pour interagir avec les clients Office" },
@@ -48,9 +121,41 @@ export const projects = [
         imageAlt: "Interface de Hound Search",
         images: ["/images/screen_capture.gif"],
         longDescription: "Mise en place de Hound Search, un outil open-source développé par Etsy, permettant de faire des recherches ultra-rapides sur d'énormes bases de code en utilisant des expressions régulières. Ce projet illustre mes compétences en déploiement de services internes, configuration via Docker, et gestion de l'intégration avec de multiples dépôts Git.",
-        challenge: "Faciliter la navigation et la recherche de code source au sein d'une organisation possédant de nombreux dépôts de code dispersés.",
-        solution: "Déploiement de Hound via des conteneurs Docker, avec une configuration centralisée en JSON permettant de cibler et d'indexer efficacement tous les dépôts pertinents.",
-        result: "Un outil de recherche interne centralisé, extrêmement performant, réduisant drastiquement le temps passé par les développeurs à chercher des extraits de code.",
+        competences: [
+            {
+                bloc: "Gérer le patrimoine informatique",
+                items: [
+                    "Inventaire des dépôts Git de l'organisation",
+                    "Docker Hub, documentation Hound",
+                    "Monitoring du conteneur Docker, redémarrage automatique",
+                    "Sauvegarde des index et de la configuration JSON"
+                ]
+            },
+            {
+                bloc: "Répondre aux incidents et aux demandes d'assistance et d'évolution",
+                items: [
+                    "Configuration réseau Docker, ports, volumes",
+                    "Ajout de nouveaux dépôts à indexer selon les besoins des développeurs"
+                ]
+            },
+            {
+                bloc: "Travailler en mode projet",
+                items: [
+                    "Évaluation de l'outil vs alternatives",
+                    "Vérification de l'indexation et de la recherche",
+                    "Déploiement via Docker Compose sur serveur Linux",
+                    "Versionnage du projet avec Git et GitHub"
+                ]
+            },
+            {
+                bloc: "Mettre à disposition des utilisateurs un service informatique",
+                items: [
+                    "Mise en production du conteneur Docker avec docker-compose",
+                    "Rédaction de la documentation de déploiement",
+                    "Health checks, logs Docker"
+                ]
+            }
+        ],
         problem: "Les développeurs perdaient un temps précieux à chercher des bouts de code spécifiques à travers des dizaines de dépôts différents.",
         stackDetails: [
             { name: "Docker", reason: "Conteneurisation pour un déploiement reproductible et isolé" },
@@ -101,9 +206,39 @@ export const projects = [
             "/images/gallery/erp/erp_users_1772901595491.png"
         ],
         longDescription: "Développement de Stocko, une application ERP fullstack sur-mesure pour centraliser la gestion des processus métiers : stocks, ventes, achats, fournisseurs et utilisateurs. L'architecture sépare clairement le frontend (React/Vite) du backend (Node.js/Express).",
-        challenge: "Créer une interface d'administration complexe tout en conservant une excellente expérience utilisateur et des temps de réponse rapides.",
-        solution: "Mise en place d'une SPA réactive avec React, connectée à une API RESTful Node.js performante pour le traitement des données en temps réel.",
-        result: "Une plateforme centralisée fluide, sécurisée et facilement maintenable, prête pour un déploiement cloud à grande échelle.",
+        competences: [
+            {
+                bloc: "Gérer le patrimoine informatique",
+                items: [
+                    "Base de données produits, utilisateurs, historiques de ventes",
+                    "Rôles admin/utilisateur, gestion des droits d'accès",
+                    "Validation des données saisies, contrôle d'intégrité"
+                ]
+            },
+            {
+                bloc: "Répondre aux incidents et aux demandes d'assistance et d'évolution",
+                items: [
+                    "Ajout de modules stocks, ventes, achats selon les besoins métiers",
+                    "Recueil des exigences fonctionnelles pour chaque module ERP"
+                ]
+            },
+            {
+                bloc: "Travailler en mode projet",
+                items: [
+                    "Analyse des processus métiers à digitaliser",
+                    "Découpage en modules : stocks, ventes, achats, utilisateurs",
+                    "Suivi de l'avancement par module"
+                ]
+            },
+            {
+                bloc: "Mettre à disposition des utilisateurs un service informatique",
+                items: [
+                    "Tests fonctionnels du CRUD sur chaque module",
+                    "Déploiement sur Vercel avec pipeline CI/CD",
+                    "Interface intuitive avec dashboard centralisé"
+                ]
+            }
+        ],
         problem: "Besoin d'un outil de gestion interne moderne, rapide et accessible depuis n'importe quel navigateur web.",
         stackDetails: [
             { name: "React & Vite", reason: "Interface utilisateur dynamique et build ultra-fast" },
@@ -132,9 +267,30 @@ export const projects = [
             "/images/offtime.webp"
         ],
         longDescription: "Chez OffTime, nous ne nous contentons pas de capturer la lumière. Nous manipulons la perception du temps. À travers un montage méticuleux, une typographie cinétique et un design numérique fluide, nous transformons des secondes en moments profonds. Studio avant-gardiste opérant globalement, notre travail se situe à l'intersection du cinéma et de l'art interactif.",
-        challenge: "Concevoir une expérience numérique qui traduit l'esthétique cinématographique et la vision avant-gardiste du studio.",
-        solution: "Une direction artistique audacieuse couplée à des animations avancées (GSAP, Three.js) pour une immersion totale.",
-        result: "Un portfolio immersif, rapide et mémorable qui agit comme une extension numérique de leur art.",
+        competences: [
+            {
+                bloc: "Développer la présence en ligne de l'organisation",
+                items: [
+                    "Création d'une vitrine immersive haut de gamme",
+                    "Intégration de contenus multimédias et animations 3D",
+                    "SEO, performances Lighthouse, optimisation Core Web Vitals"
+                ]
+            },
+            {
+                bloc: "Travailler en mode projet",
+                items: [
+                    "Direction artistique et cahier des charges créatif",
+                    "Workflow design → développement → déploiement"
+                ]
+            },
+            {
+                bloc: "Organiser son développement professionnel",
+                items: [
+                    "Exploration de Three.js, GSAP, tendances Awwwards",
+                    "Apprentissage autodidacte des animations 3D web"
+                ]
+            }
+        ],
         problem: "Concevoir une expérience numérique qui traduit l'esthétique cinématographique et la vision avant-gardiste du studio sans compromettre les performances.",
         stackDetails: [
             { name: "Next.js", reason: "Performance, rendu hybride, architecture moderne" },
@@ -169,9 +325,41 @@ export const projects = [
             "/images/gallery/garanches/garanches_footer_1772901383005.webp"
         ], // For detail gallery
         longDescription: "Développement d'une plateforme e-commerce complète pour une cave à vin. Le défi principal était de créer une expérience utilisateur fluide et haut de gamme tout en assurant une gestion robuste des stocks et des paiements via Stripe.",
-        challenge: "Le client avait besoin d'une solution sur mesure pour vendre ses vins exclusifs, avec une identité visuelle forte que les solutions clés en main (Shopify) ne permettaient pas d'atteindre facilement.",
-        solution: "Développement from scratch d'une application Next.js Fullstack, avec base de données Postgres (Prisma) pour la gestion des stocks. Stripe gère les paiements en toute sécurité.",
-        result: "Processus d'achat réduit à 3 clics, conversions améliorées et autonomie complète du client via un Dashboard administrateur sécurisé.",
+        competences: [
+            {
+                bloc: "Gérer le patrimoine informatique",
+                items: [
+                    "Catalogue produits, base de données clients, stocks",
+                    "Dashboard admin sécurisé, rôles utilisateurs",
+                    "Conformité RGPD, mentions légales e-commerce"
+                ]
+            },
+            {
+                bloc: "Développer la présence en ligne de l'organisation",
+                items: [
+                    "Design premium reflétant l'identité de marque",
+                    "SEO optimisé, meta tags, sitemap",
+                    "Boutique en ligne dynamique connectée à la BDD"
+                ]
+            },
+            {
+                bloc: "Travailler en mode projet",
+                items: [
+                    "Cahier des charges client, maquettes Figma",
+                    "Développement itératif : maquette → intégration → paiement → déploiement",
+                    "Taux de conversion, performance Lighthouse",
+                    "Versionnage du projet avec Git et GitHub"
+                ]
+            },
+            {
+                bloc: "Mettre à disposition des utilisateurs un service informatique",
+                items: [
+                    "Tests du parcours d'achat et paiement Stripe",
+                    "Déploiement continu sur Vercel avec domaine personnalisé",
+                    "Formation du client à la gestion du back-office"
+                ]
+            }
+        ],
         problem: "Le client avait besoin d'une solution sur mesure pour vendre ses vins exclusifs, avec une identité visuelle forte que les solutions clés en main (Shopify) ne permettaient pas d'atteindre facilement.",
         stackDetails: [
             { name: "Next.js", reason: "Pour le rendu hybride et le SEO" },
@@ -205,9 +393,32 @@ export const projects = [
             "/images/gallery/nomad/nomad_gallery.webp"
         ],
         longDescription: "Plus qu'une série de morceaux, NOMAD est une exploration des textures sonores. Nous sculptons chaque set pour transformer le dancefloor en une expérience immersive, loin des standards classiques. Le site web reflète cette philosophie avec des animations fluides, un grain de texture cinématographique et une navigation haute performance.",
-        challenge: "Traduire l'atmosphère brute et sophistiquée des événements NOMAD dans une interface web sans compromettre les performances.",
-        solution: "Utilisation de Next.js (App Router) pour la rapidité, Framer Motion pour les micro-interactions élégantes et Lenis pour un scroll fluide 'premium'.",
-        result: "Une identité numérique forte qui complète l'expérience physique du collectif, avec un taux d'immersion maximal dès le splash screen.",
+        competences: [
+            {
+                bloc: "Développer la présence en ligne de l'organisation",
+                items: [
+                    "Vitrine digitale immersive pour le collectif",
+                    "Galerie d'événements, intégration de contenu dynamique",
+                    "SEO, partage social, présence web"
+                ]
+            },
+            {
+                bloc: "Travailler en mode projet",
+                items: [
+                    "Brief créatif avec le collectif, objectifs de communication",
+                    "Phases de conception graphique, développement, tests, mise en ligne",
+                    "Versionnage du projet avec Git et GitHub"
+                ]
+            },
+            {
+                bloc: "Organiser son développement professionnel",
+                items: [
+                    "Veille sur les tendances web design, Awwwards, Framer Motion",
+                    "Maîtrise de Lenis, smooth scrolling avancé",
+                    "Constitution d'un portfolio créatif démontrant la direction artistique"
+                ]
+            }
+        ],
         problem: "Besoin d'une vitrine digitale qui ne soit pas juste un site informatif, mais une extension de l'expérience artistique du collectif.",
         stackDetails: [
             { name: "Next.js", reason: "Pour l'architecture moderne et le rendu ultra-rapide" },
@@ -240,9 +451,39 @@ export const projects = [
             "/images/gallery/bellenippe/bellenippe_contact_1772901891116.png",
         ],
         longDescription: "Conception complète de l'identité numérique de Bellenippe, une marque de couture française. L'objectif était de traduire la texture et la rareté des pièces physiques dans une interface digitale. Utilisation de transitions fluides et d'une typographie éditoriale pour sublimer chaque vêtement.",
-        challenge: "Comment vendre des pièces 'uniques' en ligne sans perdre l'émotion du toucher et de l'essayage ? Le site se devait de refléter les codes du luxe, en imposant une esthétique précise, épurée et très fluide.",
-        solution: "Une direction artistique centrée on de larges visuels, une typographie élégante, soutenue par Next.js pour fluidifier la navigation sans rechargement. Shopify gère la vente en back-office de manière invisible via l'API Storefront (Headless).",
-        result: "Un e-commerce ultra rapide (Green IT), une forte hausse d'engagement client (>30%) et une identité de marque parfaitement retranscrite dans le digital.",
+        competences: [
+            {
+                bloc: "Développer la présence en ligne de l'organisation",
+                items: [
+                    "Identité de marque luxe, conformité e-commerce",
+                    "Catalogue Shopify Headless, contenu éditorial",
+                    "SEO luxe, Open Graph, performances Core Web Vitals"
+                ]
+            },
+            {
+                bloc: "Travailler en mode projet",
+                items: [
+                    "Brief client luxe, direction artistique, moodboard",
+                    "Phases : maquettes → intégration → API Shopify → tests → mise en production",
+                    "Taux d'engagement +30%, métriques Green IT"
+                ]
+            },
+            {
+                bloc: "Mettre à disposition des utilisateurs un service informatique",
+                items: [
+                    "Parcours d'achat, responsive design, paiement",
+                    "Déploiement Vercel avec Shopify Storefront API en headless",
+                    "Formation du client à la gestion du back-office Shopify"
+                ]
+            },
+            {
+                bloc: "Organiser son développement professionnel",
+                items: [
+                    "Veille e-commerce headless, tendances UX luxe",
+                    "Positionnement en direction artistique web"
+                ]
+            }
+        ],
         problem: "Comment vendre des pièces 'uniques' en ligne sans perdre l'émotion du toucher et de l'essayage ? Réponse : Une direction artistique centrée sur la matière et le détail visuel.",
         stackDetails: [
             { name: "Next.js 14", reason: "Performance et SEO pour le luxe" },
@@ -270,9 +511,32 @@ export const projects = [
         imageAlt: "Visualisation de graphe de réseau complexe générée avec NetworkX et Matplotlib",
         images: [],
         longDescription: "Analyse approfondie d'un réseau de collaboration scientifique. Utilisation de métriques de centralité (PageRank, Betweenness) pour identifier les acteurs clés.",
-        challenge: "Comprendre les dynamiques de groupe au sein d'un large réseau de données non structurées.",
-        solution: "Création d'un pipeline Python d'ingestion des datas et modélisation via algorithmiques de graphe.",
-        result: "Modélisation fonctionnelle et identification des noeuds centraux du système étudié.",
+        competences: [
+            {
+                bloc: "Gérer le patrimoine informatique",
+                items: [
+                    "Jeux de données, librairies Python, environnement de développement",
+                    "Documentation NetworkX, normes de visualisation"
+                ]
+            },
+            {
+                bloc: "Travailler en mode projet",
+                items: [
+                    "Définition des métriques de centralité à implémenter",
+                    "Pipeline : collecte → nettoyage → modélisation → visualisation",
+                    "Validation des résultats algorithmiques",
+                    "Versionnage du projet avec Git et GitHub"
+                ]
+            },
+            {
+                bloc: "Organiser son développement professionnel",
+                items: [
+                    "Apprentissage de la théorie des graphes et algorithmes de centralité",
+                    "Veille sur les bibliothèques Python de Data Science",
+                    "Acquisition de compétences en analyse de données"
+                ]
+            }
+        ],
         problem: "Comprendre les dynamiques de groupe au sein d'un large réseau de données non structurées.",
         stackDetails: [
             { name: "Python", reason: "Langage de référence pour la Data Science" },
@@ -299,6 +563,39 @@ export const projects = [
         imageAlt: "Interface dashboard de l'application Java Swing pour la gestion des JO",
         images: [],
         longDescription: "Application de bureau pour la gestion centralisée des JO : athlètes, épreuves, résultats et médailles.",
+        competences: [
+            {
+                bloc: "Gérer le patrimoine informatique",
+                items: [
+                    "Base de données MySQL, environnement Java, IDE",
+                    "Conventions Java, modèle MVC, documentation JDBC",
+                    "Gestion des accès à la base de données"
+                ]
+            },
+            {
+                bloc: "Répondre aux incidents et aux demandes d'assistance et d'évolution",
+                items: [
+                    "CRUD complet sur les entités athlètes, épreuves, résultats",
+                    "Gestion des évolutions fonctionnelles de l'application"
+                ]
+            },
+            {
+                bloc: "Travailler en mode projet",
+                items: [
+                    "Modélisation UML, diagrammes de classes",
+                    "Répartition des tâches en équipe, livrables par sprint",
+                    "Tests unitaires Java, validation des requêtes SQL",
+                    "Versionnage du projet avec Git et GitHub"
+                ]
+            },
+            {
+                bloc: "Mettre à disposition des utilisateurs un service informatique",
+                items: [
+                    "Scénarios de tests fonctionnels",
+                    "Documentation utilisateur de l'interface Swing"
+                ]
+            }
+        ],
         problem: "Besoin d'une interface robuste pour la saisie et la consultation rapide de grandes quantités de données sportives.",
         stackDetails: [
             { name: "Java Swing", reason: "Interface graphique native" },
@@ -325,9 +622,41 @@ export const projects = [
         imageAlt: "Interface de l'application GSB Compte Rendu",
         images: [],
         longDescription: "Application web développée dans le cadre du contexte GSB (Galaxy Swiss Bourdin) pour la gestion des comptes rendus de visite des visiteurs médicaux. Le système permet la saisie, la consultation et la modification des rapports de visite auprès des praticiens.",
-        challenge: "Mettre en place un système de gestion complet avec authentification sécurisée et une interface intuitive pour les visiteurs médicaux.",
-        solution: "Utilisation du framework CodeIgniter 4 pour une architecture MVC propre, avec une base de données MySQL pour le stockage structuré des données.",
-        result: "Une application fonctionnelle et sécurisée permettant aux visiteurs médicaux de gérer efficacement leurs comptes rendus de visite.",
+        competences: [
+            {
+                bloc: "Gérer le patrimoine informatique",
+                items: [
+                    "Serveur web, base de données MySQL, framework CodeIgniter",
+                    "Architecture MVC, documentation CodeIgniter 4",
+                    "Authentification sécurisée, sessions PHP, rôles visiteur/admin",
+                    "Protection des données médicales, validation des formulaires"
+                ]
+            },
+            {
+                bloc: "Répondre aux incidents et aux demandes d'assistance et d'évolution",
+                items: [
+                    "Développement du CRUD comptes rendus de visite",
+                    "Analyse des besoins des visiteurs médicaux GSB"
+                ]
+            },
+            {
+                bloc: "Travailler en mode projet",
+                items: [
+                    "Contexte GSB, cahier des charges fonctionnel",
+                    "Développement par fonctionnalités : authentification → CRUD → reporting",
+                    "Scénarios de test des parcours utilisateur",
+                    "Versionnage du projet avec Git et GitHub"
+                ]
+            },
+            {
+                bloc: "Mettre à disposition des utilisateurs un service informatique",
+                items: [
+                    "Validation des formulaires, tests de sécurité",
+                    "Déploiement sur serveur web Apache/Nginx",
+                    "Guide d'utilisation pour les visiteurs médicaux"
+                ]
+            }
+        ],
         problem: "Besoin d'un outil centralisé pour la saisie et le suivi des visites médicales, remplaçant les processus manuels.",
         stackDetails: [
             { name: "CodeIgniter 4", reason: "Framework PHP MVC léger et performant" },
@@ -360,9 +689,40 @@ export const projects = [
             "/images/gallery/alunisson/alunisson_footer.webp"
         ],
         longDescription: "Conception et développement du site vitrine de l'association Alunisson, un collectif de couture solidaire basé à Orléans. Le site met en avant les ateliers créatifs accessibles dès 8 ans, les partenariats sociaux avec l'ODAS et les centres aérés, ainsi que la possibilité de réserver un atelier en ligne.",
-        challenge: "Créer un site chaleureux et accueillant qui reflète les valeurs d'inclusion et de partage de l'association, tout en facilitant les réservations d'ateliers.",
-        solution: "Un design moderne aux couleurs douces avec Next.js pour la performance et Tailwind pour un style cohérent. Intégration d'un système de réservation et d'une newsletter.",
-        result: "Un site engageant qui a permis d'augmenter la visibilité de l'association et de faciliter les inscriptions aux ateliers de couture.",
+        competences: [
+            {
+                bloc: "Développer la présence en ligne de l'organisation",
+                items: [
+                    "Vitrine associative, mentions légales, droit à l'image",
+                    "Système de réservation d'ateliers, newsletter",
+                    "SEO local Orléans, Google My Business, meta tags"
+                ]
+            },
+            {
+                bloc: "Travailler en mode projet",
+                items: [
+                    "Recueil des besoins associatifs, public cible dès 8 ans",
+                    "Conception → maquette → développement → tests → mise en ligne",
+                    "Augmentation de la visibilité, inscriptions aux ateliers",
+                    "Versionnage du projet avec Git et GitHub"
+                ]
+            },
+            {
+                bloc: "Mettre à disposition des utilisateurs un service informatique",
+                items: [
+                    "Tests cross-browser, responsive, formulaire de réservation",
+                    "Déploiement sur Vercel avec nom de domaine alunisson.eu",
+                    "Formation de l'association à la gestion du contenu"
+                ]
+            },
+            {
+                bloc: "Organiser son développement professionnel",
+                items: [
+                    "Projet client réel enrichissant le portfolio professionnel",
+                    "Mise en avant du projet sur LinkedIn et GitHub"
+                ]
+            }
+        ],
         problem: "L'association avait besoin d'une présence en ligne professionnelle pour attirer de nouveaux membres et faciliter l'organisation des ateliers.",
         stackDetails: [
             { name: "Next.js", reason: "Performance et SEO pour la visibilité associative" },

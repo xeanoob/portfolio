@@ -114,29 +114,34 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
             {/* Content Section */}
             <section className="px-6 pb-32 container mx-auto max-w-4xl">
 
-                {/* Case Study Grid */}
-                <div className="grid md:grid-cols-3 gap-8 mb-20">
-                    <div className="md:col-span-1 border-l-2 border-[var(--text-secondary)]/30 pl-6">
-                        <h2 className="text-xl font-bold mb-4 font-serif text-[var(--foreground)]">Le Défi</h2>
-                        <p className="text-[var(--text-secondary)] leading-relaxed">
-                            {project.challenge || project.problem || "Créer une solution performante répondant aux besoins du client."}
-                        </p>
+                {/* Compétences BTS SIO mobilisées */}
+                {project.competences && project.competences.length > 0 && (
+                    <div className="mb-20">
+                        <h2 className="text-3xl font-serif font-bold mb-10 border-b border-[var(--border-color)] pb-4 text-[var(--foreground)]">
+                            Compétences BTS SIO mobilisées
+                        </h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {project.competences.map((comp: any, i: number) => (
+                                <div
+                                    key={i}
+                                    className="p-6 bg-[var(--bg-secondary)] rounded-2xl border border-[var(--border-color)] hover:border-[var(--foreground)]/20 transition-all duration-300 group"
+                                >
+                                    <div className="mb-5">
+                                        <h3 className="font-bold text-lg text-[var(--foreground)] leading-snug">{comp.bloc}</h3>
+                                    </div>
+                                    <ul className="space-y-3 pl-1">
+                                        {comp.items.map((item: string, j: number) => (
+                                            <li key={j} className="flex items-start gap-3 text-[var(--text-secondary)] text-sm leading-relaxed">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-[var(--foreground)]/30 shrink-0 mt-2"></span>
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-
-                    <div className="md:col-span-1 border-l-2 border-[var(--text-secondary)]/30 pl-6">
-                        <h2 className="text-xl font-bold mb-4 font-serif text-[var(--foreground)]">La Solution</h2>
-                        <p className="text-[var(--text-secondary)] leading-relaxed">
-                            {project.solution || "Développement d'une plateforme moderne, sécurisée et rapide."}
-                        </p>
-                    </div>
-
-                    <div className="md:col-span-1 border-l-2 border-[var(--foreground)] pl-6">
-                        <h2 className="text-xl font-bold mb-4 font-serif text-[var(--foreground)]">Le Résultat</h2>
-                        <p className="text-[var(--text-secondary)] leading-relaxed">
-                            {project.result || "Un produit robuste, optimisé et prêt pour la croissance."}
-                        </p>
-                    </div>
-                </div>
+                )}
 
                 {/* Tech Stack Details */}
                 <div className="mb-20">

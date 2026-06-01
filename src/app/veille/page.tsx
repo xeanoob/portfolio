@@ -13,67 +13,67 @@ interface Article {
 
 const curatedArticles: Article[] = [
     {
-        title: "L'avènement des Value Objects en Java avec le Projet Valhalla",
-        pubDate: "2026-05-02T00:00:00Z",
-        link: "https://openjdk.org/projects/valhalla/",
-        thumbnail: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=800&auto=format&fit=crop",
-        description: "Le Projet Valhalla redéfinit la conception orientée objet en Java en introduisant les 'Value Types'. Cela permet de créer des objets immuables et légers qui se comportent comme des primitives, réduisant massivement l'empreinte mémoire et améliorant la performance."
+        title: "Mistral AI tient son AI Now Summit au Carrousel du Louvre",
+        pubDate: "2026-05-28T00:00:00Z",
+        link: "https://ainowsummit.com/",
+        thumbnail: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=800&auto=format&fit=crop",
+        description: "Le 28 mai 2026, la pépite française Mistral AI a réuni plus de 1 400 leaders au Carrousel du Louvre pour son premier AI Now Summit. La société a annoncé Vibe, sa nouvelle plateforme d'agents IA, des partenariats avec Airbus, BMW et ASML, et la construction d'un datacenter de 10 MW aux Ulis."
     },
     {
-        title: "Domain-Driven Design (DDD) simplifié par les Sealed Classes",
-        pubDate: "2026-04-12T00:00:00Z",
-        link: "https://openjdk.org/jeps/409",
-        thumbnail: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop",
-        description: "Les 'Sealed Classes' offrent un contrôle strict sur la hiérarchie d'héritage. Cet article explore comment cette fonctionnalité clé de l'orienté objet moderne permet d'implémenter un Domain-Driven Design plus sécurisé, en limitant explicitement l'extension des classes."
+        title: "OpenAI lance GPT-5.5 et Google dévoile ses TPUs de 8e génération",
+        pubDate: "2026-04-23T00:00:00Z",
+        link: "https://openai.com/index/introducing-gpt-5-5/",
+        thumbnail: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop",
+        description: "Le 23 avril 2026, OpenAI déploie GPT-5.5 (nom de code Spud), axé sur les capacités agentiques : planification multi-étapes, utilisation d'outils et travail complexe. Dans la foulée, Google tient son Cloud Next '26 et présente ses TPUs de 8e génération pour concurrencer Nvidia."
     },
     {
-        title: "Composition vs Héritage : Le nouveau paradigme Java",
-        pubDate: "2026-03-10T00:00:00Z",
-        link: "https://www.infoworld.com/article/2255818/java-composition-vs-inheritance.html",
-        thumbnail: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=800&auto=format&fit=crop",
-        description: "La communauté Java se tourne massivement vers le principe 'Favoriser la composition plutôt que l'héritage'. Analyse des limites de l'héritage multiple (via interfaces par défaut) et comment les Records et la délégation redéfinissent l'architecture des applications."
+        title: "GPT-5.4 : l'IA prend le contrôle de votre ordinateur",
+        pubDate: "2026-03-05T00:00:00Z",
+        link: "https://openai.com/index/introducing-gpt-5-4/",
+        thumbnail: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+        description: "Le 5 mars 2026, OpenAI lance GPT-5.4 avec le contrôle natif d'ordinateur : le modèle peut cliquer, taper au clavier et naviguer dans les logiciels de manière autonome. Il obtient 75% au benchmark OSWorld. NVIDIA, à sa conférence GTC, mise sur les infrastructures pour systèmes agentiques."
     },
     {
-        title: "Le Pattern Matching réinvente le polymorphisme",
-        pubDate: "2026-02-18T00:00:00Z",
-        link: "https://openjdk.org/jeps/441",
+        title: "GPT-5.3-Codex : le modèle de code qui participe à son propre entraînement",
+        pubDate: "2026-02-05T00:00:00Z",
+        link: "https://openai.com/index/introducing-gpt-5-3-codex/",
         thumbnail: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
-        description: "Le 'Pattern Matching' pour les switch redéfinit la façon de traiter le polymorphisme en Java. Fini les longues chaînes de 'instanceof' ou le Visitor Pattern complexe, le code devient plus expressif et concis."
+        description: "Le 5 février 2026, OpenAI dévoile GPT-5.3-Codex, un modèle de codage agentique capable de participer à sa propre boucle d'entraînement. C'est le premier modèle classifié « haute capacité » en cybersécurité. En parallèle, l'IA Act européen entre dans sa phase d'application concrète."
     },
     {
-        title: "Impact de Project Loom sur la conception Orientée Objet",
+        title: "L'IA Act entre en application : les pratiques interdites sont désormais sanctionnées",
         pubDate: "2026-01-15T00:00:00Z",
-        link: "https://openjdk.org/projects/loom/",
-        thumbnail: "https://images.unsplash.com/photo-1618401471353-b98a5233c591?q=80&w=800&auto=format&fit=crop",
-        description: "Avec l'intégration des Virtual Threads, la manière de concevoir des objets concurrents en Java change drastiquement. L'approche traditionnelle basée sur des pools de threads lourds laisse place à un modèle orienté objet beaucoup plus naturel et séquentiel."
+        link: "https://artificialintelligenceact.eu/",
+        thumbnail: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=800&auto=format&fit=crop",
+        description: "Début 2026, la réglementation européenne sur l'IA entre dans sa phase contraignante. Depuis février 2025, les pratiques interdites (scoring social, surveillance biométrique de masse) sont passibles de sanctions. Les entreprises doivent classifier leurs systèmes par niveau de risque. Meta suspend l'IA pour les adolescents."
     },
     {
-        title: "La fin des POJOs classiques : L'ère des Records",
-        pubDate: "2025-12-10T00:00:00Z",
-        link: "https://openjdk.org/jeps/395",
-        thumbnail: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
-        description: "L'introduction des 'Records' a marqué un tournant dans la gestion des données en Java. En automatisant la création des getters, equals() et hashCode(), les développeurs peuvent enfin se concentrer sur la vraie logique métier orientée objet, en éliminant le boilerplate."
+        title: "GPT-5.2 et Gemini 3 Flash : la guerre des modèles de raisonnement",
+        pubDate: "2025-12-11T00:00:00Z",
+        link: "https://openai.com/index/introducing-gpt-5-2/",
+        thumbnail: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?q=80&w=800&auto=format&fit=crop",
+        description: "Le 11 décembre 2025, OpenAI lance GPT-5.2 en urgence face à Google, qui déploie Gemini 3 Flash le 17 décembre. 2025 aura été l'année des modèles de raisonnement : 60% des jetons traités sont liés au raisonnement, contre 0% un an plus tôt. L'IA passe du simple chat à l'agent actif."
     },
     {
-        title: "L'Immutabilité par défaut dans les architectures Java",
-        pubDate: "2025-11-20T00:00:00Z",
-        link: "https://www.baeldung.com/java-immutable-object",
-        thumbnail: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
-        description: "Dans la conception moderne orientée objet, l'immutabilité est devenue la norme. Analyse de la manière dont les API Java récentes encouragent la création de structures de données non modifiables pour garantir la sécurité thread-safe."
+        title: "ChatGPT fête ses 3 ans : 800 millions d'utilisateurs et partenariat AWS de 38 Mds$",
+        pubDate: "2025-11-30T00:00:00Z",
+        link: "https://openai.com/index/chatgpt/",
+        thumbnail: "https://images.unsplash.com/photo-1655720828018-edd2daec9349?q=80&w=800&auto=format&fit=crop",
+        description: "Fin novembre 2025, ChatGPT célèbre ses trois ans avec plus de 800 millions d'utilisateurs hebdomadaires. OpenAI signe un partenariat de 38 milliards de dollars avec AWS pour l'infrastructure cloud. Google lance Gemini 3 Pro qui domine les classements. La première cyberattaque entièrement pilotée par IA est détectée."
     },
     {
-        title: "Project Panama : Encapsulation Objet de la mémoire native",
-        pubDate: "2025-10-05T00:00:00Z",
-        link: "https://openjdk.org/projects/panama/",
-        thumbnail: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=800&auto=format&fit=crop",
-        description: "La Foreign Function & Memory API (Project Panama) permet désormais de manipuler de la mémoire hors du tas (off-heap) tout en conservant une abstraction purement orientée objet en Java, remplaçant l'ancien et complexe JNI."
-    },
-    {
-        title: "Généricité et Reification : Le futur du typage Java",
-        pubDate: "2025-09-15T00:00:00Z",
-        link: "https://cr.openjdk.org/~briangoetz/valhalla/erasure.html",
+        title: "OpenAI DevDay : ChatGPT devient une plateforme d'apps et lève 500 Mds$ de valorisation",
+        pubDate: "2025-10-06T00:00:00Z",
+        link: "https://openai.com/devday/",
         thumbnail: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop",
-        description: "Retour sur l'évolution du système de types Java et la discussion autour de la réification des génériques. Un aspect complexe de l'orienté objet où l''erasure' montre ses limites, et comment la plateforme compte évoluer."
+        description: "Le 6 octobre 2025 à San Francisco, OpenAI transforme ChatGPT en plateforme avec un Apps SDK intégrant Spotify, Figma et Canva. La société lance GPT-5 Pro, Codex en disponibilité générale et AgentKit. OpenAI atteint une valorisation de 500 milliards de dollars et signe un accord massif avec AMD."
+    },
+    {
+        title: "Sora 2 : OpenAI lance la génération vidéo avec audio synchronisé",
+        pubDate: "2025-09-30T00:00:00Z",
+        link: "https://openai.com/index/sora-2/",
+        thumbnail: "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=800&auto=format&fit=crop",
+        description: "Le 30 septembre 2025, OpenAI lance Sora 2 avec génération vidéo synchronisée à l'audio et la fonction Cameo pour insérer son image dans les vidéos. Une app mobile type TikTok est lancée sur iOS. ChatGPT franchit les 750 millions d'utilisateurs hebdomadaires. 40% des travailleurs américains utilisent l'IA au quotidien."
     }
 ];
 
@@ -91,7 +91,7 @@ export default function VeillePage() {
                         Veille <span className="text-[var(--text-secondary)] italic">Technologique</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-[var(--text-secondary)] font-light max-w-3xl leading-relaxed">
-                        Chaque mois, je sélectionne et résume un fait d'actualité majeur ou une tendance lourde dans le domaine de l'ingénierie logicielle.
+                        Ma sélection d'articles et tendances majeures autour de l'intelligence artificielle et de son impact sur notre quotidien.
                     </p>
                 </motion.div>
 
