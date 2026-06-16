@@ -8,39 +8,66 @@ import ScrollIndicator from "@/components/ScrollIndicator";
 const timeline = [
     {
         year: "2026",
-        date: "Janvier 2026 - Présent",
-        title: "Stage DevOps",
-        company: "Sopra Steria",
+        date: "Septembre 2026 - Juin 2027",
+        title: "Licence MIAGE",
+        company: "Université d'Orléans",
+        type: "edu",
+        description: "Formation en Méthodes Informatiques Appliquées à la Gestion des Entreprises. Double sensibilité technique et fonctionnelle pour les projets SI.",
+        stack: ["Gestion de Projet", "SI", "Développement"]
+    },
+    {
+        year: "2026",
+        date: "2026",
+        title: "Stage — Sopra Steria",
+        company: "Sopra Steria, Paris La Défense",
         type: "work",
-        description: "Automatisation des déploiements sur Azure, mise en place de pipelines CI/CD GitLab, et conteneurisation Docker/Kubernetes.",
-        stack: ["Azure", "Kubernetes", "GitLab CI", "Terraform"]
+        description: "Automatisation de la sécurité : workflow de récupération d'alertes et génération automatique de rapports d'audit. DevOps : déploiement d'un outil de recherche par trigramme optimisé sur GitLab.",
+        stack: ["Sécurité", "DevOps", "GitLab", "Automatisation"]
+    },
+    {
+        year: "2026",
+        date: "Depuis Janvier 2026",
+        title: "Micro-entreprise — Solutions Web",
+        company: "Freelance, Orléans",
+        type: "work",
+        description: "Conception et mise en ligne de sites web sur-mesure (vitrines et e-commerce). Gestion de projet client : recueil des besoins, cahiers des charges, devis et facturation.",
+        stack: ["Next.js", "React", "E-commerce", "Gestion Client"]
     },
     {
         year: "2024",
-        date: "Septembre 2024",
+        date: "Septembre 2024 - Juin 2026",
         title: "BTS SIO Option SLAM",
         company: "Lycée Benjamin Franklin",
         type: "edu",
-        description: "Obtention du Brevet de Technicien Supérieur avec mention. Major de promotion sur les projets techniques.",
-        stack: ["Java", "SQL", "Gestion de Projet"]
+        description: "Brevet de Technicien Supérieur en Services Informatiques aux Organisations, option Solutions Logicielles et Applications Métiers.",
+        stack: ["Java", "SQL", "C#", "Gestion de Projet"]
     },
     {
         year: "2024",
-        date: "Mai 2024 - Juillet 2024",
+        date: "2024 - 2025",
         title: "Stage Développeur Fullstack",
-        company: "ADENES",
+        company: "ADENES, Lyon",
         type: "work",
-        description: "Conception et développement d'un plugin Outlook pour l'automatisation des flux de travail. Interface avec API REST interne.",
-        stack: ["C#", ".NET", "React", "API"]
+        description: "Création d'un Add-in Outlook et d'une API REST pour l'archivage automatique de pièces jointes. Développement d'interfaces (HTML5/CSS3/W3C) et application des protocoles de sécurité.",
+        stack: ["C#", ".NET", "API REST", "HTML5/CSS3"]
     },
     {
         year: "2023",
-        date: "Septembre 2022 - Juin 2023",
+        date: "Septembre 2023 - Juin 2024",
         title: "BUT Informatique (1ère année)",
         company: "IUT d'Orléans",
         type: "edu",
         description: "Validation de la première année. Apprentissage des bases de l'algorithmique, du développement web et de la programmation système.",
         stack: ["C++", "HTML/CSS", "Linux"]
+    },
+    {
+        year: "2019",
+        date: "2019 - 2023",
+        title: "Baccalauréat STI2D — Option SIN",
+        company: "Lycée Sainte Croix - Sainte Euverte",
+        type: "edu",
+        description: "Baccalauréat Sciences et Technologies de l'Industrie et du Développement Durable, option Systèmes d'Information et Numérique. Mention Assez Bien.",
+        stack: ["Électronique", "Programmation", "SIN"]
     },
 ];
 
@@ -116,7 +143,7 @@ export default function ParcoursContent() {
 
                 <div className="mt-32 flex justify-center">
                     <a
-                        href="/images/fichiers/CV_Ambroise_Boutrin_Dev_Fullstack.pdf"
+                        href="/images/fichiers/CV_Ambroise_Boutrin_MIAGE.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group flex items-center gap-4 text-xl font-serif border-b border-[var(--text-secondary)] pb-1 hover:opacity-50 transition-opacity text-[var(--foreground)]"

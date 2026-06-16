@@ -5,16 +5,16 @@ import { motion } from "framer-motion";
 
 const skillCategories = [
     {
-        name: "Frontend",
-        skills: ["React", "Next.js", "TypeScript", "TailwindCSS", "Framer Motion", "Three.js"]
+        name: "Développement Logiciel & POO",
+        skills: ["Java", "C#", "Python", "HTML/CSS", "JavaScript", "API REST"]
     },
     {
-        name: "Backend",
-        skills: ["Node.js", "Python", "Java", "C#", "SQL", "API REST"]
+        name: "DevOps & Base de données",
+        skills: ["Git", "GitLab CI", "MySQL", "MariaDB", "Docker", "Automatisation"]
     },
     {
-        name: "DevOps & Tools",
-        skills: ["Docker", "Git", "Linux", "CI/CD", "Vercel", "Figma"]
+        name: "Méthodes & Sécurité",
+        skills: ["Agile / SCRUM", "Cybersécurité", "Gestion de Projet", "W3C", "Linux"]
     }
 ];
 

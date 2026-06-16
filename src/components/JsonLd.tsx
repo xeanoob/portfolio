@@ -7,7 +7,7 @@ const JsonLd = () => {
         "name": "Ambroise Boutrin",
         "url": "https://www.ambroise-boutrin.fr",
         "image": "https://www.ambroise-boutrin.fr/me.png",
-        "jobTitle": "Développeur Fullstack",
+        "jobTitle": "Étudiant L3 MIAGE | Développeur Fullstack Junior",
         "worksFor": {
             "@type": "Organization",
             "name": "Freelance / Étudiant"
@@ -24,7 +24,7 @@ const JsonLd = () => {
             "https://github.com/xeanoob",
             "https://twitter.com/ambroise_b"
         ],
-        "knowsAbout": ["React", "Next.js", "TypeScript", "Node.js", "Web Development", "UI/UX Design"]
+        "knowsAbout": ["Java", "C#", "Python", "JavaScript", "HTML/CSS", "API REST", "Git", "MySQL", "Agile", "Cybersécurité"]
     };
 
     return (
@@ -103,12 +103,12 @@ const JsonLd = () => {
                             "@type": "Person",
                             "name": "Ambroise Boutrin",
                             "url": "https://www.ambroise-boutrin.fr",
-                            "jobTitle": "Développeur Fullstack & Expert Next.js",
+                            "jobTitle": "Étudiant L3 MIAGE | Développeur Fullstack Junior",
                             "worksFor": {
                                 "@type": "Organization",
                                 "name": "Ambroise B. Studio"
                             },
-                            "description": "Spécialiste en création d'applications web et sites internet performants à Orléans."
+                            "description": "Futur étudiant en L3 MIAGE à l'Université d'Orléans. Développeur Fullstack spécialisé en applications web et automatisation de processus."
                         },
                         {
                             "@context": "https://schema.org",

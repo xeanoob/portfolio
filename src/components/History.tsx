@@ -22,9 +22,9 @@ export default function History() {
                             transition={{ duration: 0.6 }}
                             style={{ willChange: "transform, opacity" }}
                         >
-                            <h3 className="text-2xl font-serif italic mb-4 text-[var(--foreground)]">Étudiant passionné par l'innovation.</h3>
+                            <h3 className="text-2xl font-serif italic mb-4 text-[var(--foreground)]">Futur étudiant en L3 MIAGE, passionné par l'innovation.</h3>
                             <p className="text-lg text-[var(--text-secondary)] leading-relaxed mb-6">
-                                Actuellement étudiant en informatique, je combine mes études avec une pratique intensive du développement web. Cette double casquette me permet d'apprendre les fondamentaux théoriques tout en explorant les technologies les plus modernes (Next.js, React).
+                                Après un BTS SIO et un an de BUT Informatique, je m'oriente vers la L3 MIAGE à l'Université d'Orléans. Fort de stages chez Sopra Steria (Paris La Défense) et ADENES (Lyon), je maîtrise le développement d'applications, l'intégration d'APIs et l'automatisation de processus. En parallèle, je gère ma micro-entreprise de création de sites web.
                             </p>
                         </motion.div>
 
@@ -37,7 +37,7 @@ export default function History() {
                         >
                             <h4 className="text-xl font-bold mb-2 text-[var(--foreground)]">Ma Vision</h4>
                             <p className="text-base text-[var(--text-secondary)] leading-relaxed">
-                                Je vois chaque projet comme une opportunité d'apprendre et de me perfectionner. Mon parcours académique m'apporte la rigueur et la logique, tandis que mes projets personnels nourrissent ma créativité. Je cherche toujours à aller au-delà du code scolaire pour créer des solutions concrètes et élégantes.
+                                La MIAGE me permet d'allier rigueur technique et sensibilité fonctionnelle. Je vois chaque projet comme une opportunité de combiner développement logiciel, gestion de projet Agile et compréhension des enjeux métiers. Mon objectif : créer des solutions SI concrètes, performantes et élégantes.
                             </p>
                         </motion.div>
 
@@ -49,7 +49,7 @@ export default function History() {
                             style={{ willChange: "transform, opacity" }}
                         >
                             <div className="p-6 bg-[var(--bg-secondary)] border-l-4 border-[var(--foreground)] italic text-[var(--text-primary)]">
-                                "Mon ambition ? Transformer chaque ligne de code en une étape vers l'excellence technique et créative."
+                                "Mon ambition ? Allier technique et fonctionnel pour concevoir des systèmes d'information qui font la différence."
                             </div>
                         </motion.div>
                     </div>

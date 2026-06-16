@@ -62,7 +62,7 @@ export default function Navbar() {
 
                     <div className="w-px h-4 bg-[var(--border-color)] mx-2"></div>
 
-                    <a href="/images/fichiers/CV_Ambroise_Boutrin_Dev_Fullstack.pdf" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--text-secondary)] transition-colors px-2">
+                    <a href="/images/fichiers/CV_Ambroise_Boutrin_MIAGE.pdf" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--text-secondary)] transition-colors px-2">
                         CV
                     </a>
 

@@ -157,7 +157,7 @@ export default function ProjectsContent() {
                             Demander un devis <ArrowUpRight size={20} />
                         </Link>
                         <a
-                            href="/images/fichiers/CV_Ambroise_Boutrin_Dev_Fullstack.pdf"
+                            href="/images/fichiers/CV_Ambroise_Boutrin_MIAGE.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="border-b border-[var(--foreground)] pb-1 hover:opacity-50 transition-opacity text-lg text-[var(--foreground)]"
