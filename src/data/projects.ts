@@ -41,6 +41,110 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        id: "13",
+        title: "ENE Micro-Station",
+        slug: "ene-microstation",
+        category: "Site Vitrine Client",
+        role: "Développeur Fullstack",
+        description: "Site vitrine professionnel pour ENE SAS, spécialiste de l'assainissement non collectif depuis 2006. Micro-stations Tricel Novo, filtres compacts, pompes de relevage.",
+        tech: ["Next.js", "TailwindCSS", "TypeScript", "Vercel"],
+        mainTech: "Next.js / Tailwind",
+        color: "bg-[#2d6a4f]",
+        textColor: "text-white",
+        github: "https://github.com/xeanoob/enemicrostation",
+        demo: "https://enemicrostation.vercel.app",
+        logo: null,
+        invertLogo: false,
+        image: "/images/captureene.webp",
+        imageAlt: "Page d'accueil du site ENE Micro-Station, spécialiste assainissement",
+        images: [],
+        longDescription: "Conception et développement du site vitrine de l'entreprise ENE SAS, spécialisée dans l'assainissement non collectif depuis 2006. Le site présente les différents produits (micro-stations Tricel Novo, filtres compacts, pompes de relevage, récupération d'eau de pluie), les services (livraison, mise en route, entretien/SAV) et la zone d'intervention couvrant 10 départements. Intégration de SEO local avancé avec données structurées Schema.org.",
+        competences: [
+            {
+                bloc: "Développer la présence en ligne de l'organisation",
+                items: [
+                    "Vitrine professionnelle avec identité visuelle de l'entreprise",
+                    "SEO local avancé : Schema.org LocalBusiness, geo tags, Google My Business",
+                    "Catalogue produits interactif avec fiches détaillées"
+                ]
+            },
+            {
+                bloc: "Travailler en mode projet",
+                items: [
+                    "Recueil des besoins du client (PME, 7 collaborateurs)",
+                    "Conception → maquette → développement → tests → mise en production",
+                    "Versionnage du projet avec Git et GitHub"
+                ]
+            },
+            {
+                bloc: "Mettre à disposition des utilisateurs un service informatique",
+                items: [
+                    "Formulaire de contact et appel direct intégré",
+                    "Responsive design mobile-first",
+                    "Déploiement sur Vercel avec domaine personnalisé enemicrostation.fr"
+                ]
+            }
+        ],
+        problem: "L'entreprise ENE SAS avait besoin d'un site moderne et optimisé SEO pour être visible localement et présenter ses produits et services d'assainissement à sa clientèle dans 10 départements.",
+        stackDetails: [
+            { name: "Next.js", reason: "Performance, SEO et rendu hybride pour une visibilité locale optimale" },
+            { name: "Tailwind CSS", reason: "Design professionnel et responsive rapide à implémenter" },
+            { name: "Schema.org", reason: "Données structurées pour le référencement local (LocalBusiness)" }
+        ]
+    },
+    {
+
+        id: "11",
+        title: "Serveur Minecraft",
+        slug: "serveur-minecraft",
+        category: "Backend & Gaming",
+        role: "Développeur Backend",
+        description: "Configuration et développement d'un serveur Minecraft avec gestion des plugins, des joueurs et de l'infrastructure backend en JavaScript.",
+        tech: ["JavaScript", "Node.js", "JSON", "Linux"],
+        mainTech: "Node.js / JavaScript",
+        color: "bg-[#3b8526]",
+        textColor: "text-white",
+        github: "https://github.com/xeanoob/serverminecraft",
+        demo: null,
+        logo: null,
+        invertLogo: false,
+        image: "/images/captureminecraft.webp",
+        imageAlt: "Configuration du serveur Minecraft",
+        images: [],
+        longDescription: "Mise en place et développement d'un serveur Minecraft personnalisé. Le projet couvre la configuration du serveur, la gestion des plugins et des permissions joueurs, ainsi que l'automatisation de certaines tâches d'administration via des scripts JavaScript/Node.js.",
+        competences: [
+            {
+                bloc: "Gérer le patrimoine informatique",
+                items: [
+                    "Configuration serveur, gestion des fichiers de configuration",
+                    "Gestion des plugins et dépendances",
+                    "Monitoring et maintenance du serveur"
+                ]
+            },
+            {
+                bloc: "Travailler en mode projet",
+                items: [
+                    "Planification de l'architecture serveur",
+                    "Configuration et tests des plugins",
+                    "Versionnage du projet avec Git et GitHub"
+                ]
+            },
+            {
+                bloc: "Mettre à disposition des utilisateurs un service informatique",
+                items: [
+                    "Serveur jouable et stable pour les utilisateurs",
+                    "Gestion des permissions et des rôles joueurs",
+                    "Documentation de la configuration"
+                ]
+            }
+        ],
+        problem: "Besoin d'un serveur Minecraft personnalisé avec des plugins spécifiques et une gestion automatisée de l'infrastructure.",
+        stackDetails: [
+            { name: "Node.js", reason: "Scripts d'automatisation et gestion du serveur" },
+            { name: "JavaScript", reason: "Logique de configuration et plugins personnalisés" }
+        ]
+    },
+    {
         id: "10",
         title: "Complément Outlook",
         slug: "complement-outlook",
